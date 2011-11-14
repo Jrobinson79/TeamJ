@@ -1169,7 +1169,7 @@ namespace TeamJ
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("TeamJDBModel", "FK_Sale_Has_Dedication", "Person")]
-        public Person Person
+        public Person Dedication
         {
             get
             {
@@ -1185,7 +1185,7 @@ namespace TeamJ
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Person> PersonReference
+        public EntityReference<Person> DedicationReference
         {
             get
             {
@@ -1207,7 +1207,7 @@ namespace TeamJ
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("TeamJDBModel", "FK_Sale_Has_Donor", "Person")]
-        public Person Person1
+        public Person Donor
         {
             get
             {
@@ -1223,7 +1223,7 @@ namespace TeamJ
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Person> Person1Reference
+        public EntityReference<Person> DonorReference
         {
             get
             {

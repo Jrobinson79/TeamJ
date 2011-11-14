@@ -228,8 +228,8 @@
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="TeamJDBModel.FK_Item_Has_Transaction" FromRole="Sale" ToRole="Item" />
-          <NavigationProperty Name="Person" Relationship="TeamJDBModel.FK_Sale_Has_Dedication" FromRole="Sale" ToRole="Person" />
-          <NavigationProperty Name="Person1" Relationship="TeamJDBModel.FK_Sale_Has_Donor" FromRole="Sale" ToRole="Person" />
+          <NavigationProperty Name="Dedication" Relationship="TeamJDBModel.FK_Sale_Has_Dedication" FromRole="Sale" ToRole="Person" />
+          <NavigationProperty Name="Donor" Relationship="TeamJDBModel.FK_Sale_Has_Donor" FromRole="Sale" ToRole="Person" />
         </EntityType>
         <EntityType Name="Section">
           <Key>
