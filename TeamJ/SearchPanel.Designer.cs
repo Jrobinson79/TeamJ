@@ -80,7 +80,7 @@ namespace TeamJ
             this.panelLSUSImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelLSUSImage.Location = new System.Drawing.Point(3, 3);
             this.panelLSUSImage.Name = "panelLSUSImage";
-            this.panelLSUSImage.Size = new System.Drawing.Size(254, 74);
+            this.panelLSUSImage.Size = new System.Drawing.Size(250, 75);
             this.panelLSUSImage.TabIndex = 0;
             // 
             // tableLayoutPanelSearch
@@ -118,6 +118,7 @@ namespace TeamJ
             this.buttonSearch.TabIndex = 0;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // labelSelect
             // 
@@ -139,6 +140,7 @@ namespace TeamJ
             this.listBoxSelect.Name = "listBoxSelect";
             this.listBoxSelect.Size = new System.Drawing.Size(254, 1);
             this.listBoxSelect.TabIndex = 0;
+            this.listBoxSelect.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxSelect_MouseDoubleClick);
             // 
             // tableLayoutPanelButtons
             // 
@@ -165,6 +167,7 @@ namespace TeamJ
             this.buttonSelect.TabIndex = 0;
             this.buttonSelect.Text = "Select";
             this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
             // buttonNew
             // 
@@ -176,6 +179,7 @@ namespace TeamJ
             this.buttonNew.TabIndex = 0;
             this.buttonNew.Text = "Add New";
             this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // tableLayoutPanel1
             // 

@@ -14,17 +14,22 @@ namespace TeamJ
         public MainForm()
         {
             InitializeComponent();
-            setPanel(new SearchPanel());
         }
 
         public void setPanel(Panel p)
         {
+            if (showingPanel != null)
+                panelFloat.Controls.Remove(showingPanel);
+
+            showingPanel = p;
+
             this.panelFloat.BringToFront();
             this.panelFloat.Visible = true;
 
             panelFloat.Controls.Add(p);
-            p.Dock = DockStyle.Fill;
         }
+
+        private Panel showingPanel = null;
 
         private void MainForm_Click(object sender, EventArgs e)
         {
@@ -32,20 +37,22 @@ namespace TeamJ
             {
                 panelFloat.Visible = false;
                 panelFloat.SendToBack();
+                panelFloat.Controls.Remove(showingPanel);
+                showingPanel = null;
             }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SearchPanel sp = new SearchPanel();
+            SearchPanel sp = new SearchPanel(textBoxSearch.Text);
 
             setPanel(sp);
-            sp.setSearchString(textBoxSearch.Text);
         }
 
         private void buttonNewDonor_Click(object sender, EventArgs e)
         {
             // setPanel(donorPanel(new donor)
+            setPanel(new ShowDonorPanel());
         }
 
         private void buttonReport_Click(object sender, EventArgs e)
