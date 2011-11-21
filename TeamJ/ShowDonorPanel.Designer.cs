@@ -48,10 +48,12 @@
             this.tableLayoutPanelBottomRight = new System.Windows.Forms.TableLayoutPanel();
             this.tabControlInfo = new System.Windows.Forms.TabControl();
             this.tabPageDonor = new System.Windows.Forms.TabPage();
-            this.personInfoPanelDonor = new TeamJ.PersonInfoPanel(this.components);
             this.tabPageRecipient = new System.Windows.Forms.TabPage();
-            this.personInfoPanelRecipient = new TeamJ.PersonInfoPanel(this.components);
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.personInfoPanelDonor = new TeamJ.PersonInfoPanel(this.components);
+            this.personInfoPanelRecipient = new TeamJ.PersonInfoPanel(this.components);
+            this.transactionPanel1 = new TeamJ.TransactionPanel(this.components);
             this.tableLayoutPanelBorder.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelImage.SuspendLayout();
@@ -299,6 +301,7 @@
             // 
             this.tabControlInfo.Controls.Add(this.tabPageDonor);
             this.tabControlInfo.Controls.Add(this.tabPageRecipient);
+            this.tabControlInfo.Controls.Add(this.tabPage1);
             this.tabControlInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlInfo.Location = new System.Drawing.Point(3, 3);
             this.tabControlInfo.Name = "tabControlInfo";
@@ -317,14 +320,6 @@
             this.tabPageDonor.TabIndex = 0;
             this.tabPageDonor.Text = "Donor Information";
             // 
-            // personInfoPanelDonor
-            // 
-            this.personInfoPanelDonor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personInfoPanelDonor.Location = new System.Drawing.Point(3, 3);
-            this.personInfoPanelDonor.Name = "personInfoPanelDonor";
-            this.personInfoPanelDonor.Size = new System.Drawing.Size(58, 0);
-            this.personInfoPanelDonor.TabIndex = 0;
-            // 
             // tabPageRecipient
             // 
             this.tabPageRecipient.BackColor = System.Drawing.SystemColors.Control;
@@ -336,14 +331,6 @@
             this.tabPageRecipient.TabIndex = 1;
             this.tabPageRecipient.Text = "Recipient Information";
             // 
-            // personInfoPanelRecipient
-            // 
-            this.personInfoPanelRecipient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personInfoPanelRecipient.Location = new System.Drawing.Point(3, 3);
-            this.personInfoPanelRecipient.Name = "personInfoPanelRecipient";
-            this.personInfoPanelRecipient.Size = new System.Drawing.Size(58, 0);
-            this.personInfoPanelRecipient.TabIndex = 0;
-            // 
             // buttonUpdate
             // 
             this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -354,6 +341,34 @@
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(64, 0);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Transaction";
+            this.tabPage1.Controls.Add(transactionPanel1);
+            // 
+            // personInfoPanelDonor
+            // 
+            this.personInfoPanelDonor.AutoSize = true;
+            this.personInfoPanelDonor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanelDonor.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanelDonor.Name = "personInfoPanelDonor";
+            this.personInfoPanelDonor.Size = new System.Drawing.Size(58, 0);
+            this.personInfoPanelDonor.TabIndex = 0;
+            // 
+            // personInfoPanelRecipient
+            // 
+            this.personInfoPanelRecipient.AutoSize = true;
+            this.personInfoPanelRecipient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanelRecipient.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanelRecipient.Name = "personInfoPanelRecipient";
+            this.personInfoPanelRecipient.Size = new System.Drawing.Size(58, -6);
+            this.personInfoPanelRecipient.TabIndex = 0;
             // 
             // ShowDonorPanel
             // 
@@ -377,7 +392,9 @@
             this.tableLayoutPanelBottomRight.ResumeLayout(false);
             this.tabControlInfo.ResumeLayout(false);
             this.tabPageDonor.ResumeLayout(false);
+            this.tabPageDonor.PerformLayout();
             this.tabPageRecipient.ResumeLayout(false);
+            this.tabPageRecipient.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +424,7 @@
         private System.Windows.Forms.Button buttonUpdate;
         private PersonInfoPanel personInfoPanelDonor;
         private PersonInfoPanel personInfoPanelRecipient;
+        private System.Windows.Forms.TabPage tabPage1;
+        private TransactionPanel transactionPanel1;
     }
 }
