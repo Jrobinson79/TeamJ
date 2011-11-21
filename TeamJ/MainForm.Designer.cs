@@ -94,8 +94,8 @@
             // 
             // labelFindDonor
             // 
-            this.labelFindDonor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelFindDonor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelFindDonor.AutoSize = true;
             this.labelFindDonor.Location = new System.Drawing.Point(3, 0);
             this.labelFindDonor.Name = "labelFindDonor";
@@ -168,9 +168,9 @@
             // 
             // panelFloat
             // 
-            this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFloat.AutoScroll = true;
             this.panelFloat.BackColor = System.Drawing.Color.Transparent;
             this.panelFloat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;

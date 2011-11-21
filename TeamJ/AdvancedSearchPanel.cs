@@ -4,21 +4,17 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TeamJ
 {
-    public partial class AdvancedSearchPanel : Component
+    public partial class AdvancedSearchPanel : Panel
     {
+
         public AdvancedSearchPanel()
         {
             InitializeComponent();
-        }
 
-        public AdvancedSearchPanel(IContainer container)
-        {
-            container.Add(this);
-
-            InitializeComponent();
         }
     }
 }
