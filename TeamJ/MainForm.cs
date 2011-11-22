@@ -58,6 +58,9 @@ namespace TeamJ
         private void buttonReport_Click(object sender, EventArgs e)
         {
             //  setPanel(new createreportPanel);
+            AdvancedSearchPanel panel = new AdvancedSearchPanel();
+            setPanel(panel);
+            panel.Visible = true;
         }
     }
 }
