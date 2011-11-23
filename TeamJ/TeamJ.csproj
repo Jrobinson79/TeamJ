@@ -115,18 +115,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeamJDBModel.edmx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="TransactionPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TransactionPanel.Designer.cs">
       <DependentUpon>TransactionPanel.cs</DependentUpon>
     </Compile>
-=======
     <EmbeddedResource Include="AdvancedSearchPanel.resx">
       <DependentUpon>AdvancedSearchPanel.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 519977fb248b722c829f1df1401fcc257361a3ae
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
