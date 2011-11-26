@@ -11,7 +11,8 @@ namespace TeamJ
 {
     public partial class PersonInfoPanel : Panel
     {
-        private Person person;
+        private Person person = new Person();
+        TeamJDBEntities context = new TeamJDBEntities();
 
         public PersonInfoPanel()
         {
@@ -21,7 +22,6 @@ namespace TeamJ
         public PersonInfoPanel(IContainer container)
         {
             container.Add(this);
-
             InitializeComponent();
         }
 
@@ -49,6 +49,7 @@ namespace TeamJ
 
         public void savePerson()
         {
+            person.PersonID = Guid.NewGuid();
             person.FirstName = textBoxFirstName.Text;
             person.MiddleName = textBoxMiddleName.Text;
             person.LastName = textBoxLastName.Text;
@@ -58,6 +59,46 @@ namespace TeamJ
             person.City = textBoxCity.Text;
             person.State = textBoxState.Text;
             person.Zip = textBoxZip.Text;
+        }
+
+        public Boolean HasPerson(Person person)
+        {
+            var peopleQuery = from people in context.People
+                              where people.FirstName  == person.FirstName
+                              && people.MiddleName == person.MiddleName
+                              && people.LastName  == person.LastName
+                              && people.Addr == person.Addr
+                              && people.City == person.City
+                              && people.State == person.State
+                              && people.Zip == person.Zip
+                              && people.Phone == person.Phone
+                              && people.Email == person.Email
+                              select people;
+
+            if (peopleQuery.Count() == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public String GetID()
+        {
+            var peopleQuery = from people in context.People
+                              where people.FirstName == person.FirstName
+                              && people.MiddleName == person.MiddleName
+                              && people.LastName == person.LastName
+                              && people.Addr == person.Addr
+                              && people.City == person.City
+                              && people.State == person.State
+                              && people.Zip == person.Zip
+                              && people.Phone == person.Phone
+                              && people.Email == person.Email
+                              select people;
+
+            foreach (var result in peopleQuery)
+                return result.PersonID.ToString();
+
+            return null;
         }
     }
 }

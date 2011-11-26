@@ -139,6 +139,7 @@ namespace TeamJ
             this.comboBoxItemType.Name = "comboBoxItemType";
             this.comboBoxItemType.Size = new System.Drawing.Size(123, 21);
             this.comboBoxItemType.TabIndex = 0;
+            this.comboBoxItemType.SelectedIndexChanged += new System.EventHandler(this.comboBoxItemType_SelectedIndexChanged);
             // 
             // tableLayoutPanelPrice
             // 

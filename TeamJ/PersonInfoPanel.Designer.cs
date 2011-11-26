@@ -70,7 +70,7 @@
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(60, 13);
             this.labelFirstName.TabIndex = 0;
-            this.labelFirstName.Text = "First Name:";
+            this.labelFirstName.Text = "First Name:*";
             // 
             // labelMiddleName
             // 
@@ -81,7 +81,7 @@
             this.labelMiddleName.Name = "labelMiddleName";
             this.labelMiddleName.Size = new System.Drawing.Size(72, 13);
             this.labelMiddleName.TabIndex = 0;
-            this.labelMiddleName.Text = "Middle Name:";
+            this.labelMiddleName.Text = "Middle Name:*";
             // 
             // labelLastName
             // 
@@ -91,7 +91,7 @@
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(61, 13);
             this.labelLastName.TabIndex = 0;
-            this.labelLastName.Text = "Last Name:";
+            this.labelLastName.Text = "Last Name:*";
             // 
             // labelEmail
             // 
@@ -101,7 +101,7 @@
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(35, 13);
             this.labelEmail.TabIndex = 0;
-            this.labelEmail.Text = "Email:";
+            this.labelEmail.Text = "Email:*";
             // 
             // labelPhone
             // 
@@ -111,7 +111,7 @@
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(41, 13);
             this.labelPhone.TabIndex = 0;
-            this.labelPhone.Text = "Phone:";
+            this.labelPhone.Text = "Phone:*";
             // 
             // labelAddress
             // 
@@ -121,7 +121,7 @@
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(48, 13);
             this.labelAddress.TabIndex = 0;
-            this.labelAddress.Text = "Address:";
+            this.labelAddress.Text = "Address:*";
             // 
             // labelCity
             // 
@@ -131,7 +131,7 @@
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(27, 13);
             this.labelCity.TabIndex = 0;
-            this.labelCity.Text = "City:";
+            this.labelCity.Text = "City:*";
             // 
             // labelState
             // 
@@ -141,7 +141,7 @@
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(35, 13);
             this.labelState.TabIndex = 0;
-            this.labelState.Text = "State:";
+            this.labelState.Text = "State:*";
             // 
             // labelZip
             // 
@@ -151,7 +151,7 @@
             this.labelZip.Name = "labelZip";
             this.labelZip.Size = new System.Drawing.Size(25, 13);
             this.labelZip.TabIndex = 0;
-            this.labelZip.Text = "Zip:";
+            this.labelZip.Text = "Zip:*";
             // 
             // textBoxFirstName
             // 

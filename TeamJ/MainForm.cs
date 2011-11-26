@@ -62,5 +62,34 @@ namespace TeamJ
             setPanel(panel);
             panel.Visible = true;
         }
+
+        private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textBoxSearch.Text == "Enter Name Here")
+            {
+                textBoxSearch.Text = "";
+            }
+
+            base.OnKeyPress(e);
+
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                textBoxSearch.Text += e.KeyChar;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+            if (textBoxSearch.Text == "" || textBoxSearch.Text == "Enter Name Here")
+            {
+                buttonSearch.Enabled = false;
+            }
+            else
+            {
+                buttonSearch.Enabled = true;
+            }
+        }
     }
 }

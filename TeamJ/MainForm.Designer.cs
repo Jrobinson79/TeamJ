@@ -112,10 +112,12 @@
             this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
             this.textBoxSearch.TabIndex = 1;
             this.textBoxSearch.Text = "Enter Name Here";
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
             // 
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.Enabled = false;
             this.buttonSearch.Location = new System.Drawing.Point(292, 10);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(77, 23);

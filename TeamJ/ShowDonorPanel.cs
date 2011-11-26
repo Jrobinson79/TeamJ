@@ -12,6 +12,7 @@ namespace TeamJ
     public partial class ShowDonorPanel : Panel
     {
         private List<Sale> sales;
+        TeamJDBEntities context = new TeamJDBEntities();
 
         public ShowDonorPanel()
         {
@@ -47,7 +48,87 @@ namespace TeamJ
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            Guid donorID;
+            Guid recipientID;
+
             // Update the fields of the selectedRecipient/donor
+            // Process the donor information
+            PersonInfoPanel donorPanel = (PersonInfoPanel)personInfoPanelDonor;
+            donorPanel.savePerson();
+            Person donor = donorPanel.getPerson();
+
+            if (donorPanel.HasPerson(donor))
+            {
+                donorID = Guid.Parse(donorPanel.GetID());
+            }
+            else
+            {
+                donorID = donor.PersonID;
+                context.People.AddObject(donor);
+            }
+
+            // Process the recipient information
+            PersonInfoPanel recipientPanel = (PersonInfoPanel)personInfoPanelRecipient;
+            recipientPanel.savePerson();
+            Person recipient = recipientPanel.getPerson();
+
+            if (recipientPanel.HasPerson(recipient))
+            {
+                recipientID = Guid.Parse(recipientPanel.GetID());
+            }
+            else
+            {
+                recipientID = recipient.PersonID;
+                context.People.AddObject(recipient);
+            }
+
+            TransactionPanel salePanel = (TransactionPanel)transactionPanel1;
+
+            salePanel.SaveSale();
+            Sale sale = salePanel.GetSale();
+
+            Item item = new Item();
+            item.ItemID = Guid.NewGuid();
+            item.ItemTypeID = salePanel.GetItemID();
+                
+            sale.SaleID = Guid.NewGuid();
+            sale.DonorID = donorID;
+            sale.DedicationID = recipientID;
+
+            context.Sales.AddObject(sale);
+
+            try
+            {
+                context.AcceptAllChanges();
+            }
+            catch(Exception) { }
+            
+            MessageBox.Show(donor.PersonID + "\n" +
+                donor.FirstName + "\n" +
+                donor.MiddleName + "\n" +
+                donor.LastName + "\n" +
+                donor.Addr + "\n" +
+                donor.City + "\n" +
+                donor.State + "\n" +
+                donor.Zip + "\n" +
+                donor.Phone + "\n" +
+                donor.Email + "\n" +
+                recipient.PersonID + "\n" +
+                recipient.FirstName + "\n" +
+                recipient.MiddleName + "\n" +
+                recipient.LastName + "\n" +
+                recipient.Addr + "\n" +
+                recipient.City + "\n" +
+                recipient.State + "\n" +
+                recipient.Zip + "\n" +
+                recipient.Phone + "\n" +
+                recipient.Email + "\n" +
+                sale.DonorID + "\n" +
+                sale.DedicationID + "\n" +
+                sale.Cost + "\n" +
+                sale.Date + "\n" +
+                item.ItemID + "\n" +
+                item.ItemTypeID + "\n");
         }
     }
 }
