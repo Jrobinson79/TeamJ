@@ -106,6 +106,8 @@ namespace TeamJ
             this.textBoxSearch.Size = new System.Drawing.Size(173, 20);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.Text = "Enter Name Here";
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // buttonSearch
             // 

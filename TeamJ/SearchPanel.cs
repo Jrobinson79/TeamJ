@@ -11,7 +11,11 @@ namespace TeamJ
 {
     public partial class SearchPanel : Panel
     {
+        #region Private Variables
+
         private TeamJDBEntities context = new TeamJDBEntities();
+
+        #endregion
 
         #region Constructors
 
@@ -57,6 +61,8 @@ namespace TeamJ
             var peopleQuery = from people in context.People
                               where (people.FirstName + people.LastName == search)
                               || (people.LastName + people.FirstName == search)
+                              || (people.FirstName.Contains(search))
+                              || (people.LastName.Contains(search))
                               || (people.LastName == search)
                               || (people.FirstName == search)
                               orderby people.LastName
@@ -70,6 +76,22 @@ namespace TeamJ
         }
 
         #endregion
+
+        #region showSelectedPerson(String selection)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="selection">Name of person selected</param>
+        private void showSelectedPerson(String selection)
+        {
+            // TODO:  launch the panel with the persons info
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Events
 
         #region buttonSearch_Click(object sender, EventArgs e)
         /// <summary>
@@ -129,14 +151,61 @@ namespace TeamJ
 
         #endregion
 
-        #region showSelectedPerson(String selection)
+        #region textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         /// <summary>
-        /// 
+        ///     Handles the event when the user strikes a key on the keyboard.
         /// </summary>
-        /// <param name="selection">Name of person selected</param>
-        private void showSelectedPerson(String selection)
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // TODO:  launch the panel with the persons info
+            //Determine if the Textfield should be blanked out
+            if (textBoxSearch.Text == "Enter Name Here")
+            {
+                textBoxSearch.Text = "";
+            }
+
+            base.OnKeyPress(e);
+
+            // Check to see if the key that was striked is a letter.
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                textBoxSearch.Text += e.KeyChar;
+
+            }
+            else if (Char.IsDigit(e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Check to see if the search button should be enabled/disabled
+            if (textBoxSearch.Text == "" || textBoxSearch.Text == "Enter Name Here")
+            {
+                buttonSearch.Enabled = false;
+            }
+            else
+            {
+                buttonSearch.Enabled = true;
+            }
+
+            this.textBoxSearch.SelectionStart = this.textBoxSearch.Text.Length;
+        }
+
+        #endregion
+
+        #region textBoxSearch_Leave(object sender, EventArgs e)
+        /// <summary>
+        ///     Determines if "Enter Name Here" should be entered into the search textbox
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void textBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "")
+            {
+                textBoxSearch.Text = "Enter Name Here";
+            }
         }
 
         #endregion

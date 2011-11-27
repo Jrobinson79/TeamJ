@@ -174,6 +174,7 @@ namespace TeamJ
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(148, 20);
             this.textBoxPrice.TabIndex = 0;
+            this.textBoxPrice.ReadOnly = true;
             // 
             // tableLayoutPanelDate
             // 

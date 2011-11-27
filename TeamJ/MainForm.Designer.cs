@@ -110,9 +110,10 @@
             this.textBoxSearch.Location = new System.Drawing.Point(121, 12);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
-            this.textBoxSearch.TabIndex = 1;
+            this.textBoxSearch.TabIndex = 3;
             this.textBoxSearch.Text = "Enter Name Here";
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // buttonSearch
             // 
@@ -142,7 +143,7 @@
             this.buttonNewDonor.Location = new System.Drawing.Point(0, 0);
             this.buttonNewDonor.Name = "buttonNewDonor";
             this.buttonNewDonor.Size = new System.Drawing.Size(376, 44);
-            this.buttonNewDonor.TabIndex = 0;
+            this.buttonNewDonor.TabIndex = 1;
             this.buttonNewDonor.Text = "Add New Donor";
             this.buttonNewDonor.UseVisualStyleBackColor = true;
             this.buttonNewDonor.Click += new System.EventHandler(this.buttonNewDonor_Click);
@@ -180,7 +181,7 @@
             this.panelFloat.Margin = new System.Windows.Forms.Padding(25);
             this.panelFloat.Name = "panelFloat";
             this.panelFloat.Size = new System.Drawing.Size(717, 500);
-            this.panelFloat.TabIndex = 2;
+            this.panelFloat.TabIndex = 1;
             this.panelFloat.Visible = false;
             // 
             // MainForm

@@ -11,20 +11,48 @@ namespace TeamJ
 {
     public partial class PersonInfoPanel : Panel
     {
-        private Person person = new Person();
-        TeamJDBEntities context = new TeamJDBEntities();
+        #region Private Variables
 
+        private Person person = new Person();
+        private TeamJDBEntities context = new TeamJDBEntities();
+
+        #endregion
+
+        #region Constructors
+
+        #region PersonInfoPanel()
+        /// <summary>
+        ///     Constructs a PersonInfoPanel object
+        /// </summary>
         public PersonInfoPanel()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region PersonInfoPanel(IContainer container)
+        /// <summary>
+        ///     Constructs a PersonInfoPanel Object
+        /// </summary>
+        /// <param name="container"></param>
         public PersonInfoPanel(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
         }
 
+        #endregion
+
+        #endregion
+
+        #region Public Methods
+
+        #region setPerson(Person p)
+        /// <summary>
+        ///     Sets the appropriate textbox fields with the information from the Person parameter.
+        /// </summary>
+        /// <param name="p">The Person object to load into the textbox fields</param>
         public void setPerson(Person p)
         {
             this.person = p;
@@ -42,11 +70,24 @@ namespace TeamJ
             this.textBoxZip.Text = p.Zip;
         }
 
+        #endregion
+
+        #region getPerson()
+        /// <summary>
+        ///     Gets the Person object from the class.
+        /// </summary>
+        /// <returns>person</returns>
         public Person getPerson()
         {
             return person;
         }
 
+        #endregion
+
+        #region savePerson()
+        /// <summary>
+        ///     Save the information from the textbox fields into the Person object of the class.
+        /// </summary>
         public void savePerson()
         {
             person.PersonID = Guid.NewGuid();
@@ -61,6 +102,14 @@ namespace TeamJ
             person.Zip = textBoxZip.Text;
         }
 
+        #endregion
+
+        #region HasPerson(Person person)
+        /// <summary>
+        ///     Checks to see if the person object is already contained in the database.
+        /// </summary>
+        /// <param name="sender">The Person object of the class</param>
+        /// <returns> True if the object exists in the database, false otherwise.</returns>
         public Boolean HasPerson(Person person)
         {
             var peopleQuery = from people in context.People
@@ -81,6 +130,13 @@ namespace TeamJ
                 return true;
         }
 
+        #endregion
+
+        #region GetID()
+        /// <summary>
+        ///     Gets the PersonID Guid of the Person object.
+        /// </summary>
+        /// <returns>The Guid ID of the person being searched for if it exists, null if it doesn't exist.</returns>
         public String GetID()
         {
             var peopleQuery = from people in context.People
@@ -100,5 +156,9 @@ namespace TeamJ
 
             return null;
         }
+
+        #endregion
+
+        #endregion
     }
 }

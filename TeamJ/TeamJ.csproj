@@ -165,7 +165,16 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo1.gif" />
+    <None Include="Images\logo1.gif" />
+    <Content Include="Images\Plaza.jpg" />
+    <Content Include="Images\Plaza_A.jpg" />
+    <Content Include="Images\Plaza_B.jpg" />
+    <Content Include="Images\Plaza_C.jpg" />
+    <Content Include="Images\Plaza_D.jpg" />
+    <Content Include="Images\Plaza_E.jpg" />
+    <Content Include="Images\Plaza_F.jpg" />
+    <Content Include="Images\Plaza_G.jpg" />
+    <Content Include="Images\Plaza_H.jpg" />
     <Content Include="TeamJDB.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

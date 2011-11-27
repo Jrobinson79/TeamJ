@@ -14,8 +14,19 @@ namespace TeamJ
 {
     public partial class TransactionPanel : Panel
     {
-        TeamJDBEntities context = new TeamJDBEntities();
+        #region Private Methods
+
+        private TeamJDBEntities context = new TeamJDBEntities();
         private Sale sale = new Sale();
+
+        #endregion
+
+        #region Constructors
+
+        #region TransactionPanel()
+        /// <summary>
+        ///     Constructs a TransactionPanel object
+        /// </summary>
         public TransactionPanel()
         {
             InitializeComponent();
@@ -28,6 +39,13 @@ namespace TeamJ
             catch (Exception) { }
         }
 
+        #endregion
+
+        #region TransactionPanel(IContainer container)
+        /// <summary>
+        ///     Constructs a TransactionPanel object
+        /// </summary>
+        /// <param name="container"></param>
         public TransactionPanel(IContainer container)
         {
             container.Add(this);
@@ -40,11 +58,17 @@ namespace TeamJ
             catch (Exception) {  }
         }
 
-        private void comboBoxItemType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SetPriceField();
-        }
-        
+        #endregion
+
+        #endregion
+
+        #region Public Methods
+
+        #region SetSale(Sale s)
+        /// <summary>
+        ///     Sets the textbox fields from the data contained in the Sale parameter
+        /// </summary>
+        /// <param name="s">The Sale object that needs to be loaded into the textbox fields</param>
         public void SetSale(Sale s)
         {
             this.sale = s;
@@ -52,11 +76,24 @@ namespace TeamJ
             this.dateTimePicker1.Text = s.Date.ToString();
         }
 
+        #endregion
+
+        #region GetSale()
+        /// <summary>
+        ///     Gets the sale object of the class.
+        /// </summary>
+        /// <returns>The Sale Object of the class</returns>
         public Sale GetSale()
         {
             return sale;
         }
 
+        #endregion
+
+        #region SaveSale()
+        /// <summary>
+        ///     Stores the textbox fields into a sale object
+        /// </summary>
         public void SaveSale()
         {
             sale.SaleID = Guid.NewGuid();
@@ -64,6 +101,12 @@ namespace TeamJ
             sale.Date = dateTimePicker1.Value;
         }
 
+        #endregion
+
+        #region SetPriceField()
+        /// <summary>
+        ///     Sets the price field to the correct price of the type selected in the combobox of ItemTypes
+        /// </summary>
         private void SetPriceField()
         {
             if (this.comboBoxItemType.SelectedIndex == 0)
@@ -85,10 +128,16 @@ namespace TeamJ
             }
         }
 
+        #endregion
+
+        #region LoadComboBoox()
+        /// <summary>
+        ///     Loads the ItemTypes combobox with a list of ItemTypes from the database.
+        /// </summary>
         private void LoadComboBox()
         {
             this.comboBoxItemType.Items.Add("<Select Item>");
-                
+
             var itemQuery = from itemType in context.ItemTypes
                             select itemType;
 
@@ -96,17 +145,24 @@ namespace TeamJ
             {
                 this.comboBoxItemType.Items.Add(result.Type.ToString());
             }
-            
+
             this.comboBoxItemType.SelectedIndex = 0;
         }
 
+        #endregion
+
+        #region GetItemID()
+        /// <summary>
+        ///     Returns the ItemType ID of the item selected in the combobox
+        /// </summary>
+        /// <returns>The Guid ID of the ItemType</returns>
         public Guid GetItemID()
         {
             string selectedItem = this.comboBoxItemType.GetItemText(this.comboBoxItemType.SelectedItem).ToString();
 
             var itemIDQuery = from itemID in context.ItemTypes
-                                 where itemID.Type == selectedItem
-                                 select itemID;
+                              where itemID.Type == selectedItem
+                              select itemID;
 
             foreach (var result in itemIDQuery)
             {
@@ -115,5 +171,26 @@ namespace TeamJ
 
             return Guid.Parse(null);
         }
+
+        #endregion
+
+        #endregion
+
+        #region Events
+
+        #region comboBoxItemType_SelectedIndexChanged(object sender, MouseEventArgs e)
+        /// <summary>
+        ///     Handles the event of when the selection item is changed
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void comboBoxItemType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetPriceField();
+        }
+
+        #endregion
+
+        #endregion
     }
 }

@@ -11,14 +11,31 @@ namespace TeamJ
 {
     public partial class ShowDonorPanel : Panel
     {
-        private List<Sale> sales;
-        TeamJDBEntities context = new TeamJDBEntities();
+        #region Private Variables
 
+        private List<Sale> sales;
+        private TeamJDBEntities context = new TeamJDBEntities();
+
+        #endregion
+
+        #region Constructors
+
+        #region ShowDonorPanel()
+        /// <summary>
+        ///     Constructs a ShowDonorPanel object
+        /// </summary>
         public ShowDonorPanel()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region ShowDonorPanel(List<Sale> sales)
+        /// <summary>
+        ///     Constructs a ShowDonorPanel object
+        /// </summary>
+        /// <param name="sales"></param>
         public ShowDonorPanel(List<Sale> sales)
         {
             // sales should be from the same donor
@@ -31,28 +48,62 @@ namespace TeamJ
             }
         }
 
+        #endregion
+
+        #endregion
+
+        #region Events
+
+        #region radioButtonBrick_CheckedChanged(object sender, MouseEventArgs e)
+        /// <summary>
+        ///     Handles the event that the brick radio button selection was changed
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void radioButtonBrick_CheckedChanged(object sender, EventArgs e)
         {
             // change the image to the brick of the user and make the lineText labels visible
         }
 
+        #endregion
+
+        #region radioButtonSection_CheckedChanged(object sender, MouseEventArgs e)
+        /// <summary>
+        ///     Handles the event that the section radio button was changed
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void radioButtonSection_CheckedChanged(object sender, EventArgs e)
         {
             // change the image to the section of the selected recipients brick
         }
 
+        #endregion
+
+        #region listBoxRecipients_SelectedIndexChanged(object sender, MouseEventArgs e)
+        /// <summary>
+        ///     Handles the event that a new selection was made in the listbox.
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void listBoxRecipients_SelectedIndexChanged(object sender, EventArgs e)
         {
             // change the tabpageRecipient to the selected recipient
         }
 
+        #endregion
+
+        #region buttonUpdate_Click(object sender, MouseEventArgs e)
+        /// <summary>
+        ///     Loads data entered into the database, enforcing mappings
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             Guid donorID;
             Guid recipientID;
 
-            // Update the fields of the selectedRecipient/donor
-            // Process the donor information
             PersonInfoPanel donorPanel = (PersonInfoPanel)personInfoPanelDonor;
             donorPanel.savePerson();
             Person donor = donorPanel.getPerson();
@@ -102,33 +153,10 @@ namespace TeamJ
                 context.AcceptAllChanges();
             }
             catch(Exception) { }
-            
-            MessageBox.Show(donor.PersonID + "\n" +
-                donor.FirstName + "\n" +
-                donor.MiddleName + "\n" +
-                donor.LastName + "\n" +
-                donor.Addr + "\n" +
-                donor.City + "\n" +
-                donor.State + "\n" +
-                donor.Zip + "\n" +
-                donor.Phone + "\n" +
-                donor.Email + "\n" +
-                recipient.PersonID + "\n" +
-                recipient.FirstName + "\n" +
-                recipient.MiddleName + "\n" +
-                recipient.LastName + "\n" +
-                recipient.Addr + "\n" +
-                recipient.City + "\n" +
-                recipient.State + "\n" +
-                recipient.Zip + "\n" +
-                recipient.Phone + "\n" +
-                recipient.Email + "\n" +
-                sale.DonorID + "\n" +
-                sale.DedicationID + "\n" +
-                sale.Cost + "\n" +
-                sale.Date + "\n" +
-                item.ItemID + "\n" +
-                item.ItemTypeID + "\n");
         }
+
+        #endregion
+
+        #endregion
     }
 }
