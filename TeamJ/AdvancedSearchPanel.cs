@@ -13,6 +13,8 @@ namespace TeamJ
 
         #region Private Variables
 
+        TeamJDBEntities context = new TeamJDBEntities();
+
         #endregion
 
         #region Constructors
@@ -24,14 +26,50 @@ namespace TeamJ
         public AdvancedSearchPanel()
         {
             InitializeComponent();
-
+            PopulateMenus();
         }
 
         #endregion
 
         #endregion
 
-        #region Public Methods
+        #region Private Methods
+
+        #region PopulateMenus()
+        /// <summary>
+        ///     Loads the ItemTypes combobox with a list of ItemTypes from the database.
+        /// </summary>
+        private void PopulateMenus()
+        {
+            // Load the items combobox
+            this.itemComboBox.Items.Add("<Select Item>");
+
+            var itemQuery = from itemType in context.ItemTypes
+                            select itemType;
+
+            foreach (var result in itemQuery)
+            {
+                this.itemComboBox.Items.Add(result.Type.ToString());
+            }
+
+            this.itemComboBox.SelectedIndex = 0;
+
+            // Load the sections combobox
+            this.sectionComboBox.Items.Add("<Select Item>");
+
+            var sectionQuery = from section in context.Sections
+                            select section;
+
+            foreach (var result in sectionQuery)
+            {
+                this.sectionComboBox.Items.Add(result.Description.ToString());
+            }
+
+            this.sectionComboBox.SelectedIndex = 0;
+        
+        }
+
+        #endregion
 
         #endregion
 

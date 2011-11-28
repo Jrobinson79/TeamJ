@@ -26,7 +26,6 @@ namespace TeamJ
         public MainForm()
         {
             InitializeComponent();
-            this.buttonNewDonor.Focus();
         }
 
         #endregion
@@ -131,9 +130,10 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Determine if the textbox should be cleared
             if (textBoxSearch.Text == "Enter Name Here")
             {
-                textBoxSearch.Text = "";
+                textBoxSearch.Clear();
             }
 
             base.OnKeyPress(e);

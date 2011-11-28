@@ -47,6 +47,7 @@ namespace TeamJ
             this.tableLayoutPanelButtons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            this.panelFloat = new System.Windows.Forms.Panel();
             // 
             // tableLayoutPanelMain
             // 
@@ -106,7 +107,9 @@ namespace TeamJ
             this.textBoxSearch.Size = new System.Drawing.Size(173, 20);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.Text = "Enter Name Here";
+            this.textBoxSearch.AcceptsReturn = true;
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // buttonSearch
@@ -213,6 +216,21 @@ namespace TeamJ
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            // 
+            // panelFloat
+            // 
+            this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFloat.AutoScroll = true;
+            this.panelFloat.BackColor = System.Drawing.Color.Transparent;
+            this.panelFloat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelFloat.Location = new System.Drawing.Point(33, 28);
+            this.panelFloat.Margin = new System.Windows.Forms.Padding(25);
+            this.panelFloat.Name = "panelFloat";
+            this.panelFloat.Size = new System.Drawing.Size(717, 500);
+            this.panelFloat.TabIndex = 1;
+            this.panelFloat.Visible = false;
 
         }
 
@@ -229,6 +247,7 @@ namespace TeamJ
         private Button buttonSelect;
         private Button buttonNew;
         private TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panelFloat;
 
     }
 }

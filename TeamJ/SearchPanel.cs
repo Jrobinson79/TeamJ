@@ -14,6 +14,7 @@ namespace TeamJ
         #region Private Variables
 
         private TeamJDBEntities context = new TeamJDBEntities();
+        private Panel showingPanel = null;
 
         #endregion
 
@@ -47,6 +48,25 @@ namespace TeamJ
 
         #region Private Methods
 
+        #region setPanel(Panel p)
+        /// <summary>
+        ///     Sets the Panel
+        /// </summary>
+        /// <param name="p"></param>
+        private void setPanel(Panel p)
+        {
+            this.tableLayoutPanelMain.Visible = false;
+            if (showingPanel != null)
+                panelFloat.Controls.Remove(showingPanel);
+
+            showingPanel = p;
+
+            this.panelFloat.BringToFront();
+            this.panelFloat.Visible = true;
+
+            panelFloat.Controls.Add(p);
+        }
+
         #region setSearchString(String search)
         /// <summary>
         /// Sets up the query and populates the list box with the results
@@ -59,20 +79,42 @@ namespace TeamJ
 
             // query database for any combination of users entered
             var peopleQuery = from people in context.People
+                              join sale in context.Sales
+                                on people.PersonID equals sale.DonorID
                               where (people.FirstName + people.LastName == search)
                               || (people.LastName + people.FirstName == search)
                               || (people.FirstName.Contains(search))
                               || (people.LastName.Contains(search))
                               || (people.LastName == search)
                               || (people.FirstName == search)
-                              orderby people.LastName
-                              select people;
+                              orderby sale.Date descending
+                              select new { sale, people };
 
             // populate listbox wit results
             foreach (var result in peopleQuery)
             {
-                this.listBoxSelect.Items.Add(result.FirstName + " " + result.LastName);
+                this.listBoxSelect.Items.Add(result.people.FirstName+ " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Donor");
             }
+
+            peopleQuery = from people in context.People
+                          join sale in context.Sales
+                            on people.PersonID equals sale.DedicationID
+                          where (people.FirstName + people.LastName == search)
+                          || (people.LastName + people.FirstName == search)
+                          || (people.FirstName.Contains(search))
+                          || (people.LastName.Contains(search))
+                          || (people.LastName == search)
+                          || (people.FirstName == search)
+                          orderby sale.Date descending
+                          select new { sale, people };
+
+            // populate listbox wit results
+            foreach (var result in peopleQuery)
+            {
+                this.listBoxSelect.Items.Add(result.people.FirstName + " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Recipient");
+            }
+
+            this.listBoxSelect.Sorted = true;
         }
 
         #endregion
@@ -84,7 +126,7 @@ namespace TeamJ
         /// <param name="selection">Name of person selected</param>
         private void showSelectedPerson(String selection)
         {
-            // TODO:  launch the panel with the persons info
+            setPanel(new ShowDonorPanel());
         }
 
         #endregion
@@ -171,14 +213,14 @@ namespace TeamJ
             if (Char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
-                textBoxSearch.Text += e.KeyChar;
+                textBoxSearch.Text += e.KeyChar.ToString();
 
             }
-            else if (Char.IsDigit(e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsSymbol(e.KeyChar))
+            else if (Char.IsDigit((Char)e.KeyChar) || Char.IsPunctuation((Char)e.KeyChar) || Char.IsSymbol((Char)e.KeyChar))
             {
                 e.Handled = true;
             }
-
+            
             // Check to see if the search button should be enabled/disabled
             if (textBoxSearch.Text == "" || textBoxSearch.Text == "Enter Name Here")
             {
@@ -190,6 +232,26 @@ namespace TeamJ
             }
 
             this.textBoxSearch.SelectionStart = this.textBoxSearch.Text.Length;
+        }
+
+        #endregion
+
+        #region textBoxSearch_KeyDown(object sender, EventArgs e)
+        /// <summary>
+        ///     Handles the event that a "Enter" is struck
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Here I am");
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         #endregion
@@ -207,6 +269,8 @@ namespace TeamJ
                 textBoxSearch.Text = "Enter Name Here";
             }
         }
+
+        #endregion
 
         #endregion
 
