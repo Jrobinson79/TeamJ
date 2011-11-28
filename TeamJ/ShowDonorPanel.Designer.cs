@@ -373,7 +373,7 @@
             // ShowDonorPanel
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.tableLayoutPanelBorder);
+            this.Controls.Add(this.tableLayoutPanelMainBottom);
             this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelBorder.ResumeLayout(false);
             this.tableLayoutPanelBorder.PerformLayout();

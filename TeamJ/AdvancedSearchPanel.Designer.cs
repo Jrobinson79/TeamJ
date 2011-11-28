@@ -31,13 +31,13 @@ namespace TeamJ
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.donorLabel = new System.Windows.Forms.Label();
             this.donorFNLabel = new System.Windows.Forms.Label();
             this.donorFNTextBox = new System.Windows.Forms.TextBox();
             this.donorMILabel = new System.Windows.Forms.Label();
             this.donorMITextBox = new System.Windows.Forms.TextBox();
             this.donorLNLabel = new System.Windows.Forms.Label();
             this.donorLNTextBox = new System.Windows.Forms.TextBox();
+            this.donorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.engravingLabel = new System.Windows.Forms.Label();
             this.engravingTextBox = new System.Windows.Forms.TextBox();
@@ -62,25 +62,29 @@ namespace TeamJ
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.searchButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.groupBoxSearchFilters = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelGroupBox = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxResults = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.groupBoxSearchFilters.SuspendLayout();
+            this.tableLayoutPanelGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel1.Controls.Add(this.donorLabel);
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.donorFNLabel);
             this.tableLayoutPanel1.Controls.Add(this.donorFNTextBox);
             this.tableLayoutPanel1.Controls.Add(this.donorMILabel);
@@ -88,80 +92,80 @@ namespace TeamJ
             this.tableLayoutPanel1.Controls.Add(this.donorLNLabel);
             this.tableLayoutPanel1.Controls.Add(this.donorLNTextBox);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 25);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // donorLabel
-            // 
-            this.donorLabel.AutoSize = true;
-            this.donorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorLabel.Location = new System.Drawing.Point(3, 0);
-            this.donorLabel.Name = "donorLabel";
-            this.donorLabel.Size = new System.Drawing.Size(24, 25);
-            this.donorLabel.TabIndex = 0;
-            this.donorLabel.Text = "Donor";
-            this.donorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // donorFNLabel
             // 
+            this.donorFNLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.donorFNLabel.AutoSize = true;
-            this.donorFNLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorFNLabel.Location = new System.Drawing.Point(33, 0);
+            this.donorFNLabel.Location = new System.Drawing.Point(37, 5);
             this.donorFNLabel.Name = "donorFNLabel";
-            this.donorFNLabel.Size = new System.Drawing.Size(14, 25);
+            this.donorFNLabel.Size = new System.Drawing.Size(60, 13);
             this.donorFNLabel.TabIndex = 0;
-            this.donorFNLabel.Text = "First Name";
+            this.donorFNLabel.Text = "First Name:";
             this.donorFNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // donorFNTextBox
             // 
-            this.donorFNTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorFNTextBox.Location = new System.Drawing.Point(53, 3);
+            this.donorFNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.donorFNTextBox.Location = new System.Drawing.Point(103, 3);
             this.donorFNTextBox.Name = "donorFNTextBox";
-            this.donorFNTextBox.Size = new System.Drawing.Size(39, 20);
+            this.donorFNTextBox.Size = new System.Drawing.Size(1, 20);
             this.donorFNTextBox.TabIndex = 0;
             // 
             // donorMILabel
             // 
+            this.donorMILabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.donorMILabel.AutoSize = true;
-            this.donorMILabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorMILabel.Location = new System.Drawing.Point(98, 0);
+            this.donorMILabel.Location = new System.Drawing.Point(50, 5);
             this.donorMILabel.Name = "donorMILabel";
-            this.donorMILabel.Size = new System.Drawing.Size(14, 25);
+            this.donorMILabel.Size = new System.Drawing.Size(31, 13);
             this.donorMILabel.TabIndex = 0;
-            this.donorMILabel.Text = "M. I.";
+            this.donorMILabel.Text = "M. I.:";
             this.donorMILabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // donorMITextBox
             // 
-            this.donorMITextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorMITextBox.Location = new System.Drawing.Point(118, 3);
+            this.donorMITextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.donorMITextBox.Location = new System.Drawing.Point(87, 3);
             this.donorMITextBox.Name = "donorMITextBox";
-            this.donorMITextBox.Size = new System.Drawing.Size(14, 20);
+            this.donorMITextBox.Size = new System.Drawing.Size(54, 20);
             this.donorMITextBox.TabIndex = 0;
             // 
             // donorLNLabel
             // 
+            this.donorLNLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.donorLNLabel.AutoSize = true;
-            this.donorLNLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorLNLabel.Location = new System.Drawing.Point(138, 0);
+            this.donorLNLabel.Location = new System.Drawing.Point(180, 5);
             this.donorLNLabel.Name = "donorLNLabel";
-            this.donorLNLabel.Size = new System.Drawing.Size(14, 25);
+            this.donorLNLabel.Size = new System.Drawing.Size(61, 13);
             this.donorLNLabel.TabIndex = 0;
-            this.donorLNLabel.Text = "Last Name";
+            this.donorLNLabel.Text = "Last Name:";
             this.donorLNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // donorLNTextBox
             // 
-            this.donorLNTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.donorLNTextBox.Location = new System.Drawing.Point(158, 3);
+            this.donorLNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.donorLNTextBox.Location = new System.Drawing.Point(247, 3);
             this.donorLNTextBox.Name = "donorLNTextBox";
-            this.donorLNTextBox.Size = new System.Drawing.Size(39, 20);
+            this.donorLNTextBox.Size = new System.Drawing.Size(1, 20);
             this.donorLNTextBox.TabIndex = 0;
+            // 
+            // donorLabel
+            // 
+            this.donorLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.donorLabel.AutoSize = true;
+            this.donorLabel.Location = new System.Drawing.Point(3, 6);
+            this.donorLabel.Name = "donorLabel";
+            this.donorLabel.Size = new System.Drawing.Size(39, 13);
+            this.donorLabel.TabIndex = 0;
+            this.donorLabel.Text = "Donor:";
+            this.donorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
@@ -171,70 +175,70 @@ namespace TeamJ
             this.tableLayoutPanel2.Controls.Add(this.engravingLabel);
             this.tableLayoutPanel2.Controls.Add(this.engravingTextBox);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 33);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 25);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // engravingLabel
             // 
+            this.engravingLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.engravingLabel.AutoSize = true;
-            this.engravingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.engravingLabel.Location = new System.Drawing.Point(3, 0);
             this.engravingLabel.Name = "engravingLabel";
-            this.engravingLabel.Size = new System.Drawing.Size(24, 25);
+            this.engravingLabel.Size = new System.Drawing.Size(22, 24);
             this.engravingLabel.TabIndex = 0;
-            this.engravingLabel.Text = "Engraving";
+            this.engravingLabel.Text = "Engraving:";
             this.engravingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // engravingTextBox
             // 
-            this.engravingTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.engravingTextBox.Location = new System.Drawing.Point(33, 3);
+            this.engravingTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.engravingTextBox.Location = new System.Drawing.Point(31, 3);
             this.engravingTextBox.Name = "engravingTextBox";
-            this.engravingTextBox.Size = new System.Drawing.Size(164, 20);
+            this.engravingTextBox.Size = new System.Drawing.Size(154, 20);
             this.engravingTextBox.TabIndex = 0;
             // 
             // sectionLabel
             // 
+            this.sectionLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.sectionLabel.AutoSize = true;
-            this.sectionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sectionLabel.Location = new System.Drawing.Point(33, 0);
+            this.sectionLabel.Location = new System.Drawing.Point(31, 0);
             this.sectionLabel.Name = "sectionLabel";
-            this.sectionLabel.Size = new System.Drawing.Size(34, 25);
+            this.sectionLabel.Size = new System.Drawing.Size(31, 24);
             this.sectionLabel.TabIndex = 0;
-            this.sectionLabel.Text = "Section";
+            this.sectionLabel.Text = "Section:";
             this.sectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sectionComboBox
             // 
-            this.sectionComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sectionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.sectionComboBox.FormattingEnabled = true;
-            this.sectionComboBox.Location = new System.Drawing.Point(73, 3);
+            this.sectionComboBox.Location = new System.Drawing.Point(68, 3);
             this.sectionComboBox.Name = "sectionComboBox";
-            this.sectionComboBox.Size = new System.Drawing.Size(39, 21);
+            this.sectionComboBox.Size = new System.Drawing.Size(36, 21);
             this.sectionComboBox.TabIndex = 0;
             // 
             // itemLabel
             // 
+            this.itemLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.itemLabel.AutoSize = true;
-            this.itemLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemLabel.Location = new System.Drawing.Point(118, 0);
+            this.itemLabel.Location = new System.Drawing.Point(111, 5);
             this.itemLabel.Name = "itemLabel";
-            this.itemLabel.Size = new System.Drawing.Size(34, 25);
+            this.itemLabel.Size = new System.Drawing.Size(30, 13);
             this.itemLabel.TabIndex = 0;
-            this.itemLabel.Text = "Item";
+            this.itemLabel.Text = "Item:";
             this.itemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // itemComboBox
             // 
-            this.itemComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.itemComboBox.FormattingEnabled = true;
-            this.itemComboBox.Location = new System.Drawing.Point(158, 3);
+            this.itemComboBox.Location = new System.Drawing.Point(147, 3);
             this.itemComboBox.Name = "itemComboBox";
-            this.itemComboBox.Size = new System.Drawing.Size(39, 21);
+            this.itemComboBox.Size = new System.Drawing.Size(38, 21);
             this.itemComboBox.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -251,22 +255,22 @@ namespace TeamJ
             this.tableLayoutPanel3.Controls.Add(this.itemLabel);
             this.tableLayoutPanel3.Controls.Add(this.itemComboBox);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 50);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 63);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 25);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // brickLabel
             // 
+            this.brickLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.brickLabel.AutoSize = true;
-            this.brickLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.brickLabel.Location = new System.Drawing.Point(3, 0);
             this.brickLabel.Name = "brickLabel";
-            this.brickLabel.Size = new System.Drawing.Size(24, 25);
+            this.brickLabel.Size = new System.Drawing.Size(22, 24);
             this.brickLabel.TabIndex = 0;
-            this.brickLabel.Text = "Brick";
+            this.brickLabel.Text = "Brick:";
             this.brickLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel4
@@ -283,91 +287,91 @@ namespace TeamJ
             this.tableLayoutPanel4.Controls.Add(this.endLabel1);
             this.tableLayoutPanel4.Controls.Add(this.graduationEndComboBox);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 75);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 93);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 25);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // graduationLabel
             // 
+            this.graduationLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.graduationLabel.AutoSize = true;
-            this.graduationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.graduationLabel.Location = new System.Drawing.Point(3, 0);
             this.graduationLabel.Name = "graduationLabel";
-            this.graduationLabel.Size = new System.Drawing.Size(24, 25);
+            this.graduationLabel.Size = new System.Drawing.Size(22, 24);
             this.graduationLabel.TabIndex = 0;
-            this.graduationLabel.Text = "Graduation";
+            this.graduationLabel.Text = "Graduation:";
             this.graduationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // startLabel1
             // 
+            this.startLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.startLabel1.AutoSize = true;
-            this.startLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startLabel1.Location = new System.Drawing.Point(33, 0);
             this.startLabel1.Name = "startLabel1";
-            this.startLabel1.Size = new System.Drawing.Size(34, 25);
+            this.startLabel1.Size = new System.Drawing.Size(29, 24);
             this.startLabel1.TabIndex = 0;
-            this.startLabel1.Text = "Start";
+            this.startLabel1.Text = "Start:";
             this.startLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // graduationStartComboBox
             // 
-            this.graduationStartComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graduationStartComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.graduationStartComboBox.FormattingEnabled = true;
-            this.graduationStartComboBox.Location = new System.Drawing.Point(73, 3);
+            this.graduationStartComboBox.Location = new System.Drawing.Point(68, 3);
             this.graduationStartComboBox.Name = "graduationStartComboBox";
-            this.graduationStartComboBox.Size = new System.Drawing.Size(39, 21);
+            this.graduationStartComboBox.Size = new System.Drawing.Size(36, 21);
             this.graduationStartComboBox.TabIndex = 0;
             // 
             // endLabel1
             // 
+            this.endLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.endLabel1.AutoSize = true;
-            this.endLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.endLabel1.Location = new System.Drawing.Point(118, 0);
+            this.endLabel1.Location = new System.Drawing.Point(112, 5);
             this.endLabel1.Name = "endLabel1";
-            this.endLabel1.Size = new System.Drawing.Size(34, 25);
+            this.endLabel1.Size = new System.Drawing.Size(29, 13);
             this.endLabel1.TabIndex = 0;
-            this.endLabel1.Text = "End";
+            this.endLabel1.Text = "End:";
             this.endLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // graduationEndComboBox
             // 
-            this.graduationEndComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graduationEndComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.graduationEndComboBox.FormattingEnabled = true;
-            this.graduationEndComboBox.Location = new System.Drawing.Point(158, 3);
+            this.graduationEndComboBox.Location = new System.Drawing.Point(147, 3);
             this.graduationEndComboBox.Name = "graduationEndComboBox";
-            this.graduationEndComboBox.Size = new System.Drawing.Size(39, 21);
+            this.graduationEndComboBox.Size = new System.Drawing.Size(38, 21);
             this.graduationEndComboBox.TabIndex = 0;
             // 
             // endLabel2
             // 
+            this.endLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.endLabel2.AutoSize = true;
-            this.endLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.endLabel2.Location = new System.Drawing.Point(118, 0);
+            this.endLabel2.Location = new System.Drawing.Point(112, 5);
             this.endLabel2.Name = "endLabel2";
-            this.endLabel2.Size = new System.Drawing.Size(34, 25);
+            this.endLabel2.Size = new System.Drawing.Size(29, 13);
             this.endLabel2.TabIndex = 1;
-            this.endLabel2.Text = "End";
+            this.endLabel2.Text = "End:";
             this.endLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // purchaseStartComboBox
             // 
-            this.purchaseStartComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.purchaseStartComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.purchaseStartComboBox.FormattingEnabled = true;
-            this.purchaseStartComboBox.Location = new System.Drawing.Point(73, 3);
+            this.purchaseStartComboBox.Location = new System.Drawing.Point(68, 3);
             this.purchaseStartComboBox.Name = "purchaseStartComboBox";
-            this.purchaseStartComboBox.Size = new System.Drawing.Size(39, 21);
+            this.purchaseStartComboBox.Size = new System.Drawing.Size(36, 21);
             this.purchaseStartComboBox.TabIndex = 2;
             // 
             // purchaseEndComboBox
             // 
-            this.purchaseEndComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.purchaseEndComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.purchaseEndComboBox.FormattingEnabled = true;
-            this.purchaseEndComboBox.Location = new System.Drawing.Point(158, 3);
+            this.purchaseEndComboBox.Location = new System.Drawing.Point(147, 3);
             this.purchaseEndComboBox.Name = "purchaseEndComboBox";
-            this.purchaseEndComboBox.Size = new System.Drawing.Size(39, 21);
+            this.purchaseEndComboBox.Size = new System.Drawing.Size(38, 21);
             this.purchaseEndComboBox.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -384,80 +388,136 @@ namespace TeamJ
             this.tableLayoutPanel5.Controls.Add(this.endLabel2);
             this.tableLayoutPanel5.Controls.Add(this.purchaseEndComboBox);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 100);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 123);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(200, 25);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(188, 24);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // purchaseLabel
             // 
+            this.purchaseLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.purchaseLabel.AutoSize = true;
-            this.purchaseLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.purchaseLabel.Location = new System.Drawing.Point(3, 0);
             this.purchaseLabel.Name = "purchaseLabel";
-            this.purchaseLabel.Size = new System.Drawing.Size(24, 25);
+            this.purchaseLabel.Size = new System.Drawing.Size(22, 24);
             this.purchaseLabel.TabIndex = 0;
-            this.purchaseLabel.Text = "Purchase";
+            this.purchaseLabel.Text = "Purchase:";
             this.purchaseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // startLabel2
             // 
+            this.startLabel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.startLabel2.AutoSize = true;
-            this.startLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startLabel2.Location = new System.Drawing.Point(33, 0);
             this.startLabel2.Name = "startLabel2";
-            this.startLabel2.Size = new System.Drawing.Size(34, 25);
+            this.startLabel2.Size = new System.Drawing.Size(29, 24);
             this.startLabel2.TabIndex = 0;
-            this.startLabel2.Text = "Start";
+            this.startLabel2.Text = "Start:";
             this.startLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 4;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Controls.Add(this.searchButton, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.cancelButton, 3, 0);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.searchButton, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.cancelButton, 2, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 125);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 153);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 40);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(188, 1);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchButton.Location = new System.Drawing.Point(103, 3);
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchButton.Location = new System.Drawing.Point(47, 3);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(44, 34);
+            this.searchButton.Size = new System.Drawing.Size(44, 1);
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
             // cancelButton
             // 
-            this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelButton.Location = new System.Drawing.Point(153, 3);
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(97, 3);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(44, 34);
+            this.cancelButton.Size = new System.Drawing.Size(44, 1);
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // groupBoxSearchFilters
+            // 
+            this.groupBoxSearchFilters.Controls.Add(this.tableLayoutPanelGroupBox);
+            this.groupBoxSearchFilters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSearchFilters.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxSearchFilters.Name = "groupBoxSearchFilters";
+            this.groupBoxSearchFilters.Size = new System.Drawing.Size(200, 50);
+            this.groupBoxSearchFilters.TabIndex = 0;
+            this.groupBoxSearchFilters.TabStop = false;
+            this.groupBoxSearchFilters.Text = "Enter Search Filters:  ";
+            // 
+            // tableLayoutPanelGroupBox
+            // 
+            this.tableLayoutPanelGroupBox.ColumnCount = 1;
+            this.tableLayoutPanelGroupBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel4, 0, 3);
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel5, 0, 4);
+            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel6, 0, 5);
+            this.tableLayoutPanelGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelGroupBox.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanelGroupBox.Name = "tableLayoutPanelGroupBox";
+            this.tableLayoutPanelGroupBox.RowCount = 6;
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelGroupBox.Size = new System.Drawing.Size(194, 31);
+            this.tableLayoutPanelGroupBox.TabIndex = 0;
+            // 
+            // tableLayoutPanelMain
+            // 
+            this.tableLayoutPanelMain.ColumnCount = 1;
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
+            this.tableLayoutPanelMain.RowCount = 2;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanelMain.TabIndex = 0;
+            this.tableLayoutPanelMain.Controls.Add(groupBoxSearchFilters);
+            this.tableLayoutPanelMain.Controls.Add(groupBoxResults);
+            // 
+            // groupBoxResults
+            // 
+            this.groupBoxResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxResults.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxResults.Name = "groupBoxResults";
+            this.groupBoxResults.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxResults.TabIndex = 0;
+            this.groupBoxResults.TabStop = false;
+            this.groupBoxResults.Text = "Search Results:";
+            // 
             // AdvancedSearchPanel
             // 
-            this.Controls.Add(this.tableLayoutPanel6);
-            this.Controls.Add(this.tableLayoutPanel5);
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanelMain);
             this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Size = new System.Drawing.Size(200, 50);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -471,6 +531,8 @@ namespace TeamJ
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.groupBoxSearchFilters.ResumeLayout(false);
+            this.tableLayoutPanelGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,6 +571,10 @@ namespace TeamJ
         private TableLayoutPanel tableLayoutPanel6;
         private Button searchButton;
         private Button cancelButton;
+        private GroupBox groupBoxSearchFilters;
+        private TableLayoutPanel tableLayoutPanelGroupBox;
+        private TableLayoutPanel tableLayoutPanelMain;
+        private GroupBox groupBoxResults;
 
 
 

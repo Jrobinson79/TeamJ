@@ -68,7 +68,7 @@
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Location = new System.Drawing.Point(3, 7);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(60, 13);
+            this.labelFirstName.Size = new System.Drawing.Size(64, 13);
             this.labelFirstName.TabIndex = 0;
             this.labelFirstName.Text = "First Name:*";
             // 
@@ -77,9 +77,9 @@
             this.labelMiddleName.AllowDrop = true;
             this.labelMiddleName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelMiddleName.AutoSize = true;
-            this.labelMiddleName.Location = new System.Drawing.Point(3, 35);
+            this.labelMiddleName.Location = new System.Drawing.Point(3, 34);
             this.labelMiddleName.Name = "labelMiddleName";
-            this.labelMiddleName.Size = new System.Drawing.Size(72, 13);
+            this.labelMiddleName.Size = new System.Drawing.Size(76, 13);
             this.labelMiddleName.TabIndex = 0;
             this.labelMiddleName.Text = "Middle Name:*";
             // 
@@ -87,9 +87,9 @@
             // 
             this.labelLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(3, 63);
+            this.labelLastName.Location = new System.Drawing.Point(3, 62);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(61, 13);
+            this.labelLastName.Size = new System.Drawing.Size(65, 13);
             this.labelLastName.TabIndex = 0;
             this.labelLastName.Text = "Last Name:*";
             // 
@@ -99,7 +99,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Location = new System.Drawing.Point(3, 8);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(35, 13);
+            this.labelEmail.Size = new System.Drawing.Size(39, 13);
             this.labelEmail.TabIndex = 0;
             this.labelEmail.Text = "Email:*";
             // 
@@ -109,7 +109,7 @@
             this.labelPhone.AutoSize = true;
             this.labelPhone.Location = new System.Drawing.Point(3, 8);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(41, 13);
+            this.labelPhone.Size = new System.Drawing.Size(45, 13);
             this.labelPhone.TabIndex = 0;
             this.labelPhone.Text = "Phone:*";
             // 
@@ -119,7 +119,7 @@
             this.labelAddress.AutoSize = true;
             this.labelAddress.Location = new System.Drawing.Point(3, 8);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(48, 13);
+            this.labelAddress.Size = new System.Drawing.Size(52, 13);
             this.labelAddress.TabIndex = 0;
             this.labelAddress.Text = "Address:*";
             // 
@@ -129,7 +129,7 @@
             this.labelCity.AutoSize = true;
             this.labelCity.Location = new System.Drawing.Point(3, 8);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(27, 13);
+            this.labelCity.Size = new System.Drawing.Size(31, 13);
             this.labelCity.TabIndex = 0;
             this.labelCity.Text = "City:*";
             // 
@@ -137,9 +137,9 @@
             // 
             this.labelState.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(101, 8);
+            this.labelState.Location = new System.Drawing.Point(100, 8);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(35, 13);
+            this.labelState.Size = new System.Drawing.Size(39, 13);
             this.labelState.TabIndex = 0;
             this.labelState.Text = "State:*";
             // 
@@ -149,32 +149,32 @@
             this.labelZip.AutoSize = true;
             this.labelZip.Location = new System.Drawing.Point(3, 8);
             this.labelZip.Name = "labelZip";
-            this.labelZip.Size = new System.Drawing.Size(25, 13);
+            this.labelZip.Size = new System.Drawing.Size(29, 13);
             this.labelZip.TabIndex = 0;
             this.labelZip.Text = "Zip:*";
             // 
             // textBoxFirstName
             // 
             this.textBoxFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(83, 4);
+            this.textBoxFirstName.Location = new System.Drawing.Point(88, 3);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(108, 20);
+            this.textBoxFirstName.Size = new System.Drawing.Size(103, 20);
             this.textBoxFirstName.TabIndex = 0;
             // 
             // textBoxMiddleName
             // 
             this.textBoxMiddleName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxMiddleName.Location = new System.Drawing.Point(83, 32);
+            this.textBoxMiddleName.Location = new System.Drawing.Point(88, 30);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(108, 20);
+            this.textBoxMiddleName.Size = new System.Drawing.Size(103, 20);
             this.textBoxMiddleName.TabIndex = 0;
             // 
             // textBoxLastName
             // 
             this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLastName.Location = new System.Drawing.Point(83, 60);
+            this.textBoxLastName.Location = new System.Drawing.Point(88, 59);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(108, 20);
+            this.textBoxLastName.Size = new System.Drawing.Size(103, 20);
             this.textBoxLastName.TabIndex = 0;
             // 
             // textBoxEmail
@@ -196,18 +196,18 @@
             // textBoxCity
             // 
             this.textBoxCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCity.Location = new System.Drawing.Point(38, 4);
+            this.textBoxCity.Location = new System.Drawing.Point(43, 4);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(48, 20);
+            this.textBoxCity.Size = new System.Drawing.Size(46, 20);
             this.textBoxCity.TabIndex = 0;
             // 
             // textBoxState
             // 
             this.textBoxState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxState.Location = new System.Drawing.Point(142, 4);
+            this.textBoxState.Location = new System.Drawing.Point(145, 4);
             this.textBoxState.MaxLength = 100;
             this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(49, 20);
+            this.textBoxState.Size = new System.Drawing.Size(46, 20);
             this.textBoxState.TabIndex = 0;
             // 
             // textBoxZip
@@ -223,7 +223,7 @@
             // 
             this.tableLayoutPanelName.AutoSize = true;
             this.tableLayoutPanelName.ColumnCount = 2;
-            this.tableLayoutPanelName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanelName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanelName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelName.Controls.Add(this.labelFirstName, 0, 0);
             this.tableLayoutPanelName.Controls.Add(this.labelMiddleName, 0, 1);
@@ -245,7 +245,7 @@
             // 
             this.tableLayoutPanelCityState.AutoSize = true;
             this.tableLayoutPanelCityState.ColumnCount = 4;
-            this.tableLayoutPanelCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanelCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanelCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelCityState.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -306,7 +306,7 @@
             // 
             this.tableLayoutPanelPhone.AutoSize = true;
             this.tableLayoutPanelPhone.ColumnCount = 2;
-            this.tableLayoutPanelPhone.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelPhone.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanelPhone.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPhone.Controls.Add(this.labelPhone, 0, 0);
             this.tableLayoutPanelPhone.Controls.Add(this.textBoxPhone, 1, 0);
@@ -321,9 +321,9 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPhone.Location = new System.Drawing.Point(53, 4);
+            this.textBoxPhone.Location = new System.Drawing.Point(58, 4);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(138, 20);
+            this.textBoxPhone.Size = new System.Drawing.Size(133, 20);
             this.textBoxPhone.TabIndex = 0;
             // 
             // tableLayoutPanelAddress
