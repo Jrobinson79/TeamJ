@@ -42,6 +42,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelToShow = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -196,6 +197,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelToShow, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -229,6 +231,14 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(338, 89);
             this.panel4.TabIndex = 0;
+            // 
+            // panelToShow
+            // 
+            this.panelToShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelToShow.Location = new System.Drawing.Point(3, 104);
+            this.panelToShow.Name = "panelToShow";
+            this.panelToShow.Size = new System.Drawing.Size(711, 393);
+            this.panelToShow.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -272,6 +282,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelToShow;
     }
 }
 

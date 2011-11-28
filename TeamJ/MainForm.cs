@@ -13,8 +13,6 @@ namespace TeamJ
     {
         #region Private Variables
 
-        private Panel showingPanel = null;
-
         #endregion
 
         #region Constructors
@@ -41,15 +39,12 @@ namespace TeamJ
         /// <param name="p"></param>
         public void setPanel(Panel p)
         {
-            if (showingPanel != null)
-                tableLayoutPanel2.Controls.Remove(showingPanel);
-
-            showingPanel = p;
+            panelToShow.Controls.Clear();
 
             this.panelFloat.BringToFront();
             this.panelFloat.Visible = true;
 
-            tableLayoutPanel2.Controls.Add(showingPanel, 0, 1);
+            panelToShow.Controls.Add(p);
         }
 
         #endregion
@@ -70,8 +65,7 @@ namespace TeamJ
             {
                 panelFloat.Visible = false;
                 panelFloat.SendToBack();
-                panelFloat.Controls.Remove(showingPanel);
-                showingPanel = null;
+                panelToShow.Controls.Clear();
             }
         }
 
