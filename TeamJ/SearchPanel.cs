@@ -126,7 +126,7 @@ namespace TeamJ
         /// <param name="selection">Name of person selected</param>
         private void showSelectedPerson(String selection)
         {
-            setPanel(new ShowDonorPanel());
+            Program.mForm.setPanel(new ShowDonorPanel());
         }
 
         #endregion
