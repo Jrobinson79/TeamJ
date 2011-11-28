@@ -42,14 +42,14 @@ namespace TeamJ
         public void setPanel(Panel p)
         {
             if (showingPanel != null)
-                panelFloat.Controls.Remove(showingPanel);
+                tableLayoutPanel2.Controls.Remove(showingPanel);
 
             showingPanel = p;
 
             this.panelFloat.BringToFront();
             this.panelFloat.Visible = true;
 
-            panelFloat.Controls.Add(p);
+            tableLayoutPanel2.Controls.Add(showingPanel, 0, 1);
         }
 
         #endregion
