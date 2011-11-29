@@ -32,21 +32,21 @@ namespace TeamJ
         private void InitializeComponent()
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonSelect = new System.Windows.Forms.Button();
-            this.listBoxSelect = new System.Windows.Forms.ListBox();
-            this.labelSelect = new System.Windows.Forms.Label();
             this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelSelect = new System.Windows.Forms.Label();
+            this.listBoxSelect = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSelect = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelFloat = new System.Windows.Forms.Panel();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.tableLayoutPanelButtons.SuspendLayout();
             this.tableLayoutPanelSearch.SuspendLayout();
+            this.tableLayoutPanelButtons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            this.panelFloat = new System.Windows.Forms.Panel();
             // 
             // tableLayoutPanelMain
             // 
@@ -69,67 +69,6 @@ namespace TeamJ
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(260, 94);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
-            // tableLayoutPanelButtons
-            // 
-            this.tableLayoutPanelButtons.ColumnCount = 2;
-            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelButtons.Controls.Add(this.buttonSelect, 0, 0);
-            this.tableLayoutPanelButtons.Controls.Add(this.buttonNew, 1, 0);
-            this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(3, 47);
-            this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
-            this.tableLayoutPanelButtons.RowCount = 1;
-            this.tableLayoutPanelButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(254, 44);
-            this.tableLayoutPanelButtons.TabIndex = 0;
-            // 
-            // buttonNew
-            // 
-            this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonNew.Location = new System.Drawing.Point(130, 3);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(80, 38);
-            this.buttonNew.TabIndex = 0;
-            this.buttonNew.Text = "Add New";
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonSelect
-            // 
-            this.buttonSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelect.Location = new System.Drawing.Point(44, 3);
-            this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(80, 38);
-            this.buttonSelect.TabIndex = 0;
-            this.buttonSelect.Text = "Select";
-            this.buttonSelect.UseVisualStyleBackColor = true;
-            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
-            // 
-            // listBoxSelect
-            // 
-            this.listBoxSelect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxSelect.FormattingEnabled = true;
-            this.listBoxSelect.Location = new System.Drawing.Point(3, 68);
-            this.listBoxSelect.Name = "listBoxSelect";
-            this.listBoxSelect.Size = new System.Drawing.Size(254, 1);
-            this.listBoxSelect.TabIndex = 0;
-            this.listBoxSelect.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxSelect_MouseDoubleClick);
-            // 
-            // labelSelect
-            // 
-            this.labelSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelSelect.AutoSize = true;
-            this.labelSelect.Location = new System.Drawing.Point(3, 35);
-            this.labelSelect.Name = "labelSelect";
-            this.labelSelect.Size = new System.Drawing.Size(177, 30);
-            this.labelSelect.TabIndex = 0;
-            this.labelSelect.Text = "Select the Correct Donor/Recipient:";
-            this.labelSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // tableLayoutPanelSearch
             // 
             this.tableLayoutPanelSearch.ColumnCount = 2;
@@ -147,16 +86,15 @@ namespace TeamJ
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.AcceptsReturn = true;
             this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.Location = new System.Drawing.Point(3, 4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(173, 20);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.Text = "Enter Name Here";
-            this.textBoxSearch.AcceptsReturn = true;
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
-            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
             // buttonSearch
             // 
@@ -171,16 +109,66 @@ namespace TeamJ
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // textBoxSearch
+            // labelSelect
             // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.Location = new System.Drawing.Point(3, 4);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(173, 20);
-            this.textBoxSearch.TabIndex = 0;
-            this.textBoxSearch.Text = "Enter Name Here";
-            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            this.labelSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelSelect.AutoSize = true;
+            this.labelSelect.Location = new System.Drawing.Point(3, 35);
+            this.labelSelect.Name = "labelSelect";
+            this.labelSelect.Size = new System.Drawing.Size(177, 30);
+            this.labelSelect.TabIndex = 0;
+            this.labelSelect.Text = "Select the Correct Donor/Recipient:";
+            this.labelSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // listBoxSelect
+            // 
+            this.listBoxSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxSelect.FormattingEnabled = true;
+            this.listBoxSelect.Location = new System.Drawing.Point(3, 68);
+            this.listBoxSelect.Name = "listBoxSelect";
+            this.listBoxSelect.Size = new System.Drawing.Size(254, 1);
+            this.listBoxSelect.TabIndex = 0;
+            this.listBoxSelect.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxSelect_MouseDoubleClick);
+            // 
+            // tableLayoutPanelButtons
+            // 
+            this.tableLayoutPanelButtons.ColumnCount = 2;
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelButtons.Controls.Add(this.buttonSelect, 0, 0);
+            this.tableLayoutPanelButtons.Controls.Add(this.buttonNew, 1, 0);
+            this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
+            this.tableLayoutPanelButtons.RowCount = 1;
+            this.tableLayoutPanelButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(254, 44);
+            this.tableLayoutPanelButtons.TabIndex = 0;
+            // 
+            // buttonSelect
+            // 
+            this.buttonSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSelect.Location = new System.Drawing.Point(44, 3);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(80, 38);
+            this.buttonSelect.TabIndex = 0;
+            this.buttonSelect.Text = "Select";
+            this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNew.Location = new System.Drawing.Point(130, 3);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(80, 38);
+            this.buttonNew.TabIndex = 0;
+            this.buttonNew.Text = "Add New";
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -198,26 +186,11 @@ namespace TeamJ
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // SearchPanel
-            // 
-            this.Controls.Add(tableLayoutPanel1);
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Size = new System.Drawing.Size(400, 100);
-            this.tableLayoutPanelMain.ResumeLayout(false);
-            this.tableLayoutPanelMain.PerformLayout();
-            this.tableLayoutPanelButtons.ResumeLayout(false);
-            this.tableLayoutPanelSearch.ResumeLayout(false);
-            this.tableLayoutPanelSearch.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.ResumeLayout(false);
-            // 
             // panelFloat
             // 
             this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFloat.AutoScroll = true;
             this.panelFloat.BackColor = System.Drawing.Color.Transparent;
             this.panelFloat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -227,6 +200,21 @@ namespace TeamJ
             this.panelFloat.Size = new System.Drawing.Size(717, 500);
             this.panelFloat.TabIndex = 1;
             this.panelFloat.Visible = false;
+            // 
+            // SearchPanel
+            // 
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Size = new System.Drawing.Size(400, 100);
+            this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelMain.PerformLayout();
+            this.tableLayoutPanelSearch.ResumeLayout(false);
+            this.tableLayoutPanelSearch.PerformLayout();
+            this.tableLayoutPanelButtons.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 

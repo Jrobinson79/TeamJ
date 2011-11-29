@@ -45,6 +45,20 @@ namespace TeamJ
             this.panelFloat.Visible = true;
 
             panelToShow.Controls.Add(p);
+
+            tableLayoutPanelButtons.Visible = false;
+        }
+
+        public void hidePanel()
+        {
+            if (panelFloat.Visible)
+            {
+                panelFloat.Visible = false;
+                panelFloat.SendToBack();
+                panelToShow.Controls.Clear();
+
+                tableLayoutPanelButtons.Visible = true;
+            }
         }
 
         #endregion
@@ -61,12 +75,7 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void MainForm_Click(object sender, EventArgs e)
         {
-            if (panelFloat.Visible)
-            {
-                panelFloat.Visible = false;
-                panelFloat.SendToBack();
-                panelToShow.Controls.Clear();
-            }
+            hidePanel();
         }
 
         #endregion
@@ -79,9 +88,7 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            SearchPanel sp = new SearchPanel(textBoxSearch.Text);
-
-            setPanel(sp);
+            setPanel(new SearchPanel(textBoxSearch.Text));
         }
 
         #endregion
@@ -94,7 +101,6 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonNewDonor_Click(object sender, EventArgs e)
         {
-            // setPanel(donorPanel(new donor)
             setPanel(new ShowDonorPanel());
         }
 
@@ -108,10 +114,7 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonReport_Click(object sender, EventArgs e)
         {
-            //  setPanel(new createreportPanel);
-            AdvancedSearchPanel panel = new AdvancedSearchPanel();
-            setPanel(panel);
-            panel.Visible = true;
+            setPanel(new ShowReportPanel());
         }
 
         #endregion
@@ -145,7 +148,7 @@ namespace TeamJ
             }
 
             // Determines if the search button should be enabled/disabled
-            if (textBoxSearch.Text == "" || textBoxSearch.Text == "Enter Name Here")
+            if (textBoxSearch.Text.Trim() == "" || textBoxSearch.Text == "Enter Name Here")
             {
                 buttonSearch.Enabled = false;
             }
@@ -175,6 +178,23 @@ namespace TeamJ
 
         #endregion
 
+        private void labelBackToHome_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+        }
+
         #endregion
+
+        private void buttonAdvancedSearch_Click(object sender, EventArgs e)
+        {
+            setPanel(new AdvancedSearchPanel());
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            //  Search for transaction when user keys enter
+            if (buttonSearch.Enabled && e.KeyCode == Keys.Enter)
+                setPanel(new SearchPanel(textBoxSearch.Text));
+        }
     }
 }

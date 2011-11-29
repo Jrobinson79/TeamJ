@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TeamJ
 {
-    public partial class ShowReportPanel : Component
+    public partial class ShowReportPanel : Panel
     {
         #region Private Variables
 

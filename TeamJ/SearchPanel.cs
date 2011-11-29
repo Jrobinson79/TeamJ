@@ -39,6 +39,7 @@ namespace TeamJ
         public SearchPanel(String search)
         {
             InitializeComponent();
+            this.textBoxSearch.Text = search;
             setSearchString(search);
         }
 
@@ -47,25 +48,6 @@ namespace TeamJ
         #endregion
 
         #region Private Methods
-
-        #region setPanel(Panel p)
-        /// <summary>
-        ///     Sets the Panel
-        /// </summary>
-        /// <param name="p"></param>
-        private void setPanel(Panel p)
-        {
-            this.tableLayoutPanelMain.Visible = false;
-            if (showingPanel != null)
-                panelFloat.Controls.Remove(showingPanel);
-
-            showingPanel = p;
-
-            this.panelFloat.BringToFront();
-            this.panelFloat.Visible = true;
-
-            panelFloat.Controls.Add(p);
-        }
 
         #region setSearchString(String search)
         /// <summary>
@@ -172,7 +154,7 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            // TODO:  launch wizard to create a new donor
+            Program.mForm.setPanel(new ShowDonorPanel());
         }
 
         #endregion
@@ -213,7 +195,7 @@ namespace TeamJ
             if (Char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
-                textBoxSearch.Text += e.KeyChar.ToString();
+                textBoxSearch.Text += e.KeyChar;
 
             }
             else if (Char.IsDigit((Char)e.KeyChar) || Char.IsPunctuation((Char)e.KeyChar) || Char.IsSymbol((Char)e.KeyChar))
@@ -222,7 +204,7 @@ namespace TeamJ
             }
             
             // Check to see if the search button should be enabled/disabled
-            if (textBoxSearch.Text == "" || textBoxSearch.Text == "Enter Name Here")
+            if (textBoxSearch.Text.Trim() == "" || textBoxSearch.Text == "Enter Name Here")
             {
                 buttonSearch.Enabled = false;
             }
@@ -236,17 +218,17 @@ namespace TeamJ
 
         #endregion
 
-        #region textBoxSearch_KeyDown(object sender, EventArgs e)
+        #region textBoxSearch_KeyUp(object sender, EventArgs e)
         /// <summary>
         ///     Handles the event that a "Enter" is struck
         /// </summary>
         /// <param name="sender">The object that is calling the method</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Here I am");
+                setSearchString(textBoxSearch.Text);
             }
             else
             {
@@ -256,24 +238,27 @@ namespace TeamJ
 
         #endregion
 
-        #region textBoxSearch_Leave(object sender, EventArgs e)
+        //  I, Jordan, removed this section, because although it may be appropriate to remove the search
+        //  entry on the main form when the user leaves the search box, this probably isn't the case on 
+        //  the search panel form.
+        //#region textBoxSearch_Leave(object sender, EventArgs e)
         /// <summary>
         ///     Determines if "Enter Name Here" should be entered into the search textbox
         /// </summary>
         /// <param name="sender">The object that is calling the method</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void textBoxSearch_Leave(object sender, EventArgs e)
-        {
-            if (textBoxSearch.Text == "")
-            {
-                textBoxSearch.Text = "Enter Name Here";
-            }
-        }
+        //private void textBoxSearch_Leave(object sender, EventArgs e)
+        //{
+        //    if (textBoxSearch.Text == "")
+        //    {
+        //        textBoxSearch.Text = "Enter Name Here";
+        //    }
+        //}
 
         #endregion
 
-        #endregion
+        //#endregion
 
-        #endregion
+        // #endregion
     }
 }
