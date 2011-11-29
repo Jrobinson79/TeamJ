@@ -73,5 +73,12 @@ namespace TeamJ.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Plaza {
+            get {
+                object obj = ResourceManager.GetObject("Plaza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

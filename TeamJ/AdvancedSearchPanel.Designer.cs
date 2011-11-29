@@ -61,12 +61,18 @@ namespace TeamJ
             this.startLabel2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.searchButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.groupBoxSearchFilters = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelGroupBox = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelFilters = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxSection = new System.Windows.Forms.GroupBox();
+            this.panelSectionImage = new System.Windows.Forms.Panel();
             this.groupBoxResults = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelSearchResults = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxResults = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanelSearchResultButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSelect = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -74,9 +80,13 @@ namespace TeamJ
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBoxSearchFilters.SuspendLayout();
-            this.tableLayoutPanelGroupBox.SuspendLayout();
+            this.tableLayoutPanelFilters.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
+            this.tableLayoutPanelBottom.SuspendLayout();
+            this.groupBoxSection.SuspendLayout();
             this.groupBoxResults.SuspendLayout();
+            this.tableLayoutPanelSearchResults.SuspendLayout();
+            this.tableLayoutPanelSearchResultButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -422,13 +432,11 @@ namespace TeamJ
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.searchButton, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.cancelButton, 2, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 153);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -440,26 +448,16 @@ namespace TeamJ
             // searchButton
             // 
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchButton.Location = new System.Drawing.Point(-26, 3);
+            this.searchButton.Location = new System.Drawing.Point(34, 3);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(114, 33);
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
-            // cancelButton
-            // 
-            this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelButton.Location = new System.Drawing.Point(94, 3);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(114, 33);
-            this.cancelButton.TabIndex = 0;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // groupBoxSearchFilters
             // 
-            this.groupBoxSearchFilters.Controls.Add(this.tableLayoutPanelGroupBox);
+            this.groupBoxSearchFilters.Controls.Add(this.tableLayoutPanelFilters);
             this.groupBoxSearchFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxSearchFilters.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSearchFilters.Name = "groupBoxSearchFilters";
@@ -468,35 +466,35 @@ namespace TeamJ
             this.groupBoxSearchFilters.TabStop = false;
             this.groupBoxSearchFilters.Text = "Enter Search Filters:  ";
             // 
-            // tableLayoutPanelGroupBox
+            // tableLayoutPanelFilters
             // 
-            this.tableLayoutPanelGroupBox.ColumnCount = 1;
-            this.tableLayoutPanelGroupBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel3, 0, 2);
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel4, 0, 3);
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel5, 0, 4);
-            this.tableLayoutPanelGroupBox.Controls.Add(this.tableLayoutPanel6, 0, 5);
-            this.tableLayoutPanelGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelGroupBox.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanelGroupBox.Name = "tableLayoutPanelGroupBox";
-            this.tableLayoutPanelGroupBox.RowCount = 6;
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelGroupBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelGroupBox.Size = new System.Drawing.Size(188, 195);
-            this.tableLayoutPanelGroupBox.TabIndex = 0;
+            this.tableLayoutPanelFilters.ColumnCount = 1;
+            this.tableLayoutPanelFilters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel4, 0, 3);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel5, 0, 4);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel6, 0, 5);
+            this.tableLayoutPanelFilters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelFilters.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanelFilters.Name = "tableLayoutPanelFilters";
+            this.tableLayoutPanelFilters.RowCount = 6;
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFilters.Size = new System.Drawing.Size(188, 195);
+            this.tableLayoutPanelFilters.TabIndex = 0;
             // 
             // tableLayoutPanelMain
             // 
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Controls.Add(this.groupBoxSearchFilters);
-            this.tableLayoutPanelMain.Controls.Add(this.groupBoxResults);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -506,25 +504,114 @@ namespace TeamJ
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
+            // tableLayoutPanelBottom
+            // 
+            this.tableLayoutPanelBottom.ColumnCount = 2;
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelBottom.Controls.Add(this.groupBoxSection);
+            this.tableLayoutPanelBottom.Controls.Add(this.groupBoxResults);
+            this.tableLayoutPanelBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 223);
+            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
+            this.tableLayoutPanelBottom.RowCount = 1;
+            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(194, 1);
+            this.tableLayoutPanelBottom.TabIndex = 0;
+            // 
+            // groupBoxSection
+            // 
+            this.groupBoxSection.Controls.Add(this.panelSectionImage);
+            this.groupBoxSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxSection.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSection.Name = "groupBoxSection";
+            this.groupBoxSection.Size = new System.Drawing.Size(244, 1);
+            this.groupBoxSection.TabIndex = 0;
+            this.groupBoxSection.TabStop = false;
+            this.groupBoxSection.Text = "Section Legend:";
+            // 
+            // panelSectionImage
+            // 
+            this.panelSectionImage.BackgroundImage = global::TeamJ.Properties.Resources.Plaza;
+            this.panelSectionImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelSectionImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSectionImage.Location = new System.Drawing.Point(3, 16);
+            this.panelSectionImage.Name = "panelSectionImage";
+            this.panelSectionImage.Size = new System.Drawing.Size(238, 0);
+            this.panelSectionImage.TabIndex = 0;
+            // 
             // groupBoxResults
             // 
-            this.groupBoxResults.Controls.Add(this.listBoxResults);
+            this.groupBoxResults.Controls.Add(this.tableLayoutPanelSearchResults);
             this.groupBoxResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxResults.Location = new System.Drawing.Point(3, 223);
+            this.groupBoxResults.Location = new System.Drawing.Point(253, 3);
             this.groupBoxResults.Name = "groupBoxResults";
-            this.groupBoxResults.Size = new System.Drawing.Size(194, 1);
+            this.groupBoxResults.Size = new System.Drawing.Size(1, 1);
             this.groupBoxResults.TabIndex = 0;
             this.groupBoxResults.TabStop = false;
             this.groupBoxResults.Text = "Search Results:";
+            // 
+            // tableLayoutPanelSearchResults
+            // 
+            this.tableLayoutPanelSearchResults.ColumnCount = 1;
+            this.tableLayoutPanelSearchResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSearchResults.Controls.Add(this.listBoxResults);
+            this.tableLayoutPanelSearchResults.Controls.Add(this.tableLayoutPanelSearchResultButtons);
+            this.tableLayoutPanelSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSearchResults.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanelSearchResults.Name = "tableLayoutPanelSearchResults";
+            this.tableLayoutPanelSearchResults.RowCount = 2;
+            this.tableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelSearchResults.Size = new System.Drawing.Size(0, 0);
+            this.tableLayoutPanelSearchResults.TabIndex = 0;
             // 
             // listBoxResults
             // 
             this.listBoxResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxResults.FormattingEnabled = true;
-            this.listBoxResults.Location = new System.Drawing.Point(3, 16);
+            this.listBoxResults.Location = new System.Drawing.Point(3, 3);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(188, 0);
+            this.listBoxResults.Size = new System.Drawing.Size(1, 1);
             this.listBoxResults.TabIndex = 0;
+            // 
+            // tableLayoutPanelSearchResultButtons
+            // 
+            this.tableLayoutPanelSearchResultButtons.ColumnCount = 4;
+            this.tableLayoutPanelSearchResultButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearchResultButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelSearchResultButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelSearchResultButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearchResultButtons.Controls.Add(this.buttonSelect, 1, 0);
+            this.tableLayoutPanelSearchResultButtons.Controls.Add(this.buttonNew, 2, 0);
+            this.tableLayoutPanelSearchResultButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSearchResultButtons.Location = new System.Drawing.Point(3, -46);
+            this.tableLayoutPanelSearchResultButtons.Name = "tableLayoutPanelSearchResultButtons";
+            this.tableLayoutPanelSearchResultButtons.RowCount = 1;
+            this.tableLayoutPanelSearchResultButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearchResultButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearchResultButtons.Size = new System.Drawing.Size(1, 44);
+            this.tableLayoutPanelSearchResultButtons.TabIndex = 0;
+            // 
+            // buttonSelect
+            // 
+            this.buttonSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSelect.Location = new System.Drawing.Point(-96, 3);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(94, 38);
+            this.buttonSelect.TabIndex = 0;
+            this.buttonSelect.Text = "Select";
+            this.buttonSelect.UseVisualStyleBackColor = true;
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonNew.Location = new System.Drawing.Point(4, 3);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(94, 38);
+            this.buttonNew.TabIndex = 0;
+            this.buttonNew.Text = "Add New";
+            this.buttonNew.UseVisualStyleBackColor = true;
             // 
             // AdvancedSearchPanel
             // 
@@ -543,9 +630,13 @@ namespace TeamJ
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBoxSearchFilters.ResumeLayout(false);
-            this.tableLayoutPanelGroupBox.ResumeLayout(false);
+            this.tableLayoutPanelFilters.ResumeLayout(false);
             this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelBottom.ResumeLayout(false);
+            this.groupBoxSection.ResumeLayout(false);
             this.groupBoxResults.ResumeLayout(false);
+            this.tableLayoutPanelSearchResults.ResumeLayout(false);
+            this.tableLayoutPanelSearchResultButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,12 +674,18 @@ namespace TeamJ
         private ComboBox purchaseEndComboBox;
         private TableLayoutPanel tableLayoutPanel6;
         private Button searchButton;
-        private Button cancelButton;
         private GroupBox groupBoxSearchFilters;
-        private TableLayoutPanel tableLayoutPanelGroupBox;
+        private TableLayoutPanel tableLayoutPanelFilters;
         private TableLayoutPanel tableLayoutPanelMain;
         private GroupBox groupBoxResults;
         private ListBox listBoxResults;
+        private TableLayoutPanel tableLayoutPanelBottom;
+        private Panel panelSectionImage;
+        private GroupBox groupBoxSection;
+        private TableLayoutPanel tableLayoutPanelSearchResults;
+        private TableLayoutPanel tableLayoutPanelSearchResultButtons;
+        private Button buttonSelect;
+        private Button buttonNew;
 
 
 
