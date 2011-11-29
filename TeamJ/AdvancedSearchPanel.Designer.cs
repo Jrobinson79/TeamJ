@@ -64,7 +64,7 @@ namespace TeamJ
             this.stateTextBox = new System.Windows.Forms.TextBox();                     
             this.zipLabel = new System.Windows.Forms.Label();                           
             this.zipTextBox = new System.Windows.Forms.TextBox();                       
-            this.cancelButton = new System.Windows.Forms.Button();
+            //this.cancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxSection = new System.Windows.Forms.GroupBox();
@@ -320,13 +320,14 @@ namespace TeamJ
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 4;
+            //this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            //this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.searchButton, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.cancelButton, 2, 0);
+            //this.tableLayoutPanel6.Controls.Add(this.cancelButton, 2, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 153);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -347,13 +348,13 @@ namespace TeamJ
             // 
             // cancelButton
             // 
-            this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelButton.Location = new System.Drawing.Point(94, 3);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(114, 29);
-            this.cancelButton.TabIndex = 0;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            //this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            //this.cancelButton.Location = new System.Drawing.Point(94, 3);
+            //this.cancelButton.Name = "cancelButton";
+            //this.cancelButton.Size = new System.Drawing.Size(114, 29);
+            // this.cancelButton.TabIndex = 0;
+            //this.cancelButton.Text = "Cancel";
+            //this.cancelButton.UseVisualStyleBackColor = true;
             //
             // groupBoxSearchFilters
             // 
@@ -752,7 +753,7 @@ namespace TeamJ
         private GroupBox groupBoxSection;
         private Panel panelSectionImage;
         private TableLayoutPanel tableLayoutPanelSearchResults;
-        private Button cancelButton;
+        //private Button cancelButton;
         //private Button backButton;
         //private Button selectButton;
         private TableLayoutPanel tableLayoutPanel4;
