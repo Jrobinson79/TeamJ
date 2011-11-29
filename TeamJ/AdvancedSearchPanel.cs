@@ -27,6 +27,10 @@ namespace TeamJ
         {
             InitializeComponent();
             PopulateMenus();
+            SetPurchaseDates();
+
+            this.endLabel1.Visible = false;
+            this.purchaseEndDatePicker.Visible = false;
         }
 
         #endregion
@@ -42,7 +46,6 @@ namespace TeamJ
         private void PopulateMenus()
         {
             // Load the items combobox
-            this.itemComboBox.Items.Add("<Select Item>");
 
             var itemQuery = from itemType in context.ItemTypes
                             select itemType;
@@ -52,23 +55,66 @@ namespace TeamJ
                 this.itemComboBox.Items.Add(result.Type.ToString());
             }
 
-            this.itemComboBox.SelectedIndex = 0;
+            // To Deselect the Combo Box
+            this.itemComboBox.SelectedIndex = -1;
 
             // Load the sections combobox
-            this.sectionComboBox.Items.Add("<Select Item>");
 
             var sectionQuery = from section in context.Sections
-                            select section;
+                               select section;
 
             foreach (var result in sectionQuery)
             {
                 this.sectionComboBox.Items.Add(result.Description.ToString());
             }
 
-            this.sectionComboBox.SelectedIndex = 0;
+            // To Deselect the Combo Box
+            this.sectionComboBox.SelectedIndex = -1;
         
         }
 
+        #endregion
+
+        #region SetPurchaseDates()
+
+        // Getting the minimum sale date and the
+        // maximum sale date so that the user knows
+        // the existing range of dates when entering
+        // information
+        private void SetPurchaseDates()
+        {
+            DateTime minDate = DateTime.Today;
+
+            foreach (Sale s in context.Sales)
+                if (s.Date.CompareTo(minDate) == -1)
+                    minDate = s.Date;
+
+            DateTime maxDate = minDate;
+
+            foreach (Sale s in context.Sales)
+                if (s.Date.CompareTo(maxDate) == 1)
+                    maxDate = s.Date;
+
+            this.purchaseStartDatePicker.Value = minDate;
+            this.purchaseEndDatePicker.Value = maxDate;
+        }
+
+        #endregion
+
+        #region Event Handlers
+        private void rangeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.rangeCheckBox.Checked)
+            {
+                this.endLabel1.Visible = true;
+                this.purchaseEndDatePicker.Visible = true;
+            }
+            else
+            {
+                this.endLabel1.Visible = false;
+                this.purchaseEndDatePicker.Visible = false;
+            }
+        }
         #endregion
 
         #endregion
