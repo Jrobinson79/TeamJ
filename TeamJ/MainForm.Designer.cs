@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAdvancedSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelFindDonor = new System.Windows.Forms.Label();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonNewDonor = new System.Windows.Forms.Button();
@@ -42,9 +42,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonAdvancedSearch = new System.Windows.Forms.Button();
             this.labelBackToHome = new System.Windows.Forms.Label();
             this.panelToShow = new System.Windows.Forms.GroupBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelButtons.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -76,6 +76,17 @@
             this.tableLayoutPanelButtons.Size = new System.Drawing.Size(382, 209);
             this.tableLayoutPanelButtons.TabIndex = 1;
             // 
+            // buttonAdvancedSearch
+            // 
+            this.buttonAdvancedSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAdvancedSearch.Location = new System.Drawing.Point(3, 159);
+            this.buttonAdvancedSearch.Name = "buttonAdvancedSearch";
+            this.buttonAdvancedSearch.Size = new System.Drawing.Size(376, 47);
+            this.buttonAdvancedSearch.TabIndex = 1;
+            this.buttonAdvancedSearch.Text = "Advanced Search";
+            this.buttonAdvancedSearch.UseVisualStyleBackColor = true;
+            this.buttonAdvancedSearch.Click += new System.EventHandler(this.buttonAdvancedSearch_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -94,8 +105,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel3.Controls.Add(this.labelFindDonor, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonSearch, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxSearch, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -115,18 +126,6 @@
             this.labelFindDonor.TabIndex = 0;
             this.labelFindDonor.Text = "Find Donor/Recipient:";
             this.labelFindDonor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.Location = new System.Drawing.Point(121, 13);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
-            this.textBoxSearch.TabIndex = 3;
-            this.textBoxSearch.Text = "Enter Name Here";
-            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
-            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // buttonSearch
             // 
@@ -239,17 +238,6 @@
             this.panel4.Size = new System.Drawing.Size(338, 89);
             this.panel4.TabIndex = 0;
             // 
-            // buttonAdvancedSearch
-            // 
-            this.buttonAdvancedSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAdvancedSearch.Location = new System.Drawing.Point(3, 159);
-            this.buttonAdvancedSearch.Name = "buttonAdvancedSearch";
-            this.buttonAdvancedSearch.Size = new System.Drawing.Size(376, 47);
-            this.buttonAdvancedSearch.TabIndex = 1;
-            this.buttonAdvancedSearch.Text = "Advanced Search";
-            this.buttonAdvancedSearch.UseVisualStyleBackColor = true;
-            this.buttonAdvancedSearch.Click += new System.EventHandler(this.buttonAdvancedSearch_Click);
-            // 
             // labelBackToHome
             // 
             this.labelBackToHome.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -272,6 +260,19 @@
             this.panelToShow.Size = new System.Drawing.Size(935, 561);
             this.panelToShow.TabIndex = 1;
             this.panelToShow.TabStop = false;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.Location = new System.Drawing.Point(121, 13);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
+            this.textBoxSearch.TabIndex = 1;
+            this.textBoxSearch.Text = "Enter Name Here";
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // MainForm
             // 
@@ -307,7 +308,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelFindDonor;
-        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Panel panelFloat;
         private System.Windows.Forms.Panel panel2;
@@ -320,6 +320,7 @@
         private System.Windows.Forms.Button buttonAdvancedSearch;
         private System.Windows.Forms.Label labelBackToHome;
         private System.Windows.Forms.GroupBox panelToShow;
+        private System.Windows.Forms.TextBox textBoxSearch;
     }
 }
 

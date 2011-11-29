@@ -128,36 +128,15 @@ namespace TeamJ
         private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Determine if the textbox should be cleared
-            if (textBoxSearch.Text == "Enter Name Here")
+            if (textBoxSearch.Text.Equals("Enter Name Here"))
             {
                 textBoxSearch.Clear();
             }
 
-            base.OnKeyPress(e);
-
-            // Determine if the key that was struck is a letter
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                textBoxSearch.Text += e.KeyChar;
-                
-            }
-            else if(Char.IsDigit(e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsSymbol(e.KeyChar))
+            if(Char.IsDigit(e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsSymbol(e.KeyChar))
             {
                 e.Handled = true;
             }
-
-            // Determines if the search button should be enabled/disabled
-            if (textBoxSearch.Text.Trim() == "" || textBoxSearch.Text == "Enter Name Here")
-            {
-                buttonSearch.Enabled = false;
-            }
-            else
-            {
-                buttonSearch.Enabled = true;
-            }
-
-            this.textBoxSearch.SelectionStart = this.textBoxSearch.Text.Length;
         }
 
         #endregion
@@ -195,6 +174,19 @@ namespace TeamJ
             //  Search for transaction when user keys enter
             if (buttonSearch.Enabled && e.KeyCode == Keys.Enter)
                 setPanel(new SearchPanel(textBoxSearch.Text));
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Determines if the search button should be enabled/disabled
+            if (textBoxSearch.Text.Trim().Equals("") || textBoxSearch.Text.Equals("Enter Name Here"))
+            {
+                buttonSearch.Enabled = false;
+            }
+            else
+            {
+                buttonSearch.Enabled = true;
+            }
         }
     }
 }

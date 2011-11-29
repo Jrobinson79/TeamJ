@@ -183,37 +183,17 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Determine if the Textfield should be blanked out
-            if (textBoxSearch.Text == "Enter Name Here")
+
+            // Determine if the textbox should be cleared
+            if (textBoxSearch.Text.Equals("Enter Name Here"))
             {
-                textBoxSearch.Text = "";
+                textBoxSearch.Clear();
             }
 
-            base.OnKeyPress(e);
-
-            // Check to see if the key that was striked is a letter.
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                textBoxSearch.Text += e.KeyChar;
-
-            }
-            else if (Char.IsDigit((Char)e.KeyChar) || Char.IsPunctuation((Char)e.KeyChar) || Char.IsSymbol((Char)e.KeyChar))
+            if (Char.IsDigit(e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsSymbol(e.KeyChar))
             {
                 e.Handled = true;
             }
-            
-            // Check to see if the search button should be enabled/disabled
-            if (textBoxSearch.Text.Trim() == "" || textBoxSearch.Text == "Enter Name Here")
-            {
-                buttonSearch.Enabled = false;
-            }
-            else
-            {
-                buttonSearch.Enabled = true;
-            }
-
-            this.textBoxSearch.SelectionStart = this.textBoxSearch.Text.Length;
         }
 
         #endregion
@@ -238,10 +218,23 @@ namespace TeamJ
 
         #endregion
 
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            // Determines if the search button should be enabled/disabled
+            if (textBoxSearch.Text.Trim().Equals("") || textBoxSearch.Text.Equals("Enter Name Here"))
+            {
+                buttonSearch.Enabled = false;
+            }
+            else
+            {
+                buttonSearch.Enabled = true;
+            }
+        }
+
+        #region textBoxSearch_Leave(object sender, EventArgs e)
         //  I, Jordan, removed this section, because although it may be appropriate to remove the search
         //  entry on the main form when the user leaves the search box, this probably isn't the case on 
         //  the search panel form.
-        //#region textBoxSearch_Leave(object sender, EventArgs e)
         /// <summary>
         ///     Determines if "Enter Name Here" should be entered into the search textbox
         /// </summary>
@@ -257,7 +250,7 @@ namespace TeamJ
 
         #endregion
 
-        //#endregion
+        #endregion
 
         // #endregion
     }
