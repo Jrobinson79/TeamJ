@@ -30,41 +30,39 @@ namespace TeamJ
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelName = new System.Windows.Forms.TableLayoutPanel();
             this.donorFNLabel = new System.Windows.Forms.Label();
             this.donorFNTextBox = new System.Windows.Forms.TextBox();
-            this.donorMiddleNameLabel = new System.Windows.Forms.Label();
-            this.donorMITextBox = new System.Windows.Forms.TextBox();
+            this.donorMNLabel = new System.Windows.Forms.Label();
+            this.donorMNTextBox = new System.Windows.Forms.TextBox();
             this.donorLNLabel = new System.Windows.Forms.Label();
             this.donorLNTextBox = new System.Windows.Forms.TextBox();
             this.donorLabel = new System.Windows.Forms.Label();
             this.sectionLabel = new System.Windows.Forms.Label();
             this.sectionComboBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanelSection = new System.Windows.Forms.TableLayoutPanel();
             this.itemLabel = new System.Windows.Forms.Label();
             this.itemComboBox = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.startLabel1 = new System.Windows.Forms.Label();
             this.endLabel1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelPurchaseDate = new System.Windows.Forms.TableLayoutPanel();
             this.purchaseStartDatePicker = new System.Windows.Forms.DateTimePicker();
             this.purchaseEndDatePicker = new System.Windows.Forms.DateTimePicker();
             this.rangeCheckBox = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBoxSearchFilters = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelFilters = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelAddress = new System.Windows.Forms.TableLayoutPanel();
             this.addressLabel = new System.Windows.Forms.Label();
             this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelLocation = new System.Windows.Forms.TableLayoutPanel();
             this.cityLabel = new System.Windows.Forms.Label();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.stateLabel = new System.Windows.Forms.Label();
             this.stateTextBox = new System.Windows.Forms.TextBox();
             this.zipLabel = new System.Windows.Forms.Label();
             this.zipTextBox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxSection = new System.Windows.Forms.GroupBox();
             this.panelSectionImage = new System.Windows.Forms.Panel();
             this.groupBoxResults = new System.Windows.Forms.GroupBox();
@@ -73,52 +71,54 @@ namespace TeamJ
             this.tableLayoutPanelSearchResultButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSelect = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanelMain2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelLeft = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelRight = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelName.SuspendLayout();
+            this.tableLayoutPanelSection.SuspendLayout();
+            this.tableLayoutPanelPurchaseDate.SuspendLayout();
+            this.tableLayoutPanelSearch.SuspendLayout();
             this.groupBoxSearchFilters.SuspendLayout();
             this.tableLayoutPanelFilters.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanelMain.SuspendLayout();
-            this.tableLayoutPanelBottom.SuspendLayout();
+            this.tableLayoutPanelAddress.SuspendLayout();
+            this.tableLayoutPanelLocation.SuspendLayout();
             this.groupBoxSection.SuspendLayout();
             this.groupBoxResults.SuspendLayout();
             this.tableLayoutPanelSearchResults.SuspendLayout();
             this.tableLayoutPanelSearchResultButtons.SuspendLayout();
+            this.tableLayoutPanelMain2.SuspendLayout();
+            this.tableLayoutPanelLeft.SuspendLayout();
+            this.tableLayoutPanelRight.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelName
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.4F));
-            this.tableLayoutPanel1.Controls.Add(this.donorFNLabel);
-            this.tableLayoutPanel1.Controls.Add(this.donorFNTextBox);
-            this.tableLayoutPanel1.Controls.Add(this.donorMiddleNameLabel);
-            this.tableLayoutPanel1.Controls.Add(this.donorMITextBox);
-            this.tableLayoutPanel1.Controls.Add(this.donorLNLabel);
-            this.tableLayoutPanel1.Controls.Add(this.donorLNTextBox);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 24);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanelName.ColumnCount = 2;
+            this.tableLayoutPanelName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanelName.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelName.Controls.Add(this.donorFNLabel, 0, 0);
+            this.tableLayoutPanelName.Controls.Add(this.donorFNTextBox, 1, 0);
+            this.tableLayoutPanelName.Controls.Add(this.donorMNLabel, 0, 1);
+            this.tableLayoutPanelName.Controls.Add(this.donorMNTextBox, 1, 1);
+            this.tableLayoutPanelName.Controls.Add(this.donorLNLabel, 0, 2);
+            this.tableLayoutPanelName.Controls.Add(this.donorLNTextBox, 1, 2);
+            this.tableLayoutPanelName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelName.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelName.Name = "tableLayoutPanelName";
+            this.tableLayoutPanelName.RowCount = 3;
+            this.tableLayoutPanelName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3F));
+            this.tableLayoutPanelName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3F));
+            this.tableLayoutPanelName.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.4F));
+            this.tableLayoutPanelName.Size = new System.Drawing.Size(1, 94);
+            this.tableLayoutPanelName.TabIndex = 0;
             // 
             // donorFNLabel
             // 
-            this.donorFNLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.donorFNLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.donorFNLabel.AutoSize = true;
-            this.donorFNLabel.Location = new System.Drawing.Point(3, 0);
+            this.donorFNLabel.Location = new System.Drawing.Point(3, 9);
             this.donorFNLabel.Name = "donorFNLabel";
-            this.donorFNLabel.Size = new System.Drawing.Size(21, 24);
+            this.donorFNLabel.Size = new System.Drawing.Size(60, 13);
             this.donorFNLabel.TabIndex = 0;
             this.donorFNLabel.Text = "First Name:";
             this.donorFNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,37 +126,37 @@ namespace TeamJ
             // donorFNTextBox
             // 
             this.donorFNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.donorFNTextBox.Location = new System.Drawing.Point(30, 3);
+            this.donorFNTextBox.Location = new System.Drawing.Point(83, 5);
             this.donorFNTextBox.Name = "donorFNTextBox";
-            this.donorFNTextBox.Size = new System.Drawing.Size(34, 20);
+            this.donorFNTextBox.Size = new System.Drawing.Size(1, 20);
             this.donorFNTextBox.TabIndex = 0;
             // 
-            // donorMiddleNameLabel
+            // donorMNLabel
             // 
-            this.donorMiddleNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.donorMiddleNameLabel.AutoSize = true;
-            this.donorMiddleNameLabel.Location = new System.Drawing.Point(70, 0);
-            this.donorMiddleNameLabel.Name = "donorMiddleNameLabel";
-            this.donorMiddleNameLabel.Size = new System.Drawing.Size(12, 24);
-            this.donorMiddleNameLabel.TabIndex = 0;
-            this.donorMiddleNameLabel.Text = "Middle Name:";
-            this.donorMiddleNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.donorMNLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.donorMNLabel.AutoSize = true;
+            this.donorMNLabel.Location = new System.Drawing.Point(3, 40);
+            this.donorMNLabel.Name = "donorMNLabel";
+            this.donorMNLabel.Size = new System.Drawing.Size(72, 13);
+            this.donorMNLabel.TabIndex = 0;
+            this.donorMNLabel.Text = "Middle Name:";
+            this.donorMNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // donorMITextBox
+            // donorMNTextBox
             // 
-            this.donorMITextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.donorMITextBox.Location = new System.Drawing.Point(88, 3);
-            this.donorMITextBox.Name = "donorMITextBox";
-            this.donorMITextBox.Size = new System.Drawing.Size(21, 20);
-            this.donorMITextBox.TabIndex = 0;
+            this.donorMNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.donorMNTextBox.Location = new System.Drawing.Point(83, 36);
+            this.donorMNTextBox.Name = "donorMNTextBox";
+            this.donorMNTextBox.Size = new System.Drawing.Size(1, 20);
+            this.donorMNTextBox.TabIndex = 0;
             // 
             // donorLNLabel
             // 
-            this.donorLNLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.donorLNLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.donorLNLabel.AutoSize = true;
-            this.donorLNLabel.Location = new System.Drawing.Point(115, 0);
+            this.donorLNLabel.Location = new System.Drawing.Point(3, 71);
             this.donorLNLabel.Name = "donorLNLabel";
-            this.donorLNLabel.Size = new System.Drawing.Size(21, 24);
+            this.donorLNLabel.Size = new System.Drawing.Size(61, 13);
             this.donorLNLabel.TabIndex = 0;
             this.donorLNLabel.Text = "Last Name:";
             this.donorLNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,14 +164,14 @@ namespace TeamJ
             // donorLNTextBox
             // 
             this.donorLNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.donorLNTextBox.Location = new System.Drawing.Point(142, 3);
+            this.donorLNTextBox.Location = new System.Drawing.Point(83, 68);
             this.donorLNTextBox.Name = "donorLNTextBox";
-            this.donorLNTextBox.Size = new System.Drawing.Size(37, 20);
+            this.donorLNTextBox.Size = new System.Drawing.Size(1, 20);
             this.donorLNTextBox.TabIndex = 0;
             // 
             // donorLabel
             // 
-            this.donorLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.donorLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.donorLabel.AutoSize = true;
             this.donorLabel.Location = new System.Drawing.Point(3, 6);
             this.donorLabel.Name = "donorLabel";
@@ -182,11 +182,11 @@ namespace TeamJ
             // 
             // sectionLabel
             // 
-            this.sectionLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.sectionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sectionLabel.AutoSize = true;
-            this.sectionLabel.Location = new System.Drawing.Point(4, 0);
+            this.sectionLabel.Location = new System.Drawing.Point(3, 5);
             this.sectionLabel.Name = "sectionLabel";
-            this.sectionLabel.Size = new System.Drawing.Size(20, 24);
+            this.sectionLabel.Size = new System.Drawing.Size(46, 13);
             this.sectionLabel.TabIndex = 0;
             this.sectionLabel.Text = "Section:";
             this.sectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,18 +195,37 @@ namespace TeamJ
             // 
             this.sectionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.sectionComboBox.FormattingEnabled = true;
-            this.sectionComboBox.Location = new System.Drawing.Point(30, 3);
+            this.sectionComboBox.Location = new System.Drawing.Point(58, 3);
             this.sectionComboBox.Name = "sectionComboBox";
-            this.sectionComboBox.Size = new System.Drawing.Size(48, 21);
+            this.sectionComboBox.Size = new System.Drawing.Size(1, 21);
             this.sectionComboBox.TabIndex = 0;
+            // 
+            // tableLayoutPanelSection
+            // 
+            this.tableLayoutPanelSection.ColumnCount = 4;
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSection.Controls.Add(this.sectionLabel, 0, 0);
+            this.tableLayoutPanelSection.Controls.Add(this.sectionComboBox, 1, 0);
+            this.tableLayoutPanelSection.Controls.Add(this.itemLabel, 2, 0);
+            this.tableLayoutPanelSection.Controls.Add(this.itemComboBox, 3, 0);
+            this.tableLayoutPanelSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSection.Location = new System.Drawing.Point(3, 163);
+            this.tableLayoutPanelSection.Name = "tableLayoutPanelSection";
+            this.tableLayoutPanelSection.RowCount = 1;
+            this.tableLayoutPanelSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSection.Size = new System.Drawing.Size(1, 24);
+            this.tableLayoutPanelSection.TabIndex = 0;
             // 
             // itemLabel
             // 
             this.itemLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.itemLabel.AutoSize = true;
-            this.itemLabel.Location = new System.Drawing.Point(86, 0);
+            this.itemLabel.Location = new System.Drawing.Point(20, 5);
             this.itemLabel.Name = "itemLabel";
-            this.itemLabel.Size = new System.Drawing.Size(19, 24);
+            this.itemLabel.Size = new System.Drawing.Size(30, 13);
             this.itemLabel.TabIndex = 0;
             this.itemLabel.Text = "Item:";
             this.itemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,123 +234,102 @@ namespace TeamJ
             // 
             this.itemComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.itemComboBox.FormattingEnabled = true;
-            this.itemComboBox.Location = new System.Drawing.Point(111, 3);
+            this.itemComboBox.Location = new System.Drawing.Point(56, 3);
             this.itemComboBox.Name = "itemComboBox";
-            this.itemComboBox.Size = new System.Drawing.Size(48, 21);
+            this.itemComboBox.Size = new System.Drawing.Size(1, 21);
             this.itemComboBox.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Controls.Add(this.sectionLabel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.sectionComboBox, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.itemLabel, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.itemComboBox, 3, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 93);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(182, 24);
-            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // startLabel1
             // 
-            this.startLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.startLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.startLabel1.AutoSize = true;
-            this.startLabel1.Location = new System.Drawing.Point(4, 0);
+            this.startLabel1.Location = new System.Drawing.Point(3, 9);
             this.startLabel1.Name = "startLabel1";
-            this.startLabel1.Size = new System.Drawing.Size(20, 24);
+            this.startLabel1.Size = new System.Drawing.Size(80, 13);
             this.startLabel1.TabIndex = 0;
             this.startLabel1.Text = "Purchase Start:";
             this.startLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // endLabel1
             // 
-            this.endLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.endLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.endLabel1.AutoSize = true;
-            this.endLabel1.Location = new System.Drawing.Point(85, 0);
+            this.endLabel1.Location = new System.Drawing.Point(3, 41);
             this.endLabel1.Name = "endLabel1";
-            this.endLabel1.Size = new System.Drawing.Size(20, 24);
+            this.endLabel1.Size = new System.Drawing.Size(77, 13);
             this.endLabel1.TabIndex = 0;
             this.endLabel1.Text = "Purchase End:";
             this.endLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanelPurchaseDate
             // 
-            this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Controls.Add(this.startLabel1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.purchaseStartDatePicker, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.endLabel1, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.purchaseEndDatePicker, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.rangeCheckBox, 4, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 123);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(182, 24);
-            this.tableLayoutPanel5.TabIndex = 0;
+            this.tableLayoutPanelPurchaseDate.ColumnCount = 3;
+            this.tableLayoutPanelPurchaseDate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanelPurchaseDate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelPurchaseDate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.startLabel1, 0, 0);
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.purchaseStartDatePicker, 1, 0);
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.endLabel1, 0, 1);
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.purchaseEndDatePicker, 1, 1);
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.rangeCheckBox, 2, 1);
+            this.tableLayoutPanelPurchaseDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelPurchaseDate.Location = new System.Drawing.Point(3, 193);
+            this.tableLayoutPanelPurchaseDate.Name = "tableLayoutPanelPurchaseDate";
+            this.tableLayoutPanelPurchaseDate.RowCount = 2;
+            this.tableLayoutPanelPurchaseDate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelPurchaseDate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelPurchaseDate.Size = new System.Drawing.Size(1, 64);
+            this.tableLayoutPanelPurchaseDate.TabIndex = 0;
             // 
             // purchaseStartDatePicker
             // 
-            this.purchaseStartDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.purchaseStartDatePicker.Location = new System.Drawing.Point(30, 3);
+            this.purchaseStartDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.purchaseStartDatePicker.Location = new System.Drawing.Point(103, 6);
             this.purchaseStartDatePicker.Name = "purchaseStartDatePicker";
-            this.purchaseStartDatePicker.Size = new System.Drawing.Size(48, 20);
+            this.purchaseStartDatePicker.Size = new System.Drawing.Size(1, 20);
             this.purchaseStartDatePicker.TabIndex = 0;
             // 
             // purchaseEndDatePicker
             // 
-            this.purchaseEndDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.purchaseEndDatePicker.Location = new System.Drawing.Point(111, 3);
+            this.purchaseEndDatePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.purchaseEndDatePicker.Location = new System.Drawing.Point(103, 38);
             this.purchaseEndDatePicker.Name = "purchaseEndDatePicker";
-            this.purchaseEndDatePicker.Size = new System.Drawing.Size(48, 20);
+            this.purchaseEndDatePicker.Size = new System.Drawing.Size(1, 20);
             this.purchaseEndDatePicker.TabIndex = 0;
             // 
             // rangeCheckBox
             // 
             this.rangeCheckBox.AutoSize = true;
             this.rangeCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rangeCheckBox.Location = new System.Drawing.Point(165, 3);
+            this.rangeCheckBox.Location = new System.Drawing.Point(-76, 35);
             this.rangeCheckBox.Name = "rangeCheckBox";
-            this.rangeCheckBox.Size = new System.Drawing.Size(14, 18);
+            this.rangeCheckBox.Size = new System.Drawing.Size(74, 26);
             this.rangeCheckBox.TabIndex = 0;
             this.rangeCheckBox.Text = "Range";
             this.rangeCheckBox.UseVisualStyleBackColor = true;
             this.rangeCheckBox.CheckedChanged += new System.EventHandler(this.rangeCheckBox_CheckedChanged);
             // 
-            // tableLayoutPanel6
+            // tableLayoutPanelSearch
             // 
-            this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.searchButton, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 153);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(182, 35);
-            this.tableLayoutPanel6.TabIndex = 0;
+            this.tableLayoutPanelSearch.ColumnCount = 3;
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSearch.Controls.Add(this.searchButton, 1, 0);
+            this.tableLayoutPanelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSearch.Location = new System.Drawing.Point(3, 263);
+            this.tableLayoutPanelSearch.Name = "tableLayoutPanelSearch";
+            this.tableLayoutPanelSearch.RowCount = 1;
+            this.tableLayoutPanelSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(1, 39);
+            this.tableLayoutPanelSearch.TabIndex = 0;
             // 
             // searchButton
             // 
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchButton.Location = new System.Drawing.Point(34, 3);
+            this.searchButton.Location = new System.Drawing.Point(-96, 3);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(114, 29);
+            this.searchButton.Size = new System.Drawing.Size(194, 33);
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -342,7 +340,7 @@ namespace TeamJ
             this.groupBoxSearchFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxSearchFilters.Location = new System.Drawing.Point(3, 3);
             this.groupBoxSearchFilters.Name = "groupBoxSearchFilters";
-            this.groupBoxSearchFilters.Size = new System.Drawing.Size(194, 214);
+            this.groupBoxSearchFilters.Size = new System.Drawing.Size(1, 324);
             this.groupBoxSearchFilters.TabIndex = 0;
             this.groupBoxSearchFilters.TabStop = false;
             this.groupBoxSearchFilters.Text = "Enter Search Filters:  ";
@@ -351,47 +349,47 @@ namespace TeamJ
             // 
             this.tableLayoutPanelFilters.ColumnCount = 1;
             this.tableLayoutPanelFilters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel8, 0, 2);
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel3, 0, 3);
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel5, 0, 4);
-            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanel6, 0, 5);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelName, 0, 0);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelAddress, 0, 1);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelLocation, 0, 2);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelSection, 0, 3);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelPurchaseDate, 0, 4);
+            this.tableLayoutPanelFilters.Controls.Add(this.tableLayoutPanelSearch, 0, 5);
             this.tableLayoutPanelFilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelFilters.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanelFilters.Name = "tableLayoutPanelFilters";
             this.tableLayoutPanelFilters.RowCount = 6;
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanelFilters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelFilters.Size = new System.Drawing.Size(188, 195);
+            this.tableLayoutPanelFilters.Size = new System.Drawing.Size(0, 305);
             this.tableLayoutPanelFilters.TabIndex = 0;
             // 
-            // tableLayoutPanel7
+            // tableLayoutPanelAddress
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel7.Controls.Add(this.addressLabel);
-            this.tableLayoutPanel7.Controls.Add(this.addressTextBox);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 33);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(182, 24);
-            this.tableLayoutPanel7.TabIndex = 0;
+            this.tableLayoutPanelAddress.ColumnCount = 2;
+            this.tableLayoutPanelAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanelAddress.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelAddress.Controls.Add(this.addressLabel);
+            this.tableLayoutPanelAddress.Controls.Add(this.addressTextBox);
+            this.tableLayoutPanelAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelAddress.Location = new System.Drawing.Point(3, 103);
+            this.tableLayoutPanelAddress.Name = "tableLayoutPanelAddress";
+            this.tableLayoutPanelAddress.RowCount = 1;
+            this.tableLayoutPanelAddress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelAddress.Size = new System.Drawing.Size(1, 24);
+            this.tableLayoutPanelAddress.TabIndex = 0;
             // 
             // addressLabel
             // 
+            this.addressLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.addressLabel.AutoSize = true;
-            this.addressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addressLabel.Location = new System.Drawing.Point(3, 0);
+            this.addressLabel.Location = new System.Drawing.Point(3, 5);
             this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(21, 24);
+            this.addressLabel.Size = new System.Drawing.Size(48, 13);
             this.addressLabel.TabIndex = 0;
             this.addressLabel.Text = "Address:";
             this.addressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -399,41 +397,41 @@ namespace TeamJ
             // addressTextBox
             // 
             this.addressTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addressTextBox.Location = new System.Drawing.Point(30, 3);
+            this.addressTextBox.Location = new System.Drawing.Point(58, 3);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(149, 20);
+            this.addressTextBox.Size = new System.Drawing.Size(1, 20);
             this.addressTextBox.TabIndex = 0;
             // 
-            // tableLayoutPanel8
+            // tableLayoutPanelLocation
             // 
-            this.tableLayoutPanel8.ColumnCount = 6;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tableLayoutPanel8.Controls.Add(this.cityLabel, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.cityTextBox, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.stateLabel, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.stateTextBox, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.zipLabel, 4, 0);
-            this.tableLayoutPanel8.Controls.Add(this.zipTextBox, 5, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 63);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(182, 24);
-            this.tableLayoutPanel8.TabIndex = 0;
+            this.tableLayoutPanelLocation.ColumnCount = 6;
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanelLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelLocation.Controls.Add(this.cityLabel, 0, 0);
+            this.tableLayoutPanelLocation.Controls.Add(this.cityTextBox, 1, 0);
+            this.tableLayoutPanelLocation.Controls.Add(this.stateLabel, 2, 0);
+            this.tableLayoutPanelLocation.Controls.Add(this.stateTextBox, 3, 0);
+            this.tableLayoutPanelLocation.Controls.Add(this.zipLabel, 4, 0);
+            this.tableLayoutPanelLocation.Controls.Add(this.zipTextBox, 5, 0);
+            this.tableLayoutPanelLocation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelLocation.Location = new System.Drawing.Point(3, 133);
+            this.tableLayoutPanelLocation.Name = "tableLayoutPanelLocation";
+            this.tableLayoutPanelLocation.RowCount = 1;
+            this.tableLayoutPanelLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelLocation.Size = new System.Drawing.Size(1, 24);
+            this.tableLayoutPanelLocation.TabIndex = 0;
             // 
             // cityLabel
             // 
+            this.cityLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cityLabel.Location = new System.Drawing.Point(3, 0);
+            this.cityLabel.Location = new System.Drawing.Point(3, 5);
             this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(21, 24);
+            this.cityLabel.Size = new System.Drawing.Size(27, 13);
             this.cityLabel.TabIndex = 0;
             this.cityLabel.Text = "City:";
             this.cityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -441,18 +439,18 @@ namespace TeamJ
             // cityTextBox
             // 
             this.cityTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cityTextBox.Location = new System.Drawing.Point(30, 3);
+            this.cityTextBox.Location = new System.Drawing.Point(58, 3);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(34, 20);
+            this.cityTextBox.Size = new System.Drawing.Size(1, 20);
             this.cityTextBox.TabIndex = 0;
             // 
             // stateLabel
             // 
+            this.stateLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stateLabel.Location = new System.Drawing.Point(70, 0);
+            this.stateLabel.Location = new System.Drawing.Point(-5, 5);
             this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(12, 24);
+            this.stateLabel.Size = new System.Drawing.Size(35, 13);
             this.stateLabel.TabIndex = 0;
             this.stateLabel.Text = "State:";
             this.stateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -460,18 +458,18 @@ namespace TeamJ
             // stateTextBox
             // 
             this.stateTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stateTextBox.Location = new System.Drawing.Point(88, 3);
+            this.stateTextBox.Location = new System.Drawing.Point(36, 3);
             this.stateTextBox.Name = "stateTextBox";
-            this.stateTextBox.Size = new System.Drawing.Size(21, 20);
+            this.stateTextBox.Size = new System.Drawing.Size(1, 20);
             this.stateTextBox.TabIndex = 0;
             // 
             // zipLabel
             // 
+            this.zipLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.zipLabel.AutoSize = true;
-            this.zipLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zipLabel.Location = new System.Drawing.Point(115, 0);
+            this.zipLabel.Location = new System.Drawing.Point(2, 5);
             this.zipLabel.Name = "zipLabel";
-            this.zipLabel.Size = new System.Drawing.Size(21, 24);
+            this.zipLabel.Size = new System.Drawing.Size(25, 13);
             this.zipLabel.TabIndex = 0;
             this.zipLabel.Text = "Zip:";
             this.zipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -479,48 +477,18 @@ namespace TeamJ
             // zipTextBox
             // 
             this.zipTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zipTextBox.Location = new System.Drawing.Point(142, 3);
+            this.zipTextBox.Location = new System.Drawing.Point(33, 3);
             this.zipTextBox.Name = "zipTextBox";
-            this.zipTextBox.Size = new System.Drawing.Size(37, 20);
+            this.zipTextBox.Size = new System.Drawing.Size(1, 20);
             this.zipTextBox.TabIndex = 0;
-            // 
-            // tableLayoutPanelMain
-            // 
-            this.tableLayoutPanelMain.ColumnCount = 1;
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.groupBoxSearchFilters);
-            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom);
-            this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            this.tableLayoutPanelMain.RowCount = 2;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanelMain.TabIndex = 0;
-            // 
-            // tableLayoutPanelBottom
-            // 
-            this.tableLayoutPanelBottom.ColumnCount = 2;
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottom.Controls.Add(this.groupBoxSection);
-            this.tableLayoutPanelBottom.Controls.Add(this.groupBoxResults);
-            this.tableLayoutPanelBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 223);
-            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
-            this.tableLayoutPanelBottom.RowCount = 1;
-            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(194, 1);
-            this.tableLayoutPanelBottom.TabIndex = 0;
             // 
             // groupBoxSection
             // 
             this.groupBoxSection.Controls.Add(this.panelSectionImage);
             this.groupBoxSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxSection.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxSection.Location = new System.Drawing.Point(3, -126);
             this.groupBoxSection.Name = "groupBoxSection";
-            this.groupBoxSection.Size = new System.Drawing.Size(244, 1);
+            this.groupBoxSection.Size = new System.Drawing.Size(418, 469);
             this.groupBoxSection.TabIndex = 0;
             this.groupBoxSection.TabStop = false;
             this.groupBoxSection.Text = "Section Legend:";
@@ -532,14 +500,14 @@ namespace TeamJ
             this.panelSectionImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSectionImage.Location = new System.Drawing.Point(3, 16);
             this.panelSectionImage.Name = "panelSectionImage";
-            this.panelSectionImage.Size = new System.Drawing.Size(238, 0);
+            this.panelSectionImage.Size = new System.Drawing.Size(412, 450);
             this.panelSectionImage.TabIndex = 0;
             // 
             // groupBoxResults
             // 
             this.groupBoxResults.Controls.Add(this.tableLayoutPanelSearchResults);
             this.groupBoxResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxResults.Location = new System.Drawing.Point(253, 3);
+            this.groupBoxResults.Location = new System.Drawing.Point(3, 333);
             this.groupBoxResults.Name = "groupBoxResults";
             this.groupBoxResults.Size = new System.Drawing.Size(1, 1);
             this.groupBoxResults.TabIndex = 0;
@@ -557,7 +525,7 @@ namespace TeamJ
             this.tableLayoutPanelSearchResults.Name = "tableLayoutPanelSearchResults";
             this.tableLayoutPanelSearchResults.RowCount = 2;
             this.tableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanelSearchResults.Size = new System.Drawing.Size(0, 0);
             this.tableLayoutPanelSearchResults.TabIndex = 0;
             // 
@@ -567,7 +535,7 @@ namespace TeamJ
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.Location = new System.Drawing.Point(3, 3);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(188, -35);
+            this.listBoxResults.Size = new System.Drawing.Size(1, 1);
             this.listBoxResults.TabIndex = 0;
             // 
             // tableLayoutPanelSearchResultButtons
@@ -580,12 +548,12 @@ namespace TeamJ
             this.tableLayoutPanelSearchResultButtons.Controls.Add(this.buttonSelect, 1, 0);
             this.tableLayoutPanelSearchResultButtons.Controls.Add(this.buttonNew, 2, 0);
             this.tableLayoutPanelSearchResultButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSearchResultButtons.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelSearchResultButtons.Location = new System.Drawing.Point(3, -38);
             this.tableLayoutPanelSearchResultButtons.Name = "tableLayoutPanelSearchResultButtons";
             this.tableLayoutPanelSearchResultButtons.RowCount = 1;
             this.tableLayoutPanelSearchResultButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelSearchResultButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSearchResultButtons.Size = new System.Drawing.Size(1, 1);
+            this.tableLayoutPanelSearchResultButtons.Size = new System.Drawing.Size(1, 36);
             this.tableLayoutPanelSearchResultButtons.TabIndex = 0;
             // 
             // buttonSelect
@@ -593,7 +561,7 @@ namespace TeamJ
             this.buttonSelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonSelect.Location = new System.Drawing.Point(-96, 3);
             this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(94, 1);
+            this.buttonSelect.Size = new System.Drawing.Size(94, 30);
             this.buttonSelect.TabIndex = 0;
             this.buttonSelect.Text = "Select";
             this.buttonSelect.UseVisualStyleBackColor = true;
@@ -603,69 +571,113 @@ namespace TeamJ
             this.buttonNew.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonNew.Location = new System.Drawing.Point(4, 3);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(94, 1);
+            this.buttonNew.Size = new System.Drawing.Size(94, 30);
             this.buttonNew.TabIndex = 0;
             this.buttonNew.Text = "Add New";
             this.buttonNew.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanelMain2
+            // 
+            this.tableLayoutPanelMain2.ColumnCount = 2;
+            this.tableLayoutPanelMain2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 430F));
+            this.tableLayoutPanelMain2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain2.Controls.Add(this.tableLayoutPanelLeft, 0, 0);
+            this.tableLayoutPanelMain2.Controls.Add(this.tableLayoutPanelRight, 1, 0);
+            this.tableLayoutPanelMain2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMain2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelMain2.Name = "tableLayoutPanelMain2";
+            this.tableLayoutPanelMain2.RowCount = 1;
+            this.tableLayoutPanelMain2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain2.Size = new System.Drawing.Size(200, 50);
+            this.tableLayoutPanelMain2.TabIndex = 0;
+            // 
+            // tableLayoutPanelLeft
+            // 
+            this.tableLayoutPanelLeft.ColumnCount = 1;
+            this.tableLayoutPanelLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelLeft.Controls.Add(this.groupBoxSection, 0, 1);
+            this.tableLayoutPanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelLeft.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelLeft.Name = "tableLayoutPanelLeft";
+            this.tableLayoutPanelLeft.RowCount = 3;
+            this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 475F));
+            this.tableLayoutPanelLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanelLeft.Size = new System.Drawing.Size(424, 44);
+            this.tableLayoutPanelLeft.TabIndex = 0;
+            // 
+            // tableLayoutPanelRight
+            // 
+            this.tableLayoutPanelRight.ColumnCount = 1;
+            this.tableLayoutPanelRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRight.Controls.Add(this.groupBoxSearchFilters);
+            this.tableLayoutPanelRight.Controls.Add(this.groupBoxResults);
+            this.tableLayoutPanelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelRight.Location = new System.Drawing.Point(433, 3);
+            this.tableLayoutPanelRight.Name = "tableLayoutPanelRight";
+            this.tableLayoutPanelRight.RowCount = 2;
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 330F));
+            this.tableLayoutPanelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRight.Size = new System.Drawing.Size(1, 44);
+            this.tableLayoutPanelRight.TabIndex = 0;
+            // 
             // AdvancedSearchPanel
             // 
-            this.Controls.Add(this.tableLayoutPanelMain);
+            this.Controls.Add(this.tableLayoutPanelMain2);
             this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Size = new System.Drawing.Size(200, 50);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanelName.ResumeLayout(false);
+            this.tableLayoutPanelName.PerformLayout();
+            this.tableLayoutPanelSection.ResumeLayout(false);
+            this.tableLayoutPanelSection.PerformLayout();
+            this.tableLayoutPanelPurchaseDate.ResumeLayout(false);
+            this.tableLayoutPanelPurchaseDate.PerformLayout();
+            this.tableLayoutPanelSearch.ResumeLayout(false);
             this.groupBoxSearchFilters.ResumeLayout(false);
             this.tableLayoutPanelFilters.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanelMain.ResumeLayout(false);
-            this.tableLayoutPanelBottom.ResumeLayout(false);
+            this.tableLayoutPanelAddress.ResumeLayout(false);
+            this.tableLayoutPanelAddress.PerformLayout();
+            this.tableLayoutPanelLocation.ResumeLayout(false);
+            this.tableLayoutPanelLocation.PerformLayout();
             this.groupBoxSection.ResumeLayout(false);
             this.groupBoxResults.ResumeLayout(false);
             this.tableLayoutPanelSearchResults.ResumeLayout(false);
             this.tableLayoutPanelSearchResultButtons.ResumeLayout(false);
+            this.tableLayoutPanelMain2.ResumeLayout(false);
+            this.tableLayoutPanelLeft.ResumeLayout(false);
+            this.tableLayoutPanelRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelName;
         private Label donorLabel;
         private Label donorFNLabel;
-        private Label donorMiddleNameLabel;
+        private Label donorMNLabel;
         private Label donorLNLabel;
         private TextBox donorFNTextBox;
-        private TextBox donorMITextBox;
+        private TextBox donorMNTextBox;
         private TextBox donorLNTextBox;
         private Label sectionLabel;
         private ComboBox sectionComboBox;
-        private Label itemLabel;
-        private ComboBox itemComboBox;
-        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel tableLayoutPanelSection;
         private Label endLabel1;
-        private TableLayoutPanel tableLayoutPanel5;
+        private TableLayoutPanel tableLayoutPanelPurchaseDate;
         private Label startLabel1;
-        private TableLayoutPanel tableLayoutPanel6;
+        private TableLayoutPanel tableLayoutPanelSearch;
         private Button searchButton;
         private GroupBox groupBoxSearchFilters;
         //private TableLayoutPanel tableLayoutPanelFilters;
-        private TableLayoutPanel tableLayoutPanelMain;
+        //private TableLayoutPanel tableLayoutPanelMain;
         private GroupBox groupBoxResults;
         private ListBox listBoxResults;
         private TableLayoutPanel tableLayoutPanelSearchResultButtons;
         private Button buttonSelect;
         private Button buttonNew;
         private TableLayoutPanel tableLayoutPanelFilters;
-        private TableLayoutPanel tableLayoutPanelBottom;
+        //private TableLayoutPanel tableLayoutPanelBottom;
         private GroupBox groupBoxSection;
         private Panel panelSectionImage;
         private TableLayoutPanel tableLayoutPanelSearchResults;
@@ -673,10 +685,10 @@ namespace TeamJ
         //private Button backButton;
         //private Button selectButton;
         //private TableLayoutPanel tableLayoutPanel4;
-        private TableLayoutPanel tableLayoutPanel7;
+        private TableLayoutPanel tableLayoutPanelAddress;
         private Label addressLabel;
         private TextBox addressTextBox;
-        private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel tableLayoutPanelLocation;
         private Label cityLabel;
         private Label stateLabel;
         private Label zipLabel;
@@ -686,5 +698,10 @@ namespace TeamJ
         private DateTimePicker purchaseStartDatePicker;
         private DateTimePicker purchaseEndDatePicker;
         private CheckBox rangeCheckBox;
+        private TableLayoutPanel tableLayoutPanelMain2;
+        private TableLayoutPanel tableLayoutPanelLeft;
+        private TableLayoutPanel tableLayoutPanelRight;
+        private Label itemLabel;
+        private ComboBox itemComboBox;
     }
 }

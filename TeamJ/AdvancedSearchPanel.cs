@@ -29,8 +29,8 @@ namespace TeamJ
             PopulateMenus();
             SetPurchaseDates();
 
-            this.endLabel1.Visible = false;
-            this.purchaseEndDatePicker.Visible = false;
+            //this.endLabel1.Visible = false;
+            this.purchaseEndDatePicker.Enabled = false;
         }
 
         #endregion
@@ -65,7 +65,7 @@ namespace TeamJ
 
             foreach (var result in sectionQuery)
             {
-                this.sectionComboBox.Items.Add(result.Description.ToString());
+                this.sectionComboBox.Items.Add(result.Location.ToString());
             }
 
             // To Deselect the Combo Box
@@ -106,13 +106,13 @@ namespace TeamJ
         {
             if (this.rangeCheckBox.Checked)
             {
-                this.endLabel1.Visible = true;
-                this.purchaseEndDatePicker.Visible = true;
+                //this.endLabel1.Visible = true;
+                this.purchaseEndDatePicker.Enabled = true;
             }
             else
             {
-                this.endLabel1.Visible = false;
-                this.purchaseEndDatePicker.Visible = false;
+                //this.endLabel1.Visible = false;
+                this.purchaseEndDatePicker.Enabled = false;
             }
         }
         #endregion
