@@ -14,7 +14,7 @@ namespace TeamJ
         #region Private Variables
 
         private TeamJDBEntities context = new TeamJDBEntities();
-        private Panel showingPanel = null;
+        //private Panel showingPanel = null;
 
         #endregion
 
