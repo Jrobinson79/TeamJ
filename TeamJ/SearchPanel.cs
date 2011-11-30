@@ -13,9 +13,6 @@ namespace TeamJ
     {
         #region Private Variables
 
-        private TeamJDBEntities context = new TeamJDBEntities();
-        //private Panel showingPanel = null;
-
         #endregion
 
         #region Constructors
@@ -56,13 +53,33 @@ namespace TeamJ
         /// <param name="search">Name of person to search</param>
         private void setSearchString(String search)
         {
-            // Make sure list box will show new search results
-            this.listBoxSelect.Items.Clear();
+            using (TeamJDBEntities context = new TeamJDBEntities())
+            {
+                // Make sure list box will show new search results
+                this.listBoxSelect.Items.Clear();
 
-            // query database for any combination of users entered
-            var peopleQuery = from people in context.People
+                // query database for any combination of users entered
+                var peopleQuery = from people in context.People
+                                  join sale in context.Sales
+                                    on people.PersonID equals sale.DonorID
+                                  where (people.FirstName + people.LastName == search)
+                                  || (people.LastName + people.FirstName == search)
+                                  || (people.FirstName.Contains(search))
+                                  || (people.LastName.Contains(search))
+                                  || (people.LastName == search)
+                                  || (people.FirstName == search)
+                                  orderby sale.Date descending
+                                  select new { sale, people };
+
+                // populate listbox wit results
+                foreach (var result in peopleQuery)
+                {
+                    this.listBoxSelect.Items.Add(result.people.FirstName + " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Donor");
+                }
+
+                peopleQuery = from people in context.People
                               join sale in context.Sales
-                                on people.PersonID equals sale.DonorID
+                                on people.PersonID equals sale.DedicationID
                               where (people.FirstName + people.LastName == search)
                               || (people.LastName + people.FirstName == search)
                               || (people.FirstName.Contains(search))
@@ -72,31 +89,14 @@ namespace TeamJ
                               orderby sale.Date descending
                               select new { sale, people };
 
-            // populate listbox wit results
-            foreach (var result in peopleQuery)
-            {
-                this.listBoxSelect.Items.Add(result.people.FirstName+ " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Donor");
+                // populate listbox wit results
+                foreach (var result in peopleQuery)
+                {
+                    this.listBoxSelect.Items.Add(result.people.FirstName + " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Recipient");
+                }
+
+                this.listBoxSelect.Sorted = true;
             }
-
-            peopleQuery = from people in context.People
-                          join sale in context.Sales
-                            on people.PersonID equals sale.DedicationID
-                          where (people.FirstName + people.LastName == search)
-                          || (people.LastName + people.FirstName == search)
-                          || (people.FirstName.Contains(search))
-                          || (people.LastName.Contains(search))
-                          || (people.LastName == search)
-                          || (people.FirstName == search)
-                          orderby sale.Date descending
-                          select new { sale, people };
-
-            // populate listbox wit results
-            foreach (var result in peopleQuery)
-            {
-                this.listBoxSelect.Items.Add(result.people.FirstName + " " + result.people.LastName + " - " + result.sale.Date.ToShortDateString() + " - " + "Recipient");
-            }
-
-            this.listBoxSelect.Sorted = true;
         }
 
         #endregion

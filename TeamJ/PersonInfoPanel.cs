@@ -14,7 +14,6 @@ namespace TeamJ
         #region Private Variables
 
         private Person person = new Person();
-        private TeamJDBEntities context = new TeamJDBEntities();
 
         #endregion
 
@@ -112,22 +111,25 @@ namespace TeamJ
         /// <returns> True if the object exists in the database, false otherwise.</returns>
         public Boolean HasPerson(Person person)
         {
-            var peopleQuery = from people in context.People
-                              where people.FirstName  == person.FirstName
-                              && people.MiddleName == person.MiddleName
-                              && people.LastName  == person.LastName
-                              && people.Addr == person.Addr
-                              && people.City == person.City
-                              && people.State == person.State
-                              && people.Zip == person.Zip
-                              && people.Phone == person.Phone
-                              && people.Email == person.Email
-                              select people;
+            using (TeamJDBEntities context = new TeamJDBEntities())
+            {
+                var peopleQuery = from people in context.People
+                                  where people.FirstName == person.FirstName
+                                  && people.MiddleName == person.MiddleName
+                                  && people.LastName == person.LastName
+                                  && people.Addr == person.Addr
+                                  && people.City == person.City
+                                  && people.State == person.State
+                                  && people.Zip == person.Zip
+                                  && people.Phone == person.Phone
+                                  && people.Email == person.Email
+                                  select people;
 
-            if (peopleQuery.Count() == 0)
-                return false;
-            else
-                return true;
+                if (peopleQuery.Count() == 0)
+                    return false;
+                else
+                    return true;
+            }
         }
 
         #endregion
@@ -139,22 +141,25 @@ namespace TeamJ
         /// <returns>The Guid ID of the person being searched for if it exists, null if it doesn't exist.</returns>
         public String GetID()
         {
-            var peopleQuery = from people in context.People
-                              where people.FirstName == person.FirstName
-                              && people.MiddleName == person.MiddleName
-                              && people.LastName == person.LastName
-                              && people.Addr == person.Addr
-                              && people.City == person.City
-                              && people.State == person.State
-                              && people.Zip == person.Zip
-                              && people.Phone == person.Phone
-                              && people.Email == person.Email
-                              select people;
+            using (TeamJDBEntities context = new TeamJDBEntities())
+            {
+                var peopleQuery = from people in context.People
+                                  where people.FirstName == person.FirstName
+                                  && people.MiddleName == person.MiddleName
+                                  && people.LastName == person.LastName
+                                  && people.Addr == person.Addr
+                                  && people.City == person.City
+                                  && people.State == person.State
+                                  && people.Zip == person.Zip
+                                  && people.Phone == person.Phone
+                                  && people.Email == person.Email
+                                  select people;
 
-            foreach (var result in peopleQuery)
-                return result.PersonID.ToString();
+                foreach (var result in peopleQuery)
+                    return result.PersonID.ToString();
 
-            return null;
+                return null;
+            }
         }
 
         #endregion

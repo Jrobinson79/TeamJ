@@ -13,10 +13,6 @@ namespace TeamJ
     {
         #region Private Variables
 
-        private List<Sale> sales;
-        private TeamJDBEntities context = new TeamJDBEntities();
-        private List<List<string>> ids = new List<List<string>>();
-
         #endregion
 
         #region Constructors
@@ -257,58 +253,61 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            Guid donorID;
-            Guid recipientID;
-
-            PersonInfoPanel donorPanel = (PersonInfoPanel)personInfoPanelDonor;
-            donorPanel.savePerson();
-            Person donor = donorPanel.getPerson();
-
-            if (donorPanel.HasPerson(donor))
+            using (TeamJDBEntities context = new TeamJDBEntities())
             {
-                donorID = Guid.Parse(donorPanel.GetID());
+                Guid donorID;
+                Guid recipientID;
+
+                PersonInfoPanel donorPanel = (PersonInfoPanel)personInfoPanelDonor;
+                donorPanel.savePerson();
+                Person donor = donorPanel.getPerson();
+
+                if (donorPanel.HasPerson(donor))
+                {
+                    donorID = Guid.Parse(donorPanel.GetID());
+                }
+                else
+                {
+                    donorID = donor.PersonID;
+                    context.People.AddObject(donor);
+                }
+
+                // Process the recipient information
+                PersonInfoPanel recipientPanel = (PersonInfoPanel)personInfoPanelRecipient;
+                recipientPanel.savePerson();
+                Person recipient = recipientPanel.getPerson();
+
+                if (recipientPanel.HasPerson(recipient))
+                {
+                    recipientID = Guid.Parse(recipientPanel.GetID());
+                }
+                else
+                {
+                    recipientID = recipient.PersonID;
+                    context.People.AddObject(recipient);
+                }
+
+                TransactionPanel salePanel = (TransactionPanel)transactionPanel1;
+
+                salePanel.SaveSale();
+                Sale sale = salePanel.GetSale();
+
+                Item item = new Item();
+                item.ItemID = Guid.NewGuid();
+                item.ItemTypeID = salePanel.GetItemID();
+
+                sale.SaleID = Guid.NewGuid();
+                sale.DonorID = donorID;
+                sale.DedicationID = recipientID;
+
+                context.Sales.AddObject(sale);
+
+                try
+                {
+                    context.AcceptAllChanges();
+                }
+                catch (Exception) { }
             }
-            else
-            {
-                donorID = donor.PersonID;
-                context.People.AddObject(donor);
-            }
-
-            // Process the recipient information
-            PersonInfoPanel recipientPanel = (PersonInfoPanel)personInfoPanelRecipient;
-            recipientPanel.savePerson();
-            Person recipient = recipientPanel.getPerson();
-
-            if (recipientPanel.HasPerson(recipient))
-            {
-                recipientID = Guid.Parse(recipientPanel.GetID());
-            }
-            else
-            {
-                recipientID = recipient.PersonID;
-                context.People.AddObject(recipient);
-            }
-
-            TransactionPanel salePanel = (TransactionPanel)transactionPanel1;
-
-            salePanel.SaveSale();
-            Sale sale = salePanel.GetSale();
-
-            Item item = new Item();
-            item.ItemID = Guid.NewGuid();
-            item.ItemTypeID = salePanel.GetItemID();
-                
-            sale.SaleID = Guid.NewGuid();
-            sale.DonorID = donorID;
-            sale.DedicationID = recipientID;
-
-            context.Sales.AddObject(sale);
-
-            try
-            {
-                context.AcceptAllChanges();
-            }
-            catch(Exception) { }
         }
 
         #endregion

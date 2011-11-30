@@ -13,8 +13,6 @@ namespace TeamJ
 
         #region Private Variables
 
-        TeamJDBEntities context = new TeamJDBEntities();
-
         #endregion
 
         #region Constructors
@@ -46,32 +44,35 @@ namespace TeamJ
         /// </summary>
         private void PopulateMenus()
         {
-            // Load the items combobox
-
-            var itemQuery = from itemType in context.ItemTypes
-                            select itemType;
-
-            foreach (var result in itemQuery)
+            using (TeamJDBEntities context = new TeamJDBEntities())
             {
-                this.itemComboBox.Items.Add(result.Type.ToString());
+                // Load the items combobox
+
+                var itemQuery = from itemType in context.ItemTypes
+                                select itemType;
+
+                foreach (var result in itemQuery)
+                {
+                    this.itemComboBox.Items.Add(result.Type.ToString());
+                }
+
+                // To Deselect the Combo Box
+                this.itemComboBox.SelectedIndex = -1;
+
+                // Load the sections combobox
+
+                var sectionQuery = from section in context.Sections
+                                   select section;
+
+                foreach (var result in sectionQuery)
+                {
+                    this.sectionComboBox.Items.Add(result.Location.ToString());
+                }
+
+                // To Deselect the Combo Box
+                this.sectionComboBox.SelectedIndex = -1;
+
             }
-
-            // To Deselect the Combo Box
-            this.itemComboBox.SelectedIndex = -1;
-
-            // Load the sections combobox
-
-            var sectionQuery = from section in context.Sections
-                               select section;
-
-            foreach (var result in sectionQuery)
-            {
-                this.sectionComboBox.Items.Add(result.Location.ToString());
-            }
-
-            // To Deselect the Combo Box
-            this.sectionComboBox.SelectedIndex = -1;
-        
         }
 
         #endregion
@@ -84,20 +85,23 @@ namespace TeamJ
         // information
         private void SetPurchaseDates()
         {
-            DateTime minDate = DateTime.Today;
+            using (TeamJDBEntities context = new TeamJDBEntities())
+            {
+                DateTime minDate = DateTime.Today;
 
-            foreach (Sale s in context.Sales)
-                if (s.Date.CompareTo(minDate) == -1)
-                    minDate = s.Date;
+                foreach (Sale s in context.Sales)
+                    if (s.Date.CompareTo(minDate) == -1)
+                        minDate = s.Date;
 
-            DateTime maxDate = minDate;
+                DateTime maxDate = minDate;
 
-            foreach (Sale s in context.Sales)
-                if (s.Date.CompareTo(maxDate) == 1)
-                    maxDate = s.Date;
+                foreach (Sale s in context.Sales)
+                    if (s.Date.CompareTo(maxDate) == 1)
+                        maxDate = s.Date;
 
-            this.purchaseStartDatePicker.Value = minDate;
-            this.purchaseEndDatePicker.Value = maxDate;
+                this.purchaseStartDatePicker.Value = minDate;
+                this.purchaseEndDatePicker.Value = maxDate;
+            }
         }
 
         #endregion

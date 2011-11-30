@@ -15,8 +15,6 @@ namespace TeamJ
     public partial class TransactionPanel : Panel
     {
         #region Private Methods
-
-        private TeamJDBEntities context = new TeamJDBEntities();
         private Sale sale = new Sale();
 
         #endregion
@@ -109,21 +107,24 @@ namespace TeamJ
         /// </summary>
         private void SetPriceField()
         {
-            if (this.comboBoxItemType.SelectedIndex == 0)
+            using (TeamJDBEntities context = new TeamJDBEntities())
             {
-                textBoxPrice.Text = "";
-            }
-            else
-            {
-                string selectedItem = this.comboBoxItemType.GetItemText(this.comboBoxItemType.SelectedItem).ToString();
-
-                var itemPriceQuery = from itemType in context.ItemTypes
-                                     where itemType.Type == selectedItem
-                                     select itemType;
-
-                foreach (var result in itemPriceQuery)
+                if (this.comboBoxItemType.SelectedIndex == 0)
                 {
-                    this.textBoxPrice.Text = result.Price.ToString("0.00");
+                    textBoxPrice.Text = "";
+                }
+                else
+                {
+                    string selectedItem = this.comboBoxItemType.GetItemText(this.comboBoxItemType.SelectedItem).ToString();
+
+                    var itemPriceQuery = from itemType in context.ItemTypes
+                                         where itemType.Type == selectedItem
+                                         select itemType;
+
+                    foreach (var result in itemPriceQuery)
+                    {
+                        this.textBoxPrice.Text = result.Price.ToString("0.00");
+                    }
                 }
             }
         }
@@ -136,17 +137,20 @@ namespace TeamJ
         /// </summary>
         private void LoadComboBox()
         {
-            this.comboBoxItemType.Items.Add("<Select Item>");
-
-            var itemQuery = from itemType in context.ItemTypes
-                            select itemType;
-
-            foreach (var result in itemQuery)
+            using (TeamJDBEntities context = new TeamJDBEntities())
             {
-                this.comboBoxItemType.Items.Add(result.Type.ToString());
-            }
+                this.comboBoxItemType.Items.Add("<Select Item>");
 
-            this.comboBoxItemType.SelectedIndex = 0;
+                var itemQuery = from itemType in context.ItemTypes
+                                select itemType;
+
+                foreach (var result in itemQuery)
+                {
+                    this.comboBoxItemType.Items.Add(result.Type.ToString());
+                }
+
+                this.comboBoxItemType.SelectedIndex = 0;
+            }
         }
 
         #endregion
@@ -158,18 +162,21 @@ namespace TeamJ
         /// <returns>The Guid ID of the ItemType</returns>
         public Guid GetItemID()
         {
-            string selectedItem = this.comboBoxItemType.GetItemText(this.comboBoxItemType.SelectedItem).ToString();
-
-            var itemIDQuery = from itemID in context.ItemTypes
-                              where itemID.Type == selectedItem
-                              select itemID;
-
-            foreach (var result in itemIDQuery)
+            using (TeamJDBEntities context = new TeamJDBEntities())
             {
-                return result.ItemTypeID;
-            }
+                string selectedItem = this.comboBoxItemType.GetItemText(this.comboBoxItemType.SelectedItem).ToString();
 
-            return Guid.Parse(null);
+                var itemIDQuery = from itemID in context.ItemTypes
+                                  where itemID.Type == selectedItem
+                                  select itemID;
+
+                foreach (var result in itemIDQuery)
+                {
+                    return result.ItemTypeID;
+                }
+
+                return Guid.Parse(null);
+            }
         }
 
         #endregion
