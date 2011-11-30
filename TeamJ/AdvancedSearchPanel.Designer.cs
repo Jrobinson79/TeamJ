@@ -271,7 +271,7 @@ namespace TeamJ
             this.tableLayoutPanelPurchaseDate.Controls.Add(this.purchaseStartDatePicker, 1, 0);
             this.tableLayoutPanelPurchaseDate.Controls.Add(this.endLabel1, 0, 1);
             this.tableLayoutPanelPurchaseDate.Controls.Add(this.purchaseEndDatePicker, 1, 1);
-            this.tableLayoutPanelPurchaseDate.Controls.Add(this.rangeCheckBox, 2, 1);
+            this.tableLayoutPanelPurchaseDate.Controls.Add(this.rangeCheckBox, 2, 0);
             this.tableLayoutPanelPurchaseDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelPurchaseDate.Location = new System.Drawing.Point(3, 193);
             this.tableLayoutPanelPurchaseDate.Name = "tableLayoutPanelPurchaseDate";
@@ -288,6 +288,7 @@ namespace TeamJ
             this.purchaseStartDatePicker.Name = "purchaseStartDatePicker";
             this.purchaseStartDatePicker.Size = new System.Drawing.Size(1, 20);
             this.purchaseStartDatePicker.TabIndex = 0;
+            this.purchaseStartDatePicker.Format = DateTimePickerFormat.Short;
             // 
             // purchaseEndDatePicker
             // 
@@ -296,6 +297,7 @@ namespace TeamJ
             this.purchaseEndDatePicker.Name = "purchaseEndDatePicker";
             this.purchaseEndDatePicker.Size = new System.Drawing.Size(1, 20);
             this.purchaseEndDatePicker.TabIndex = 0;
+            this.purchaseEndDatePicker.Format = DateTimePickerFormat.Short;
             // 
             // rangeCheckBox
             // 
@@ -305,7 +307,7 @@ namespace TeamJ
             this.rangeCheckBox.Name = "rangeCheckBox";
             this.rangeCheckBox.Size = new System.Drawing.Size(74, 26);
             this.rangeCheckBox.TabIndex = 0;
-            this.rangeCheckBox.Text = "Range";
+            this.rangeCheckBox.Text = "Set Range";
             this.rangeCheckBox.UseVisualStyleBackColor = true;
             this.rangeCheckBox.CheckedChanged += new System.EventHandler(this.rangeCheckBox_CheckedChanged);
             // 

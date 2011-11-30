@@ -128,6 +128,7 @@
             this.panelLogoImage.Name = "panelLogoImage";
             this.panelLogoImage.Size = new System.Drawing.Size(96, 75);
             this.panelLogoImage.TabIndex = 0;
+            this.panelLogoImage.BackgroundImage = global::TeamJ.Properties.Resources.Plaza;
             // 
             // tableLayoutPanelMainBottom
             // 

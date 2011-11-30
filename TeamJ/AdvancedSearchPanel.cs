@@ -29,7 +29,8 @@ namespace TeamJ
             PopulateMenus();
             SetPurchaseDates();
 
-            //this.endLabel1.Visible = false;
+            this.endLabel1.Visible = false;
+            this.purchaseEndDatePicker.Visible = false;
             this.purchaseEndDatePicker.Enabled = false;
         }
 
@@ -101,25 +102,25 @@ namespace TeamJ
 
         #endregion
 
-        #region Event Handlers
+        #endregion
+
+        #region Events
+
         private void rangeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (this.rangeCheckBox.Checked)
             {
-                //this.endLabel1.Visible = true;
+                this.endLabel1.Visible = true;
+                this.purchaseEndDatePicker.Visible = true;
                 this.purchaseEndDatePicker.Enabled = true;
             }
             else
             {
-                //this.endLabel1.Visible = false;
+                this.endLabel1.Visible = false;
+                this.purchaseEndDatePicker.Visible = false;
                 this.purchaseEndDatePicker.Enabled = false;
             }
         }
-        #endregion
-
-        #endregion
-
-        #region Events
 
         #endregion
     }

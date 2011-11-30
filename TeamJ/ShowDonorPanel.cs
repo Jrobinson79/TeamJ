@@ -15,6 +15,7 @@ namespace TeamJ
 
         private List<Sale> sales;
         private TeamJDBEntities context = new TeamJDBEntities();
+        private List<List<string>> ids = new List<List<string>>();
 
         #endregion
 
@@ -27,25 +28,42 @@ namespace TeamJ
         public ShowDonorPanel()
         {
             InitializeComponent();
+            this.buttonUpdate.Text = "Create";
+            this.labelDonor.Visible = false;
+            this.labelDonorName.Visible = false;
+            this.listBoxRecipients.Visible = false;
+            this.groupBoxRecipients.Visible = false;
         }
 
         #endregion
 
-        #region ShowDonorPanel(List<Sale> sales)
+        #region ShowDonorPanel(ListBox list, string selectedName)
         /// <summary>
         ///     Constructs a ShowDonorPanel object
         /// </summary>
         /// <param name="sales"></param>
-        public ShowDonorPanel(List<Sale> sales)
+        public ShowDonorPanel(ListBox list, string selectedName)
         {
             // sales should be from the same donor
 
             InitializeComponent();
 
-            if (sales != null && sales.Count > 0)
-            {
-                this.sales = sales;
-            }
+            listBoxRecipients.Items.AddRange(list.Items);
+            listBoxRecipients.SelectedIndex = list.FindString(selectedName);
+        }
+
+        #endregion
+
+        #region ShowDonorPanel(string search)
+        /// <summary>
+        ///     Constructs a ShowDonorPanel object
+        /// </summary>
+        /// <param name="sales"></param>
+        public ShowDonorPanel(string search)
+        {
+            // sales should be from the same donor
+
+            InitializeComponent();
         }
 
         #endregion

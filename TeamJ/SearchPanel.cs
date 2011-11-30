@@ -39,7 +39,7 @@ namespace TeamJ
         public SearchPanel(String search)
         {
             InitializeComponent();
-            this.textBoxSearch.Text = search;
+            //this.textBoxSearch.Text = search;
             setSearchString(search);
         }
 
@@ -108,7 +108,9 @@ namespace TeamJ
         /// <param name="selection">Name of person selected</param>
         private void showSelectedPerson(String selection)
         {
-            Program.mForm.setPanel(new ShowDonorPanel());
+            string test = this.listBoxSelect.SelectedIndex.ToString();
+            int inttest = int.Parse(test);
+            Program.mForm.setPanel(new ShowDonorPanel(this.listBoxSelect, this.listBoxSelect.GetItemText(this.listBoxSelect.SelectedItem)));
         }
 
         #endregion

@@ -157,18 +157,25 @@ namespace TeamJ
 
         #endregion
 
-        private void labelBackToHome_Click(object sender, EventArgs e)
-        {
-            hidePanel();
-        }
-
-        #endregion
-
+        #region buttonAdvancedSearch_Click(object sender, EventArgs e)
+        /// <summary>
+        ///     Brings up the advanced search panel
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonAdvancedSearch_Click(object sender, EventArgs e)
         {
             setPanel(new AdvancedSearchPanel());
         }
 
+        #endregion
+
+        #region textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        /// <summary>
+        ///     determines if the enter key will go to the search page.
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
             //  Search for transaction when user keys enter
@@ -176,6 +183,14 @@ namespace TeamJ
                 setPanel(new SearchPanel(textBoxSearch.Text));
         }
 
+        #endregion
+
+        #region textBoxSearch_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        ///     Determines if the search button is visible
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             // Determines if the search button should be enabled/disabled
@@ -188,5 +203,22 @@ namespace TeamJ
                 buttonSearch.Enabled = true;
             }
         }
+
+        #endregion
+
+        #region labelBackToHome_Click(object sender, EventArgs e)
+        /// <summary>
+        ///     Sends the user back to the main page.
+        /// </summary>
+        /// <param name="sender">The object that is calling the method</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void labelBackToHome_Click(object sender, EventArgs e)
+        {
+            hidePanel();
+        }
+
+        #endregion
+
+        #endregion
     }
 }
