@@ -1,0 +1,10 @@
+C:\Users\jeremiah\Desktop\DomainClasses\DomainClasses\bin\Debug\DomainClasses.dll
+C:\Users\jeremiah\Desktop\DomainClasses\DomainClasses\bin\Debug\DomainClasses.pdb
+C:\Users\jeremiah\Desktop\DomainClasses\DomainClasses\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jeremiah\Desktop\DomainClasses\DomainClasses\obj\Debug\DomainClasses.dll
+C:\Users\jeremiah\Desktop\DomainClasses\DomainClasses\obj\Debug\DomainClasses.pdb
+C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\bin\Debug\DomainClasses.dll
+C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\bin\Debug\DomainClasses.pdb
+C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\DomainClasses.dll
+C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\DomainClasses.pdb

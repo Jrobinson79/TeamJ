@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.Entity;
+using DataLayer;
+using DomainClasses;
 
 namespace TeamJ
 {
     public partial class TestForm : Form
     {
-        private TeamJDBEntities context = new TeamJDBEntities();
-
         public TestForm()
         {
             InitializeComponent();
@@ -22,35 +22,42 @@ namespace TeamJ
         private void showItemTypesButton_Clicked(object sender, EventArgs e)
         {
 
-            List<ItemType> types = context.ItemTypes.ToList();
-            String strList = "Type | Price\n\n";
-
-            foreach (ItemType type in types)
+            using (var context = new Context())
             {
-                strList += type.Type + ": " + type.Price + "\n";
-            }
+                List<ItemType> types = context.ItemTypes.ToList();
+                String strList = "Type | Price\n\n";
 
-            MessageBox.Show(strList);
+                foreach (ItemType type in types)
+                {
+                    strList += type.Type + ": " + type.Price + "\n";
+                }
+
+                MessageBox.Show(strList);
+            }
 
         }
 
         private void showAllSectionsButton_Click(object sender, EventArgs e)
         {
-            List<Section> sections = context.Sections.ToList();
-            String strSections = "Section | Description\n\n";
 
-            foreach (Section section in sections)
+            using (var context = new Context())
             {
-                strSections += section.Location + ": " + section.Description + "\n";
-            }
+                List<Section> sections = context.Sections.ToList();
+                String strSections = "Section | Description\n\n";
 
-            MessageBox.Show(strSections);
+                foreach (Section section in sections)
+                {
+                    strSections += section.Location + ": " + section.Description + "\n";
+                }
+
+                MessageBox.Show(strSections);
+            }
 
         }
 
         private void singleBrickSaleButton_Click(object sender, EventArgs e)
         {
-            EntryForm ef = new EntryForm(context);
+            EntryForm ef = new EntryForm();
             ef.ShowDialog();
         }
     }
