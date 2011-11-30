@@ -178,6 +178,7 @@
     <Content Include="Images\Plaza_F.jpg" />
     <Content Include="Images\Plaza_G.jpg" />
     <Content Include="Images\Plaza_H.jpg" />
+    <None Include="Resources\Plaza_A.jpg.bmp" />
     <Content Include="TeamJDB.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

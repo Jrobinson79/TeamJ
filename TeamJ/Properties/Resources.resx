@@ -121,10 +121,37 @@
   <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\logo1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3D Ground &amp; People" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="GroundAndPeople" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\3D Ground &amp; People.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plaza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Plaza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_B.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_C.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_D.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_E.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_F.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_G.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plaza_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Plaza_H.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
