@@ -160,7 +160,7 @@ namespace TeamJ
 
         #endregion
 
-        #region
+        #region selectSectionImage()
         /// <summary>
         /// This method shows the section image.  Passing in a null value 
         /// will show the default section image.
@@ -180,7 +180,7 @@ namespace TeamJ
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-            if (section == null)
+            if(section == null)
             {
                 panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
             }
@@ -211,6 +211,9 @@ namespace TeamJ
                         break;
                     case "H":
                         panelSectionImage.BackgroundImage = Properties.Resources.Plaza_H;
+                        break;
+                    default:
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
                         break;
                 }
             }
