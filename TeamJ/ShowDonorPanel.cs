@@ -54,6 +54,7 @@ namespace TeamJ
 
             listBoxResults.Items.AddRange(list.Items);
             listBoxResults.SelectedIndex = list.FindString(selectedName);
+            selectBrickImage(null, null, null);
         }
 
         #endregion
@@ -183,34 +184,39 @@ namespace TeamJ
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-            panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
-
-            switch (section.Location)
+            if (section == null)
             {
-                case "A":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_A;
-                    break;
-                case "B":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_B;
-                    break;
-                case "C":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_C;
-                    break;
-                case "D":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_D;
-                    break;
-                case "E":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_E;
-                    break;
-                case "F":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_F;
-                    break;
-                case "G":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_G;
-                    break;
-                case "H":
-                    panelSectionImage.BackgroundImage = Properties.Resources.Plaza_H;
-                    break;
+                panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
+            }
+            else
+            {
+                switch (section.Location)
+                {
+                    case "A":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_A;
+                        break;
+                    case "B":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_B;
+                        break;
+                    case "C":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_C;
+                        break;
+                    case "D":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_D;
+                        break;
+                    case "E":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_E;
+                        break;
+                    case "F":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_F;
+                        break;
+                    case "G":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_G;
+                        break;
+                    case "H":
+                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_H;
+                        break;
+                }
             }
 
             this.tableLayoutPanelImageBorder.Controls.Add(panelSectionImage, 0, 1);
