@@ -36,8 +36,10 @@ namespace TeamJ
         public SearchPanel(String search)
         {
             InitializeComponent();
-            //this.textBoxSearch.Text = search;
+            this.textBoxSearch.Text = search;
             setSearchString(search);
+
+            initialize();
         }
 
         #endregion
@@ -45,6 +47,15 @@ namespace TeamJ
         #endregion
 
         #region Private Methods
+
+        #region initialize();
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
+        #endregion
 
         #region setSearchString(String search)
         /// <summary>

@@ -204,7 +204,6 @@ namespace TeamJ
             // 
             // SearchPanel
             // 
-            this.Dock = DockStyle.Fill;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SearchPanel";

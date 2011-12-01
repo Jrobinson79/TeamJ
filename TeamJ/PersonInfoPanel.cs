@@ -39,13 +39,23 @@ namespace TeamJ
         {
             container.Add(this);
             InitializeComponent();
+            initialize();
         }
 
         #endregion
 
         #endregion
 
-        #region Public Methods
+        #region Methods
+
+        #region initialize()
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
+        #endregion
 
         #region setPerson(Person p)
         /// <summary>

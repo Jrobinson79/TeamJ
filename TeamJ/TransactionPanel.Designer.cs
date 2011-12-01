@@ -36,11 +36,6 @@ namespace TeamJ
             this.comboBoxItemType = new System.Windows.Forms.ComboBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanelSection = new System.Windows.Forms.TableLayoutPanel();
-            this.labelSection = new System.Windows.Forms.Label();
-            this.comboBoxSection = new System.Windows.Forms.ComboBox();
-            this.labelDescription = new System.Windows.Forms.Label();
-            this.labelDescriptionVar = new System.Windows.Forms.Label();
             this.tableLayoutPanelPrice = new System.Windows.Forms.TableLayoutPanel();
             this.labelPrice = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
@@ -48,7 +43,11 @@ namespace TeamJ
             this.textBoxDonation = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelTotalCalc = new System.Windows.Forms.Label();
-            this.labelSectionName = new System.Windows.Forms.Label();
+            this.tableLayoutPanelSection = new System.Windows.Forms.TableLayoutPanel();
+            this.labelSection = new System.Windows.Forms.Label();
+            this.comboBoxSection = new System.Windows.Forms.ComboBox();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.labelDescriptionVar = new System.Windows.Forms.Label();
             this.tableLayoutPanelBrickText = new System.Windows.Forms.TableLayoutPanel();
             this.labelLine1 = new System.Windows.Forms.Label();
             this.textBoxLine1 = new System.Windows.Forms.TextBox();
@@ -56,14 +55,13 @@ namespace TeamJ
             this.textBoxLine2 = new System.Windows.Forms.TextBox();
             this.labelLine3 = new System.Windows.Forms.Label();
             this.textBoxLine3 = new System.Windows.Forms.TextBox();
+            this.labelSectionName = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelItem.SuspendLayout();
-            this.tableLayoutPanelSection.SuspendLayout();
             this.tableLayoutPanelPrice.SuspendLayout();
+            this.tableLayoutPanelSection.SuspendLayout();
             this.tableLayoutPanelBrickText.SuspendLayout();
             this.SuspendLayout();
-
-            this.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // tableLayoutPanelMain
             // 
@@ -82,7 +80,7 @@ namespace TeamJ
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(650, 544);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(999, 637);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tableLayoutPanelItem
@@ -100,7 +98,7 @@ namespace TeamJ
             this.tableLayoutPanelItem.RowCount = 2;
             this.tableLayoutPanelItem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelItem.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelItem.Size = new System.Drawing.Size(644, 64);
+            this.tableLayoutPanelItem.Size = new System.Drawing.Size(993, 64);
             this.tableLayoutPanelItem.TabIndex = 0;
             // 
             // labelItemType
@@ -143,64 +141,6 @@ namespace TeamJ
             this.dateTimePicker1.Size = new System.Drawing.Size(223, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // tableLayoutPanelSection
-            // 
-            this.tableLayoutPanelSection.ColumnCount = 2;
-            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSection.Controls.Add(this.labelSection, 0, 0);
-            this.tableLayoutPanelSection.Controls.Add(this.comboBoxSection, 1, 0);
-            this.tableLayoutPanelSection.Controls.Add(this.labelDescription, 0, 1);
-            this.tableLayoutPanelSection.Controls.Add(this.labelDescriptionVar, 1, 1);
-            this.tableLayoutPanelSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSection.Location = new System.Drawing.Point(3, 144);
-            this.tableLayoutPanelSection.Name = "tableLayoutPanelSection";
-            this.tableLayoutPanelSection.RowCount = 2;
-            this.tableLayoutPanelSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelSection.Size = new System.Drawing.Size(644, 64);
-            this.tableLayoutPanelSection.TabIndex = 1;
-            // 
-            // labelSection
-            // 
-            this.labelSection.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSection.AutoSize = true;
-            this.labelSection.Location = new System.Drawing.Point(3, 9);
-            this.labelSection.Name = "labelSection";
-            this.labelSection.Size = new System.Drawing.Size(46, 13);
-            this.labelSection.TabIndex = 0;
-            this.labelSection.Text = "Section:";
-            this.labelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBoxSection
-            // 
-            this.comboBoxSection.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxSection.FormattingEnabled = true;
-            this.comboBoxSection.Location = new System.Drawing.Point(79, 5);
-            this.comboBoxSection.Name = "comboBoxSection";
-            this.comboBoxSection.Size = new System.Drawing.Size(133, 21);
-            this.comboBoxSection.TabIndex = 0;
-            // 
-            // labelDescription
-            // 
-            this.labelDescription.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(3, 41);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(63, 13);
-            this.labelDescription.TabIndex = 0;
-            this.labelDescription.Text = "Description:";
-            // 
-            // labelDescriptionVar
-            // 
-            this.labelDescriptionVar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelDescriptionVar.AutoSize = true;
-            this.labelDescriptionVar.Location = new System.Drawing.Point(79, 41);
-            this.labelDescriptionVar.Name = "labelDescriptionVar";
-            this.labelDescriptionVar.Size = new System.Drawing.Size(72, 13);
-            this.labelDescriptionVar.TabIndex = 0;
-            this.labelDescriptionVar.Text = "<Description>";
-            // 
             // tableLayoutPanelPrice
             // 
             this.tableLayoutPanelPrice.ColumnCount = 2;
@@ -220,7 +160,7 @@ namespace TeamJ
             this.tableLayoutPanelPrice.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPrice.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelPrice.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelPrice.Size = new System.Drawing.Size(644, 87);
+            this.tableLayoutPanelPrice.Size = new System.Drawing.Size(993, 87);
             this.tableLayoutPanelPrice.TabIndex = 1;
             // 
             // labelPrice
@@ -281,14 +221,63 @@ namespace TeamJ
             this.labelTotalCalc.TabIndex = 0;
             this.labelTotalCalc.Text = "$0";
             // 
-            // labelSectionName
+            // tableLayoutPanelSection
             // 
-            this.labelSectionName.AutoSize = true;
-            this.labelSectionName.Location = new System.Drawing.Point(43, 0);
-            this.labelSectionName.Name = "labelSectionName";
-            this.labelSectionName.Size = new System.Drawing.Size(41, 13);
-            this.labelSectionName.TabIndex = 0;
-            this.labelSectionName.Text = "section";
+            this.tableLayoutPanelSection.ColumnCount = 2;
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanelSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSection.Controls.Add(this.labelSection, 0, 0);
+            this.tableLayoutPanelSection.Controls.Add(this.comboBoxSection, 1, 0);
+            this.tableLayoutPanelSection.Controls.Add(this.labelDescription, 0, 1);
+            this.tableLayoutPanelSection.Controls.Add(this.labelDescriptionVar, 1, 1);
+            this.tableLayoutPanelSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSection.Location = new System.Drawing.Point(3, 144);
+            this.tableLayoutPanelSection.Name = "tableLayoutPanelSection";
+            this.tableLayoutPanelSection.RowCount = 2;
+            this.tableLayoutPanelSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSection.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelSection.Size = new System.Drawing.Size(993, 64);
+            this.tableLayoutPanelSection.TabIndex = 1;
+            // 
+            // labelSection
+            // 
+            this.labelSection.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelSection.AutoSize = true;
+            this.labelSection.Location = new System.Drawing.Point(3, 9);
+            this.labelSection.Name = "labelSection";
+            this.labelSection.Size = new System.Drawing.Size(46, 13);
+            this.labelSection.TabIndex = 0;
+            this.labelSection.Text = "Section:";
+            this.labelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboBoxSection
+            // 
+            this.comboBoxSection.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxSection.FormattingEnabled = true;
+            this.comboBoxSection.Location = new System.Drawing.Point(79, 5);
+            this.comboBoxSection.Name = "comboBoxSection";
+            this.comboBoxSection.Size = new System.Drawing.Size(133, 21);
+            this.comboBoxSection.TabIndex = 0;
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Location = new System.Drawing.Point(3, 41);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(63, 13);
+            this.labelDescription.TabIndex = 0;
+            this.labelDescription.Text = "Description:";
+            // 
+            // labelDescriptionVar
+            // 
+            this.labelDescriptionVar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelDescriptionVar.AutoSize = true;
+            this.labelDescriptionVar.Location = new System.Drawing.Point(79, 41);
+            this.labelDescriptionVar.Name = "labelDescriptionVar";
+            this.labelDescriptionVar.Size = new System.Drawing.Size(72, 13);
+            this.labelDescriptionVar.TabIndex = 0;
+            this.labelDescriptionVar.Text = "<Description>";
             // 
             // tableLayoutPanelBrickText
             // 
@@ -308,7 +297,7 @@ namespace TeamJ
             this.tableLayoutPanelBrickText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelBrickText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelBrickText.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelBrickText.Size = new System.Drawing.Size(644, 65);
+            this.tableLayoutPanelBrickText.Size = new System.Drawing.Size(993, 65);
             this.tableLayoutPanelBrickText.TabIndex = 2;
             // 
             // labelLine1
@@ -327,7 +316,7 @@ namespace TeamJ
             this.textBoxLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine1.Location = new System.Drawing.Point(60, 3);
             this.textBoxLine1.Name = "textBoxLine1";
-            this.textBoxLine1.Size = new System.Drawing.Size(581, 20);
+            this.textBoxLine1.Size = new System.Drawing.Size(930, 20);
             this.textBoxLine1.TabIndex = 0;
             // 
             // labelLine2
@@ -346,7 +335,7 @@ namespace TeamJ
             this.textBoxLine2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine2.Location = new System.Drawing.Point(60, 24);
             this.textBoxLine2.Name = "textBoxLine2";
-            this.textBoxLine2.Size = new System.Drawing.Size(581, 20);
+            this.textBoxLine2.Size = new System.Drawing.Size(930, 20);
             this.textBoxLine2.TabIndex = 0;
             // 
             // labelLine3
@@ -365,21 +354,30 @@ namespace TeamJ
             this.textBoxLine3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLine3.Location = new System.Drawing.Point(60, 45);
             this.textBoxLine3.Name = "textBoxLine3";
-            this.textBoxLine3.Size = new System.Drawing.Size(581, 20);
+            this.textBoxLine3.Size = new System.Drawing.Size(930, 20);
             this.textBoxLine3.TabIndex = 0;
+            // 
+            // labelSectionName
+            // 
+            this.labelSectionName.AutoSize = true;
+            this.labelSectionName.Location = new System.Drawing.Point(43, 0);
+            this.labelSectionName.Name = "labelSectionName";
+            this.labelSectionName.Size = new System.Drawing.Size(41, 13);
+            this.labelSectionName.TabIndex = 0;
+            this.labelSectionName.Text = "section";
             // 
             // TransactionPanel
             // 
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "TransactionPanel";
-            this.Size = new System.Drawing.Size(650, 544);
+            this.Size = new System.Drawing.Size(999, 637);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelItem.ResumeLayout(false);
             this.tableLayoutPanelItem.PerformLayout();
-            this.tableLayoutPanelSection.ResumeLayout(false);
-            this.tableLayoutPanelSection.PerformLayout();
             this.tableLayoutPanelPrice.ResumeLayout(false);
             this.tableLayoutPanelPrice.PerformLayout();
+            this.tableLayoutPanelSection.ResumeLayout(false);
+            this.tableLayoutPanelSection.PerformLayout();
             this.tableLayoutPanelBrickText.ResumeLayout(false);
             this.tableLayoutPanelBrickText.PerformLayout();
             this.ResumeLayout(false);

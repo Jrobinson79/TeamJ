@@ -24,6 +24,21 @@ namespace TeamJ
         public AdvancedSearchPanel()
         {
             InitializeComponent();
+            initialize();
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Private Methods
+
+        #region initialize();
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+
             PopulateMenus();
             SetPurchaseDates();
 
@@ -33,10 +48,6 @@ namespace TeamJ
         }
 
         #endregion
-
-        #endregion
-
-        #region Private Methods
 
         #region PopulateMenus()
         /// <summary>

@@ -24,6 +24,7 @@ namespace TeamJ
         public ShowReportPanel()
         {
             InitializeComponent();
+            initialize();
         }
 
         #endregion
@@ -38,6 +39,7 @@ namespace TeamJ
             container.Add(this);
 
             InitializeComponent();
+            initialize();
         }
 
         #endregion
@@ -45,6 +47,15 @@ namespace TeamJ
         #endregion
 
         #region Private Methods
+
+        #region initialize();
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
+        #endregion
 
         #endregion
 

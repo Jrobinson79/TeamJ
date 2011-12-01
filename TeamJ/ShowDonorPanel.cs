@@ -24,6 +24,8 @@ namespace TeamJ
         public ShowDonorPanel()
         {
             InitializeComponent();
+            initialize();
+
             this.buttonUpdate.Text = "Create";
 
             this.tableLayoutPanelBottomLeft.Visible = false;
@@ -48,6 +50,7 @@ namespace TeamJ
 
             InitializeComponent();
 
+            initialize();
             listBoxResults.Items.AddRange(list.Items);
             listBoxResults.SelectedIndex = list.FindString(selectedName);
             selectBrickImage(null, null, null);
@@ -65,6 +68,7 @@ namespace TeamJ
             // sales should be from the same donor
 
             InitializeComponent();
+            initialize();
         }
 
         #endregion
@@ -72,6 +76,15 @@ namespace TeamJ
         #endregion
 
         #region Private Methods
+
+        #region initialize();
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
+        #endregion
 
         #region selectBrickImage(String lineText1, String lineText2, String lineText3)
         /// <summary>

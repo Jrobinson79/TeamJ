@@ -28,13 +28,7 @@ namespace TeamJ
         public TransactionPanel()
         {
             InitializeComponent();
-
-            try
-            {
-                LoadComboBox();
-                SetPriceField();
-            }
-            catch (Exception) { }
+            this.initialize();
         }
 
         #endregion
@@ -48,19 +42,30 @@ namespace TeamJ
         {
             container.Add(this);
             InitializeComponent();
-            try
-            {
-                LoadComboBox();
-                SetPriceField();
-            }
-            catch (Exception) {  }
+            this.initialize();
         }
 
         #endregion
 
         #endregion
 
-        #region Public Methods
+        #region Methods
+
+        #region
+
+        private void initialize()
+        {
+            this.Dock = DockStyle.Fill;
+
+            try
+            {
+                LoadComboBox();
+                SetPriceField();
+            }
+            catch (Exception) { }
+        }
+
+        #endregion
 
         #region SetSale(Sale s)
         /// <summary>
