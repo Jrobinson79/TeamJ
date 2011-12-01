@@ -131,7 +131,7 @@ namespace TeamJ
 
         #endregion
 
-        #region LoadComboBoox()
+        #region LoadComboBox()
         /// <summary>
         ///     Loads the ItemTypes combobox with a list of ItemTypes from the database.
         /// </summary>

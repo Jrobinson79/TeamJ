@@ -6,12 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace TeamJ
 {
     public partial class ShowDonorPanel : Panel
     {
         #region Private Variables
+
+        private Image imagePreview;
+        private Graphics imageGraphics;
 
         #endregion
 
@@ -26,7 +30,7 @@ namespace TeamJ
             InitializeComponent();
             this.buttonUpdate.Text = "Create";
 
-            this.tableLayoutPanelBottomLeft.Visible = false;
+            //this.tableLayoutPanelBottomLeft.Visible = false;
 
             this.tableLayoutPanelMainBottom.ColumnStyles.Clear();
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -100,11 +104,11 @@ namespace TeamJ
 
             this.tableLayoutPanelImageBorder.Controls.Add(panelBrickImage, 0, 1);
 
-            tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine1);
-            tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine2);
-            tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine3);
-            tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine1);
-            tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine2);
+            //tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine1);
+            //tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine2);
+            //tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine3);
+            //tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine1);
+            //tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine2);
 
             if (lineText3 == null)
             {
@@ -118,7 +122,7 @@ namespace TeamJ
                     this.tableLayoutPanelBrickText.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
                     this.tableLayoutPanelBrickText.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-                    this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 2);
+                    //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 2);
 
                     labelBrickTextLine1.Text = lineText1;
                 }
@@ -131,8 +135,8 @@ namespace TeamJ
                     this.tableLayoutPanelBrickText2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
                     this.tableLayoutPanelBrickText2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-                    this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 1);
-                    this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine2, 0, 2);
+                    //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 1);
+                    //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine2, 0, 2);
 
                     labelBrickTextLine1.Text = lineText1;
                     labelBrickTextLine2.Text = lineText2;
@@ -148,14 +152,52 @@ namespace TeamJ
                 this.tableLayoutPanelBrickText.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
                 this.tableLayoutPanelBrickText.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-                this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 1);
-                this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine2, 0, 2);
-                this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine3, 0, 3);
+                //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 1);
+                //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine2, 0, 2);
+                //this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine3, 0, 3);
 
                 labelBrickTextLine1.Text = lineText1;
                 labelBrickTextLine2.Text = lineText2;
                 labelBrickTextLine3.Text = lineText3;
             }
+
+            paintPreviewImage(labelBrickTextLine1.Text,
+                              labelBrickTextLine2.Text,
+                              labelBrickTextLine3.Text);
+        }
+
+        private void paintPreviewImage(String line1, String line2, String line3)
+        {
+            imagePreview = global::TeamJ.Properties.Resources.stone;
+            panelBrickImage.BackgroundImage = imagePreview;
+
+            imageGraphics = Graphics.FromImage(imagePreview);
+            imageGraphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            Font myFont = new Font(Font.FontFamily, 18F, FontStyle.Bold);
+
+            SizeF sizeString1 = imageGraphics.MeasureString(line1, myFont);
+            SizeF sizeString2 = imageGraphics.MeasureString(line2, myFont);
+            SizeF sizeString3 = imageGraphics.MeasureString(line3, myFont);
+
+            imageGraphics.DrawString(line1,
+                                     myFont,
+                                     Brushes.Black,
+                                     imageGraphics.VisibleClipBounds.Width / 2 - sizeString1.Width / 2,
+                                     imageGraphics.VisibleClipBounds.Height / 4 - sizeString1.Height / 2);
+            imageGraphics.DrawString(line2,
+                                     myFont,
+                                     Brushes.Black,
+                                     imageGraphics.VisibleClipBounds.Width / 2 - sizeString2.Width / 2,
+                                     2 * (imageGraphics.VisibleClipBounds.Height / 4) - sizeString2.Height / 2);
+            imageGraphics.DrawString(line3,
+                                     myFont,
+                                     Brushes.Black,
+                                     imageGraphics.VisibleClipBounds.Width / 2 - sizeString3.Width / 2,
+                                     3 * (imageGraphics.VisibleClipBounds.Height / 4) - sizeString3.Height / 2);
+
+            imageGraphics.Dispose();
+            panelBrickImage.Refresh();
         }
 
         #endregion

@@ -47,18 +47,18 @@
             this.tableLayoutPanelBottomRight = new System.Windows.Forms.TableLayoutPanel();
             this.tabControlInfo = new System.Windows.Forms.TabControl();
             this.tabPageDonor = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelDonorTab = new System.Windows.Forms.TableLayoutPanel();
             this.personInfoPanelDonor = new TeamJ.PersonInfoPanel(this.components);
+            this.checkBoxSameAsRecipient = new System.Windows.Forms.CheckBox();
             this.tabPageRecipient = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelRecipientTab = new System.Windows.Forms.TableLayoutPanel();
             this.personInfoPanelRecipient = new TeamJ.PersonInfoPanel(this.components);
+            this.checkBoxSameAsDonor = new System.Windows.Forms.CheckBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.transactionPanel1 = new TeamJ.TransactionPanel(this.components);
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanelBrickText2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelSectionImage = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelDonorTab = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxSameAsRecipient = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanelRecipientTab = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxSameAsDonor = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMainBottom.SuspendLayout();
             this.tableLayoutPanelBottomLeft.SuspendLayout();
             this.groupBoxResults.SuspendLayout();
@@ -69,9 +69,11 @@
             this.tableLayoutPanelBottomLeftButtons.SuspendLayout();
             this.tableLayoutPanelBottomRight.SuspendLayout();
             this.tabControlInfo.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPageDonor.SuspendLayout();
             this.tableLayoutPanelDonorTab.SuspendLayout();
+            this.tabPageRecipient.SuspendLayout();
             this.tableLayoutPanelRecipientTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMainBottom
@@ -163,9 +165,10 @@
             // 
             // panelBrickImage
             // 
-            this.panelBrickImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBrickImage.BackgroundImage")));
+            this.panelBrickImage.BackgroundImage = global::TeamJ.Properties.Resources.brick;
             this.panelBrickImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBrickImage.Controls.Add(this.tableLayoutPanelBrickText);
+            // --- Changing it to where the text is drawn on the image
+            //this.panelBrickImage.Controls.Add(this.tableLayoutPanelBrickText);
             this.panelBrickImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBrickImage.Location = new System.Drawing.Point(3, -81);
             this.panelBrickImage.Name = "panelBrickImage";
@@ -300,8 +303,8 @@
             // 
             // tabPageDonor
             // 
-            this.tabPageDonor.Controls.Add(tableLayoutPanelDonorTab);
             this.tabPageDonor.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageDonor.Controls.Add(this.tableLayoutPanelDonorTab);
             this.tabPageDonor.Location = new System.Drawing.Point(4, 22);
             this.tabPageDonor.Name = "tabPageDonor";
             this.tabPageDonor.Padding = new System.Windows.Forms.Padding(3);
@@ -309,19 +312,46 @@
             this.tabPageDonor.TabIndex = 0;
             this.tabPageDonor.Text = "Donor Information";
             // 
+            // tableLayoutPanelDonorTab
+            // 
+            this.tableLayoutPanelDonorTab.ColumnCount = 1;
+            this.tableLayoutPanelDonorTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelDonorTab.Controls.Add(this.personInfoPanelDonor, 0, 0);
+            this.tableLayoutPanelDonorTab.Controls.Add(this.checkBoxSameAsRecipient, 0, 1);
+            this.tableLayoutPanelDonorTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelDonorTab.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelDonorTab.Name = "tableLayoutPanelDonorTab";
+            this.tableLayoutPanelDonorTab.RowCount = 3;
+            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelDonorTab.Size = new System.Drawing.Size(73, 21);
+            this.tableLayoutPanelDonorTab.TabIndex = 0;
+            // 
             // personInfoPanelDonor
             // 
             this.personInfoPanelDonor.AutoSize = true;
             this.personInfoPanelDonor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.personInfoPanelDonor.Location = new System.Drawing.Point(3, 3);
             this.personInfoPanelDonor.Name = "personInfoPanelDonor";
-            this.personInfoPanelDonor.Size = new System.Drawing.Size(194, 394);
+            this.personInfoPanelDonor.Size = new System.Drawing.Size(67, 269);
             this.personInfoPanelDonor.TabIndex = 0;
+            // 
+            // checkBoxSameAsRecipient
+            // 
+            this.checkBoxSameAsRecipient.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkBoxSameAsRecipient.AutoSize = true;
+            this.checkBoxSameAsRecipient.Location = new System.Drawing.Point(3, 291);
+            this.checkBoxSameAsRecipient.Name = "checkBoxSameAsRecipient";
+            this.checkBoxSameAsRecipient.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxSameAsRecipient.TabIndex = 0;
+            this.checkBoxSameAsRecipient.Text = "Same as Recipient Information";
+            this.checkBoxSameAsRecipient.UseVisualStyleBackColor = true;
             // 
             // tabPageRecipient
             // 
-            this.tabPageRecipient.Controls.Add(tableLayoutPanelRecipientTab);
             this.tabPageRecipient.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageRecipient.Controls.Add(this.tableLayoutPanelRecipientTab);
             this.tabPageRecipient.Location = new System.Drawing.Point(4, 22);
             this.tabPageRecipient.Name = "tabPageRecipient";
             this.tabPageRecipient.Padding = new System.Windows.Forms.Padding(3);
@@ -329,14 +359,41 @@
             this.tabPageRecipient.TabIndex = 1;
             this.tabPageRecipient.Text = "Recipient Information";
             // 
+            // tableLayoutPanelRecipientTab
+            // 
+            this.tableLayoutPanelRecipientTab.ColumnCount = 1;
+            this.tableLayoutPanelRecipientTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRecipientTab.Controls.Add(this.personInfoPanelRecipient, 0, 0);
+            this.tableLayoutPanelRecipientTab.Controls.Add(this.checkBoxSameAsDonor, 0, 1);
+            this.tableLayoutPanelRecipientTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelRecipientTab.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelRecipientTab.Name = "tableLayoutPanelRecipientTab";
+            this.tableLayoutPanelRecipientTab.RowCount = 3;
+            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(186, 68);
+            this.tableLayoutPanelRecipientTab.TabIndex = 0;
+            // 
             // personInfoPanelRecipient
             // 
             this.personInfoPanelRecipient.AutoSize = true;
             this.personInfoPanelRecipient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.personInfoPanelRecipient.Location = new System.Drawing.Point(3, 3);
             this.personInfoPanelRecipient.Name = "personInfoPanelRecipient";
-            this.personInfoPanelRecipient.Size = new System.Drawing.Size(194, 394);
+            this.personInfoPanelRecipient.Size = new System.Drawing.Size(180, 269);
             this.personInfoPanelRecipient.TabIndex = 0;
+            // 
+            // checkBoxSameAsDonor
+            // 
+            this.checkBoxSameAsDonor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkBoxSameAsDonor.AutoSize = true;
+            this.checkBoxSameAsDonor.Location = new System.Drawing.Point(3, 291);
+            this.checkBoxSameAsDonor.Name = "checkBoxSameAsDonor";
+            this.checkBoxSameAsDonor.Size = new System.Drawing.Size(154, 17);
+            this.checkBoxSameAsDonor.TabIndex = 0;
+            this.checkBoxSameAsDonor.Text = "Same as Donor Information";
+            this.checkBoxSameAsDonor.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -392,60 +449,6 @@
             this.panelSectionImage.Size = new System.Drawing.Size(200, 100);
             this.panelSectionImage.TabIndex = 0;
             // 
-            // tableLayoutPanelDonorTab
-            // 
-            this.tableLayoutPanelDonorTab.ColumnCount = 1;
-            this.tableLayoutPanelDonorTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelDonorTab.Controls.Add(this.personInfoPanelDonor, 0, 0);
-            this.tableLayoutPanelDonorTab.Controls.Add(this.checkBoxSameAsRecipient, 0, 1);
-            this.tableLayoutPanelDonorTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelDonorTab.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelDonorTab.Name = "tableLayoutPanelDonorTab";
-            this.tableLayoutPanelDonorTab.RowCount = 3;
-            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
-            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelDonorTab.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanelDonorTab.TabIndex = 0;
-            // 
-            // checkBoxSameAsRecipient
-            // 
-            this.checkBoxSameAsRecipient.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.checkBoxSameAsRecipient.AutoSize = true;
-            this.checkBoxSameAsRecipient.Location = new System.Drawing.Point(3, 416);
-            this.checkBoxSameAsRecipient.Name = "checkBoxSameAsRecipient";
-            this.checkBoxSameAsRecipient.Size = new System.Drawing.Size(162, 17);
-            this.checkBoxSameAsRecipient.TabIndex = 0;
-            this.checkBoxSameAsRecipient.Text = "Same as Recipient Information";
-            this.checkBoxSameAsRecipient.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelRecipientTab
-            // 
-            this.tableLayoutPanelRecipientTab.ColumnCount = 1;
-            this.tableLayoutPanelRecipientTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRecipientTab.Controls.Add(this.personInfoPanelRecipient, 0, 0);
-            this.tableLayoutPanelRecipientTab.Controls.Add(this.checkBoxSameAsDonor, 0, 1);
-            this.tableLayoutPanelRecipientTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRecipientTab.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelRecipientTab.Name = "tableLayoutPanelRecipientTab";
-            this.tableLayoutPanelRecipientTab.RowCount = 3;
-            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
-            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanelRecipientTab.TabIndex = 0;
-            // 
-            // checkBoxSameAsDonor
-            // 
-            this.checkBoxSameAsDonor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.checkBoxSameAsDonor.AutoSize = true;
-            this.checkBoxSameAsDonor.Location = new System.Drawing.Point(3, 416);
-            this.checkBoxSameAsDonor.Name = "checkBoxSameAsDonor";
-            this.checkBoxSameAsDonor.Size = new System.Drawing.Size(154, 17);
-            this.checkBoxSameAsDonor.TabIndex = 0;
-            this.checkBoxSameAsDonor.Text = "Same as Donor Information";
-            this.checkBoxSameAsDonor.UseVisualStyleBackColor = true;
-            // 
             // ShowDonorPanel
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -465,11 +468,13 @@
             this.tableLayoutPanelBottomLeftButtons.PerformLayout();
             this.tableLayoutPanelBottomRight.ResumeLayout(false);
             this.tabControlInfo.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPageDonor.ResumeLayout(false);
             this.tableLayoutPanelDonorTab.ResumeLayout(false);
             this.tableLayoutPanelDonorTab.PerformLayout();
+            this.tabPageRecipient.ResumeLayout(false);
             this.tableLayoutPanelRecipientTab.ResumeLayout(false);
             this.tableLayoutPanelRecipientTab.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
