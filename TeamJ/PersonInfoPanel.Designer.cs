@@ -306,6 +306,7 @@
             // 
             // PersonInfoPanel
             // 
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AutoSize = true;
             this.Controls.Add(this.tableLayoutPanelMain);

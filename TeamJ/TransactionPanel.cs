@@ -12,7 +12,7 @@ using System.Data.SqlTypes;
 
 namespace TeamJ
 {
-    public partial class TransactionPanel : Panel
+    public partial class TransactionPanel : UserControl
     {
         #region Private Methods
         private Sale sale = new Sale();

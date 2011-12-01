@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TeamJ
 {
-    public partial class AdvancedSearchPanel : Panel
+    public partial class AdvancedSearchPanel : UserControl
     {
 
         #region Private Variables

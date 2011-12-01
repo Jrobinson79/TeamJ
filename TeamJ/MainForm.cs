@@ -37,7 +37,7 @@ namespace TeamJ
         ///     Sets the Panel
         /// </summary>
         /// <param name="p"></param>
-        public void setPanel(Panel p)
+        public void setPanel(UserControl p)
         {
             panelToShow.Controls.Clear();
 

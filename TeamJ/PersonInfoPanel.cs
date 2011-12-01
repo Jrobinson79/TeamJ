@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TeamJ
 {
-    public partial class PersonInfoPanel : Panel
+    public partial class PersonInfoPanel : UserControl
     {
         #region Private Variables
 

@@ -34,6 +34,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelFindDonor = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonNewDonor = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelBackToHome = new System.Windows.Forms.Label();
             this.panelToShow = new System.Windows.Forms.GroupBox();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelButtons.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -117,8 +117,8 @@
             // 
             // labelFindDonor
             // 
-            this.labelFindDonor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelFindDonor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelFindDonor.AutoSize = true;
             this.labelFindDonor.Location = new System.Drawing.Point(3, 0);
             this.labelFindDonor.Name = "labelFindDonor";
@@ -138,6 +138,19 @@
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.Location = new System.Drawing.Point(121, 13);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
+            this.textBoxSearch.TabIndex = 1;
+            this.textBoxSearch.Text = "Enter Name Here";
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // panel2
             // 
@@ -183,9 +196,9 @@
             // 
             // panelFloat
             // 
-            this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFloat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFloat.AutoScroll = true;
             this.panelFloat.BackColor = System.Drawing.SystemColors.Control;
             this.panelFloat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -255,24 +268,12 @@
             // panelToShow
             // 
             this.panelToShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelToShow.Location = new System.Drawing.Point(3, 104);
+            this.panelToShow.Location = new System.Drawing.Point(5, 106);
+            this.panelToShow.Margin = new System.Windows.Forms.Padding(5);
             this.panelToShow.Name = "panelToShow";
-            this.panelToShow.Size = new System.Drawing.Size(935, 561);
+            this.panelToShow.Size = new System.Drawing.Size(931, 557);
             this.panelToShow.TabIndex = 1;
             this.panelToShow.TabStop = false;
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.Location = new System.Drawing.Point(121, 13);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
-            this.textBoxSearch.TabIndex = 1;
-            this.textBoxSearch.Text = "Enter Name Here";
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
-            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
-            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // MainForm
             // 

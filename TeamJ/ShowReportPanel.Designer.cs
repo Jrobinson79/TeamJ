@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ShowReportPanel
+            // 
+            this.Name = "ShowReportPanel";
+            this.Size = new System.Drawing.Size(999, 637);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
