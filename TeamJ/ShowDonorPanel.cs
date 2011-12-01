@@ -12,7 +12,7 @@ namespace TeamJ
     public partial class ShowDonorPanel : UserControl
     {
         #region Private Variables
-
+        private Boolean addingSale = false;
         #endregion
 
         #region Constructors
@@ -26,14 +26,19 @@ namespace TeamJ
             InitializeComponent();
             initialize();
 
+            addingSale = true;
+
             this.buttonUpdate.Text = "Create";
 
-            this.tableLayoutPanelBottomLeft.Visible = false;
+            this.tableLayoutPanelMainBottom.Controls.Clear();
 
             this.tableLayoutPanelMainBottom.ColumnStyles.Clear();
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 400F));
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+
+            selectSectionImage(null);
+
+            this.tableLayoutPanelMainBottom.Controls.Add(tableLayoutPanelImage, 0, 0);
             this.tableLayoutPanelMainBottom.Controls.Add(tableLayoutPanelBottomRight, 1, 0);
         }
 
@@ -181,19 +186,26 @@ namespace TeamJ
         /// <param name="section"></param>
         private void selectSectionImage(Section section)
         {
+            float size;
+
+            if (addingSale)
+                size = 450F;
+            else
+                size = 300F;
+
             tableLayoutPanelImageBorder.Controls.Remove(panelBrickImage);
 
             this.tableLayoutPanelImage.ColumnStyles.Clear();
             this.tableLayoutPanelImage.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.tableLayoutPanelImage.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
+            this.tableLayoutPanelImage.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, size));
             this.tableLayoutPanelImage.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
 
             this.tableLayoutPanelImageBorder.RowStyles.Clear();
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Absolute, 300F));
+            this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Absolute, size));
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-            if(section == null)
+            if (section == null)
             {
                 panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
             }
@@ -231,7 +243,17 @@ namespace TeamJ
                 }
             }
 
-            this.tableLayoutPanelImageBorder.Controls.Add(panelSectionImage, 0, 1);
+            if (addingSale)
+            {
+                groupBoxResults.Text = null;
+                groupBoxResults.Controls.Clear();
+                groupBoxResults.Controls.Add(panelSectionImage);
+                this.tableLayoutPanelImageBorder.Controls.Add(groupBoxResults, 0, 1);
+            }
+            else
+            {
+                this.tableLayoutPanelImageBorder.Controls.Add(panelSectionImage, 0, 1);
+            }
         }
 
         #endregion

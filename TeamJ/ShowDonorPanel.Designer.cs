@@ -48,16 +48,16 @@
             this.tabControlInfo = new System.Windows.Forms.TabControl();
             this.tabPageDonor = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelDonorTab = new System.Windows.Forms.TableLayoutPanel();
-            this.personInfoPanelDonor = new TeamJ.PersonInfoPanel(this.components);
             this.tabPageRecipient = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelRecipientTab = new System.Windows.Forms.TableLayoutPanel();
-            this.personInfoPanelRecipient = new TeamJ.PersonInfoPanel(this.components);
             this.checkBoxSameAsDonor = new System.Windows.Forms.CheckBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.transactionPanel1 = new TeamJ.TransactionPanel(this.components);
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanelBrickText2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelSectionImage = new System.Windows.Forms.Panel();
+            this.personInfoPanelDonor = new TeamJ.PersonInfoPanel(this.components);
+            this.personInfoPanelRecipient = new TeamJ.PersonInfoPanel(this.components);
+            this.transactionPanel1 = new TeamJ.TransactionPanel(this.components);
             this.tableLayoutPanelMainBottom.SuspendLayout();
             this.tableLayoutPanelBottomLeft.SuspendLayout();
             this.groupBoxResults.SuspendLayout();
@@ -78,14 +78,14 @@
             // tableLayoutPanelMainBottom
             // 
             this.tableLayoutPanelMainBottom.AutoSize = true;
-            this.tableLayoutPanelMainBottom.ColumnCount = 3;
+            this.tableLayoutPanelMainBottom.ColumnCount = 2;
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.tableLayoutPanelMainBottom.Controls.Add(this.tableLayoutPanelBottomLeft, 0, 0);
             this.tableLayoutPanelMainBottom.Controls.Add(this.tableLayoutPanelBottomRight, 1, 0);
             this.tableLayoutPanelMainBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMainBottom.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanelMainBottom.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.tableLayoutPanelMainBottom.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMainBottom.Name = "tableLayoutPanelMainBottom";
             this.tableLayoutPanelMainBottom.RowCount = 1;
@@ -284,7 +284,7 @@
             this.tableLayoutPanelBottomRight.RowCount = 2;
             this.tableLayoutPanelBottomRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelBottomRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanelBottomRight.Size = new System.Drawing.Size(493, 631);
+            this.tableLayoutPanelBottomRight.Size = new System.Drawing.Size(494, 631);
             this.tableLayoutPanelBottomRight.TabIndex = 0;
             // 
             // tabControlInfo
@@ -296,7 +296,7 @@
             this.tabControlInfo.Location = new System.Drawing.Point(3, 3);
             this.tabControlInfo.Name = "tabControlInfo";
             this.tabControlInfo.SelectedIndex = 0;
-            this.tabControlInfo.Size = new System.Drawing.Size(487, 590);
+            this.tabControlInfo.Size = new System.Drawing.Size(488, 590);
             this.tabControlInfo.TabIndex = 0;
             // 
             // tabPageDonor
@@ -306,7 +306,7 @@
             this.tabPageDonor.Location = new System.Drawing.Point(4, 22);
             this.tabPageDonor.Name = "tabPageDonor";
             this.tabPageDonor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDonor.Size = new System.Drawing.Size(479, 564);
+            this.tabPageDonor.Size = new System.Drawing.Size(480, 564);
             this.tabPageDonor.TabIndex = 0;
             this.tabPageDonor.Text = "Donor Information";
             // 
@@ -322,17 +322,8 @@
             this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelDonorTab.Size = new System.Drawing.Size(473, 558);
+            this.tableLayoutPanelDonorTab.Size = new System.Drawing.Size(474, 558);
             this.tableLayoutPanelDonorTab.TabIndex = 0;
-            // 
-            // personInfoPanelDonor
-            // 
-            this.personInfoPanelDonor.AutoSize = true;
-            this.personInfoPanelDonor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personInfoPanelDonor.Location = new System.Drawing.Point(3, 3);
-            this.personInfoPanelDonor.Name = "personInfoPanelDonor";
-            this.personInfoPanelDonor.Size = new System.Drawing.Size(467, 269);
-            this.personInfoPanelDonor.TabIndex = 0;
             // 
             // tabPageRecipient
             // 
@@ -341,7 +332,7 @@
             this.tabPageRecipient.Location = new System.Drawing.Point(4, 22);
             this.tabPageRecipient.Name = "tabPageRecipient";
             this.tabPageRecipient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRecipient.Size = new System.Drawing.Size(192, 74);
+            this.tabPageRecipient.Size = new System.Drawing.Size(480, 564);
             this.tabPageRecipient.TabIndex = 1;
             this.tabPageRecipient.Text = "Recipient Information";
             // 
@@ -358,17 +349,8 @@
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(186, 68);
+            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(474, 558);
             this.tableLayoutPanelRecipientTab.TabIndex = 0;
-            // 
-            // personInfoPanelRecipient
-            // 
-            this.personInfoPanelRecipient.AutoSize = true;
-            this.personInfoPanelRecipient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personInfoPanelRecipient.Location = new System.Drawing.Point(3, 3);
-            this.personInfoPanelRecipient.Name = "personInfoPanelRecipient";
-            this.personInfoPanelRecipient.Size = new System.Drawing.Size(180, 269);
-            this.personInfoPanelRecipient.TabIndex = 0;
             // 
             // checkBoxSameAsDonor
             // 
@@ -387,22 +369,14 @@
             this.tabPage1.Controls.Add(this.transactionPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(192, 74);
+            this.tabPage1.Size = new System.Drawing.Size(480, 564);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Transaction";
-            // 
-            // transactionPanel1
-            // 
-            this.transactionPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.transactionPanel1.Location = new System.Drawing.Point(0, 0);
-            this.transactionPanel1.Name = "transactionPanel1";
-            this.transactionPanel1.Size = new System.Drawing.Size(192, 74);
-            this.transactionPanel1.TabIndex = 0;
             // 
             // buttonUpdate
             // 
             this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.buttonUpdate.Location = new System.Drawing.Point(210, 599);
+            this.buttonUpdate.Location = new System.Drawing.Point(211, 599);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(72, 29);
             this.buttonUpdate.TabIndex = 0;
@@ -435,6 +409,32 @@
             this.panelSectionImage.Name = "panelSectionImage";
             this.panelSectionImage.Size = new System.Drawing.Size(200, 100);
             this.panelSectionImage.TabIndex = 0;
+            // 
+            // personInfoPanelDonor
+            // 
+            this.personInfoPanelDonor.AutoSize = true;
+            this.personInfoPanelDonor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanelDonor.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanelDonor.Name = "personInfoPanelDonor";
+            this.personInfoPanelDonor.Size = new System.Drawing.Size(468, 269);
+            this.personInfoPanelDonor.TabIndex = 0;
+            // 
+            // personInfoPanelRecipient
+            // 
+            this.personInfoPanelRecipient.AutoSize = true;
+            this.personInfoPanelRecipient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanelRecipient.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanelRecipient.Name = "personInfoPanelRecipient";
+            this.personInfoPanelRecipient.Size = new System.Drawing.Size(468, 269);
+            this.personInfoPanelRecipient.TabIndex = 0;
+            // 
+            // transactionPanel1
+            // 
+            this.transactionPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionPanel1.Location = new System.Drawing.Point(0, 0);
+            this.transactionPanel1.Name = "transactionPanel1";
+            this.transactionPanel1.Size = new System.Drawing.Size(480, 564);
+            this.transactionPanel1.TabIndex = 0;
             // 
             // ShowDonorPanel
             // 
