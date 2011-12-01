@@ -117,6 +117,18 @@ namespace TeamJ
 
         #endregion
 
+        #region Search()
+
+        private void Search()
+        {
+            using(TeamJDBEntities context = new TeamJDBEntities())
+            {
+                
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #region Events

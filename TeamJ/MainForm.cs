@@ -89,6 +89,7 @@ namespace TeamJ
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             setPanel(new SearchPanel(textBoxSearch.Text));
+            textBoxSearch.Text = "Enter Name Here";
         }
 
         #endregion
