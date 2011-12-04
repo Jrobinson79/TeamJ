@@ -316,10 +316,10 @@ namespace TeamJ
             // 
             // textBoxLine1
             // 
-            this.textBoxLine1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLine1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxLine1.Location = new System.Drawing.Point(60, 3);
             this.textBoxLine1.Name = "textBoxLine1";
-            this.textBoxLine1.Size = new System.Drawing.Size(930, 20);
+            this.textBoxLine1.Size = new System.Drawing.Size(231, 20);
             this.textBoxLine1.TabIndex = 0;
             // 
             // labelLine2
@@ -335,10 +335,10 @@ namespace TeamJ
             // 
             // textBoxLine2
             // 
-            this.textBoxLine2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLine2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxLine2.Location = new System.Drawing.Point(60, 24);
             this.textBoxLine2.Name = "textBoxLine2";
-            this.textBoxLine2.Size = new System.Drawing.Size(930, 20);
+            this.textBoxLine2.Size = new System.Drawing.Size(231, 20);
             this.textBoxLine2.TabIndex = 0;
             // 
             // labelLine3
@@ -354,10 +354,10 @@ namespace TeamJ
             // 
             // textBoxLine3
             // 
-            this.textBoxLine3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLine3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxLine3.Location = new System.Drawing.Point(60, 45);
             this.textBoxLine3.Name = "textBoxLine3";
-            this.textBoxLine3.Size = new System.Drawing.Size(930, 20);
+            this.textBoxLine3.Size = new System.Drawing.Size(231, 20);
             this.textBoxLine3.TabIndex = 0;
             // 
             // labelSectionName

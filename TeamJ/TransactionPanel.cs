@@ -139,7 +139,7 @@ namespace TeamJ
         {
             using (var context = new Context())
             {
-                if (this.comboBoxItemType.SelectedIndex > 0 &&
+                if (this.comboBoxItemType.SelectedIndex > -1 &&
                     !this.comboBoxItemType.Text.Trim().Equals(""))
                 {
                     this.textBoxPrice.Text = ((ItemType)comboBoxItemType.SelectedItem).Price.ToString("0.00");
@@ -160,21 +160,13 @@ namespace TeamJ
         {
             using (var context = new Context())
             {
-                this.comboBoxItemType.Items.Add("<Select Item>");
-
-				context.ItemTypes.Load();
+                context.ItemTypes.Load();
 				comboBoxItemType.DataSource = context.ItemTypes.Local.ToBindingList();
 				comboBoxItemType.DisplayMember = "Type";
-
-				this.comboBoxItemType.SelectedIndex = 0;
-
-				this.comboBoxSection.Items.Add("<Select Item>");
 				
 				context.Sections.Load();
 				comboBoxSection.DataSource = context.Sections.Local.ToBindingList();
 				comboBoxSection.DisplayMember = "Location";
-	
-				comboBoxSection.SelectedIndex = 0;
             }
         }
 
@@ -185,12 +177,12 @@ namespace TeamJ
             try
             {
                 labelTotalCalc.Text = "" +
-                    (Decimal.Parse(textBoxPrice.Text)
-                   + Decimal.Parse(textBoxDonation.Text.Trim()));
+                    ((textBoxPrice.Text.Trim().Equals("") ? 0 : Decimal.Parse(textBoxPrice.Text))
+                    + (textBoxDonation.Text.Trim().Equals("") ? 0 : Decimal.Parse(textBoxDonation.Text.Trim())));
             }
             catch (Exception)
             {
-                labelTotal.Text = "";
+                labelTotalCalc.Text = "";
             }
         }
 

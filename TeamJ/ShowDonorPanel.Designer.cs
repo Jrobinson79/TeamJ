@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowDonorPanel));
             this.tableLayoutPanelMainBottom = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelBottomLeft = new System.Windows.Forms.TableLayoutPanel();
@@ -47,10 +48,13 @@
             this.tabControlInfo = new System.Windows.Forms.TabControl();
             this.tabPageDonor = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelDonorTab = new System.Windows.Forms.TableLayoutPanel();
+            this.personInfoPanel1 = new TeamJ.PersonInfoPanel(this.components);
             this.tabPageRecipient = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelRecipientTab = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxSameAsDonor = new System.Windows.Forms.CheckBox();
+            this.personInfoPanel2 = new TeamJ.PersonInfoPanel(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.transactionPanel2 = new TeamJ.TransactionPanel(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonInvoice = new System.Windows.Forms.Button();
@@ -67,8 +71,10 @@
             this.tableLayoutPanelBottomRight.SuspendLayout();
             this.tabControlInfo.SuspendLayout();
             this.tabPageDonor.SuspendLayout();
+            this.tableLayoutPanelDonorTab.SuspendLayout();
             this.tabPageRecipient.SuspendLayout();
             this.tableLayoutPanelRecipientTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,15 +317,25 @@
             // 
             this.tableLayoutPanelDonorTab.ColumnCount = 1;
             this.tableLayoutPanelDonorTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelDonorTab.Controls.Add(this.personInfoPanel1, 0, 0);
             this.tableLayoutPanelDonorTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelDonorTab.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelDonorTab.Name = "tableLayoutPanelDonorTab";
             this.tableLayoutPanelDonorTab.RowCount = 2;
-            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+            this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 291F));
             this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelDonorTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelDonorTab.Size = new System.Drawing.Size(474, 550);
             this.tableLayoutPanelDonorTab.TabIndex = 0;
+            // 
+            // personInfoPanel1
+            // 
+            this.personInfoPanel1.AutoSize = true;
+            this.personInfoPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanel1.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanel1.Name = "personInfoPanel1";
+            this.personInfoPanel1.Size = new System.Drawing.Size(468, 285);
+            this.personInfoPanel1.TabIndex = 0;
             // 
             // tabPageRecipient
             // 
@@ -328,7 +344,7 @@
             this.tabPageRecipient.Location = new System.Drawing.Point(4, 22);
             this.tabPageRecipient.Name = "tabPageRecipient";
             this.tabPageRecipient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRecipient.Size = new System.Drawing.Size(480, 556);
+            this.tabPageRecipient.Size = new System.Drawing.Size(192, 74);
             this.tabPageRecipient.TabIndex = 1;
             this.tabPageRecipient.Text = "Recipient Information";
             // 
@@ -337,6 +353,7 @@
             this.tableLayoutPanelRecipientTab.ColumnCount = 1;
             this.tableLayoutPanelRecipientTab.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRecipientTab.Controls.Add(this.checkBoxSameAsDonor, 0, 1);
+            this.tableLayoutPanelRecipientTab.Controls.Add(this.personInfoPanel2, 0, 0);
             this.tableLayoutPanelRecipientTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelRecipientTab.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelRecipientTab.Name = "tableLayoutPanelRecipientTab";
@@ -344,7 +361,7 @@
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelRecipientTab.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(474, 558);
+            this.tableLayoutPanelRecipientTab.Size = new System.Drawing.Size(186, 68);
             this.tableLayoutPanelRecipientTab.TabIndex = 0;
             // 
             // checkBoxSameAsDonor
@@ -358,14 +375,32 @@
             this.checkBoxSameAsDonor.Text = "Same as Donor Information";
             this.checkBoxSameAsDonor.UseVisualStyleBackColor = true;
             // 
+            // personInfoPanel2
+            // 
+            this.personInfoPanel2.AutoSize = true;
+            this.personInfoPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personInfoPanel2.Location = new System.Drawing.Point(3, 3);
+            this.personInfoPanel2.Name = "personInfoPanel2";
+            this.personInfoPanel2.Size = new System.Drawing.Size(180, 269);
+            this.personInfoPanel2.TabIndex = 1;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.transactionPanel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(480, 556);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Transaction";
+            // 
+            // transactionPanel2
+            // 
+            this.transactionPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transactionPanel2.Location = new System.Drawing.Point(0, 0);
+            this.transactionPanel2.Name = "transactionPanel2";
+            this.transactionPanel2.Size = new System.Drawing.Size(480, 556);
+            this.transactionPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -453,9 +488,12 @@
             this.tableLayoutPanelBottomRight.ResumeLayout(false);
             this.tabControlInfo.ResumeLayout(false);
             this.tabPageDonor.ResumeLayout(false);
+            this.tableLayoutPanelDonorTab.ResumeLayout(false);
+            this.tableLayoutPanelDonorTab.PerformLayout();
             this.tabPageRecipient.ResumeLayout(false);
             this.tableLayoutPanelRecipientTab.ResumeLayout(false);
             this.tableLayoutPanelRecipientTab.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -494,5 +532,8 @@
         private System.Windows.Forms.CheckBox checkBoxSameAsDonor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button buttonInvoice;
+        private PersonInfoPanel personInfoPanel1;
+        private PersonInfoPanel personInfoPanel2;
+        private TransactionPanel transactionPanel2;
     }
 }
