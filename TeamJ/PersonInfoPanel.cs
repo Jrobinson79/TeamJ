@@ -103,17 +103,17 @@ namespace TeamJ
         /// </summary>
         public void savePerson()
         {
-            person.FirstName = textBoxFirstName.Text;
-            person.MiddleName = textBoxMiddleName.Text;
-            person.LastName = textBoxLastName.Text;
-            person.Email = textBoxEmail.Text;
-            person.Phone = textBoxPhone.Text;
+            person.FirstName = textBoxFirstName.Text.Trim();
+            person.MiddleName = textBoxMiddleName.Text.Trim();
+            person.LastName = textBoxLastName.Text.Trim();
+            person.Email = textBoxEmail.Text.Trim();
+            person.Phone = textBoxPhone.Text.Trim();
 
             Address addr = person.Address;
-            addr.Street = textBoxAddress.Text;
-            addr.City = textBoxCity.Text;
-            addr.State = textBoxState.Text;
-            addr.Zipcode = textBoxZip.Text;
+            addr.Street = textBoxAddress.Text.Trim();
+            addr.City = textBoxCity.Text.Trim();
+            addr.State = textBoxState.Text.Trim();
+            addr.Zipcode = textBoxZip.Text.Trim();
         }
 
         #endregion

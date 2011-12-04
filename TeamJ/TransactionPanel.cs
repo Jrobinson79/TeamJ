@@ -125,6 +125,24 @@ namespace TeamJ
             item.Line2 = textBoxLine2.Text;
             item.Line3 = textBoxLine3.Text;
 
+            TextBox[] boxes = { textBoxLine1, textBoxLine2, textBoxLine3 };
+            int count = 1;
+
+            foreach (TextBox b in boxes)
+            {
+                if (!b.Text.Trim().Equals(""))
+                {
+                    switch (count)
+                    {
+                        case 1: item.Line1 = b.Text.Trim(); break;
+                        case 2: item.Line2 = b.Text.Trim(); break;
+                        case 3: item.Line3 = b.Text.Trim(); break;
+                    }
+
+                    count++;
+                }
+            }
+
             item.Section = (Section)comboBoxSection.SelectedItem;
             item.Sale = sale;
         }
