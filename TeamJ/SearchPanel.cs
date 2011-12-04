@@ -26,6 +26,7 @@ namespace TeamJ
         public SearchPanel()
         {
             InitializeComponent();
+            initialize();
         }
 
         #endregion
@@ -85,7 +86,7 @@ namespace TeamJ
                                   orderby sale.Date descending
                                   select new { sale, people };
 
-                // populate listbox wit results
+                // populate listbox with results
                 foreach (var result in peopleQuery)
                 {
                     TransactionItem item = new TransactionItem(result.people, result.sale, "Donor");
@@ -105,7 +106,7 @@ namespace TeamJ
                               orderby sale.Date descending
                               select new { sale, people };
 
-                // populate listbox wit results
+                // populate listbox with results
                 foreach (var result in peopleQuery)
                 {
                     TransactionItem item = new TransactionItem(result.people, result.sale, "Recipient");
@@ -137,7 +138,13 @@ namespace TeamJ
             {
                 string test = this.listBoxSelect.SelectedIndex.ToString();
                 int inttest = int.Parse(test);
-                Program.mForm.setPanel(new ShowDonorPanel(this.listBoxSelect, this.listBoxSelect.GetItemText(this.listBoxSelect.SelectedItem)));
+
+                List<TransactionItem> mList = new List<TransactionItem>();
+
+                foreach(Object o in listBoxSelect.Items)
+                    mList.Add((TransactionItem)o);
+
+                Program.mForm.setPanel(new ShowDonorPanel(mList, this.listBoxSelect.SelectedIndex));
             }
         }
 
@@ -180,6 +187,12 @@ namespace TeamJ
         }
 
         #endregion
+
+
+        private void textBoxHighlight(object sender, EventArgs e)
+        {
+            textBoxSearch.SelectAll();
+        }
 
         #region buttonNew_Click(object sender, EventArgs e)
         /// <summary>
@@ -256,10 +269,12 @@ namespace TeamJ
             if (textBoxSearch.Text.Trim().Equals("") || textBoxSearch.Text.Equals("Enter Name Here"))
             {
                 buttonSearch.Enabled = false;
+                listBoxSelect.Items.Clear();
             }
             else
             {
                 buttonSearch.Enabled = true;
+                setSearchString(textBoxSearch.Text);
             }
         }
 

@@ -38,7 +38,8 @@ namespace TeamJ
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             this.tableLayoutPanelMainBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
 
-            selectSectionImage(null);
+            clearAndSetTables();
+            selectSectionImageForAddingSale(null);
 
             this.tableLayoutPanelMainBottom.Controls.Add(tableLayoutPanelImage, 0, 0);
             this.tableLayoutPanelMainBottom.Controls.Add(tableLayoutPanelBottomRight, 1, 0);
@@ -46,51 +47,90 @@ namespace TeamJ
 
         #endregion
 
-        #region ShowDonorPanel(ListBox list, string selectedName)
-        /// <summary>
-        ///     Constructs a ShowDonorPanel object
-        /// </summary>
-        /// <param name="sales"></param>
-        public ShowDonorPanel(ListBox list, string selectedName)
+        public ShowDonorPanel(List<TransactionItem> list, int selectedIndex)
         {
-            // sales should be from the same donor
-
             InitializeComponent();
-
             initialize();
-            listBoxResults.Items.AddRange(list.Items);
-            listBoxResults.SelectedIndex = list.FindString(selectedName);
-            selectBrickImage(null, null, null);
+
+            listBoxResults.DataSource = list;
+
+            listBoxResults.SelectedIndexChanged += (s, e) =>
+            {
+                updateChanges();
+            };
+
+            listBoxResults.SelectedIndex = selectedIndex;
+            updateChanges();
         }
 
         #endregion
 
-        #endregion
-
         #region Private Methods
+
+        //  Assuming the listbox has a list of sale objects;
+        private void updateChanges()
+        {
+            int saleid = ((TransactionItem)listBoxResults.SelectedItem).getSale().SaleID;
+
+            using (var context = new Context())
+            {
+                Sale sale = context.Sales.Where(i => i.SaleID == saleid).ToList().First();
+                Item item = sale.Items.First();
+
+                personInfoPanelDonor.setPerson(sale.Donor, true);
+                personInfoPanelRecipient.setPerson(sale.Recipient, true);
+                transactionPanel1.SetSale(sale);
+
+                checkBoxSameAsDonor.Checked = (sale.DonorID == sale.RecipientID);
+
+                selectImage();
+            }
+        }
 
         #region initialize();
 
         private void initialize()
         {
             this.Dock = DockStyle.Fill;
+
+            TextBox textBox1, textBox2, textBox3;
+
+            textBox1 = transactionPanel1.getTextBox1();
+            textBox2 = transactionPanel1.getTextBox2();
+            textBox3 = transactionPanel1.getTextBox3();
+
+            textBox1.TextChanged += (s, e) =>
+            {
+                labelBrickTextLine1.Text = textBox1.Text;
+            };
+
+            textBox2.TextChanged += (s, e) =>
+            {
+                if (textBox2.Text.Trim().Equals("") || !tableLayoutPanelBrickText2.Contains(labelBrickTextLine2))
+                    selectBrickImage();
+                else
+                    labelBrickTextLine2.Text = textBox2.Text;
+            };
+
+            textBox3.TextChanged += (s, e) =>
+            {
+                if (textBox3.Text.Trim().Equals("") || !tableLayoutPanelBrickText.Contains(labelBrickTextLine3))
+                    selectBrickImage();
+                else
+                    labelBrickTextLine3.Text = textBox3.Text;
+            };
         }
 
         #endregion
-
-        #region selectBrickImage(String lineText1, String lineText2, String lineText3)
-        /// <summary>
-        /// This method sets the image as the brick image.  lineText1 should have a value before
-        /// lineText2, and lineText2 should have a value before lineText3 is given a value.
-        /// ("String Line 1", null, null) would show one line of text.
-        /// ("String line 1", "String line 2", null) would show two lines of text.
-        /// ("String line 1", "String line 2", "String line 3) would show three lines of text.
-        /// </summary>
-        /// <param name="lineText1"></param>
-        /// <param name="lineText2"></param>
-        /// <param name="lineText3"></param>
-        private void selectBrickImage(String lineText1, String lineText2, String lineText3)
+        
+        private void selectBrickImage()
         {
+            String lineText1, lineText2, lineText3;
+
+            lineText1 = transactionPanel1.getTextBox1().Text;
+            lineText2 = transactionPanel1.getTextBox2().Text;
+            lineText3 = transactionPanel1.getTextBox3().Text;
+
             tableLayoutPanelImageBorder.Controls.Remove(panelSectionImage);
 
             this.tableLayoutPanelImage.ColumnStyles.Clear();
@@ -104,6 +144,8 @@ namespace TeamJ
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
             this.tableLayoutPanelImageBorder.Controls.Add(panelBrickImage, 0, 1);
+            panelBrickImage.Controls.Remove(tableLayoutPanelBrickText);
+            panelBrickImage.Controls.Remove(tableLayoutPanelBrickText2);
 
             tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine1);
             tableLayoutPanelBrickText.Controls.Remove(labelBrickTextLine2);
@@ -111,10 +153,10 @@ namespace TeamJ
             tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine1);
             tableLayoutPanelBrickText2.Controls.Remove(labelBrickTextLine2);
 
-            if (lineText3 == null)
+            if (lineText3.Trim().Equals(""))
             {
                 // Only one line of text
-                if (lineText2 == null)
+                if (lineText2.Trim().Equals(""))
                 {
                     this.tableLayoutPanelBrickText.RowStyles.Clear();
                     this.tableLayoutPanelBrickText.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -126,6 +168,8 @@ namespace TeamJ
                     this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 2);
 
                     labelBrickTextLine1.Text = lineText1;
+
+                    panelBrickImage.Controls.Add(tableLayoutPanelBrickText);
                 }
                 //  Two lines of text
                 else
@@ -136,11 +180,12 @@ namespace TeamJ
                     this.tableLayoutPanelBrickText2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
                     this.tableLayoutPanelBrickText2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
 
-                    this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine1, 0, 1);
-                    this.tableLayoutPanelBrickText.Controls.Add(labelBrickTextLine2, 0, 2);
+                    this.tableLayoutPanelBrickText2.Controls.Add(labelBrickTextLine1, 0, 1);
+                    this.tableLayoutPanelBrickText2.Controls.Add(labelBrickTextLine2, 0, 2);
 
                     labelBrickTextLine1.Text = lineText1;
                     labelBrickTextLine2.Text = lineText2;
+                    panelBrickImage.Controls.Add(tableLayoutPanelBrickText2);
                 }
             }
             // Three lines of text
@@ -160,10 +205,9 @@ namespace TeamJ
                 labelBrickTextLine1.Text = lineText1;
                 labelBrickTextLine2.Text = lineText2;
                 labelBrickTextLine3.Text = lineText3;
+                panelBrickImage.Controls.Add(tableLayoutPanelBrickText);
             }
         }
-
-        #endregion
 
         #region selectSectionImage()
         /// <summary>
@@ -171,7 +215,33 @@ namespace TeamJ
         /// will show the default section image.
         /// </summary>
         /// <param name="section"></param>
-        private void selectSectionImage(Section section)
+        private void selectSectionImage()
+        {
+            Section section;
+            int saleid = ((TransactionItem)listBoxResults.SelectedItem).getSale().SaleID;
+
+            using (var context = new Context())
+            {
+                Item item = context.Sales
+                    .Where(i => i.SaleID == saleid)
+                    .ToList()
+                    .First() // get sale
+                    .Items
+                    .First(); // get item
+
+                section = item.Section;
+            }
+
+            clearAndSetTables();
+
+            panelSectionImage.BackgroundImage = getSectionImage(section.Location);
+                
+            this.tableLayoutPanelImageBorder.Controls.Add(panelSectionImage, 0, 1);
+        }
+
+        #endregion
+
+        private void clearAndSetTables()
         {
             float size;
 
@@ -191,59 +261,53 @@ namespace TeamJ
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Absolute, size));
             this.tableLayoutPanelImageBorder.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+        }
 
-            if (section == null)
+        private Image getSectionImage(String location)
+        {
+            switch (location)
             {
-                panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
-            }
-            else
-            {
-                switch (section.Location)
-                {
-                    case "A":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_A;
-                        break;
-                    case "B":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_B;
-                        break;
-                    case "C":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_C;
-                        break;
-                    case "D":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_D;
-                        break;
-                    case "E":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_E;
-                        break;
-                    case "F":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_F;
-                        break;
-                    case "G":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_G;
-                        break;
-                    case "H":
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza_H;
-                        break;
-                    default:
-                        panelSectionImage.BackgroundImage = Properties.Resources.Plaza;
-                        break;
-                }
-            }
-
-            if (addingSale)
-            {
-                groupBoxResults.Text = null;
-                groupBoxResults.Controls.Clear();
-                groupBoxResults.Controls.Add(panelSectionImage);
-                this.tableLayoutPanelImageBorder.Controls.Add(groupBoxResults, 0, 1);
-            }
-            else
-            {
-                this.tableLayoutPanelImageBorder.Controls.Add(panelSectionImage, 0, 1);
+                case "A":
+                    return Properties.Resources.Plaza_A;
+                case "B":
+                    return Properties.Resources.Plaza_B;
+                case "C":
+                    return Properties.Resources.Plaza_C;
+                case "D":
+                    return Properties.Resources.Plaza_D;
+                case "E":
+                    return Properties.Resources.Plaza_E;
+                case "F":
+                    return Properties.Resources.Plaza_F;
+                case "G":
+                    return Properties.Resources.Plaza_G;
+                case "H":
+                    return Properties.Resources.Plaza_H;
+                default:
+                    return Properties.Resources.Plaza;
             }
         }
 
-        #endregion
+        private void selectSectionImageForAddingSale(Section s)
+        {
+            if (s == null)
+                panelSectionImage.BackgroundImage = getSectionImage("");
+            else
+                panelSectionImage.BackgroundImage = getSectionImage(s.Location);
+
+            groupBoxResults.Text = null;
+            groupBoxResults.Controls.Clear();
+            groupBoxResults.Controls.Add(panelSectionImage);
+            this.tableLayoutPanelImageBorder.Controls.Add(groupBoxResults, 0, 1);
+        }
+
+        private void selectImage()
+        {
+            if (radioButtonBrick.Checked)
+                selectBrickImage();
+            else
+                selectSectionImage();
+        }
 
         #endregion
 
@@ -251,24 +315,8 @@ namespace TeamJ
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonBrick.Checked)
-                selectBrickImage(null, null, null);
-            else
-                selectSectionImage(null);
+            selectImage();
         }
-
-        #region listBoxRecipients_SelectedIndexChanged(object sender, MouseEventArgs e)
-        /// <summary>
-        ///     Handles the event that a new selection was made in the listbox.
-        /// </summary>
-        /// <param name="sender">The object that is calling the method</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void listBoxRecipients_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // change the tabpageRecipient to the selected recipient
-        }
-
-        #endregion
 
         #region buttonUpdate_Click(object sender, MouseEventArgs e)
         /// <summary>
@@ -278,10 +326,16 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            int saleid = ((TransactionItem)listBoxResults.SelectedItem).getSale().SaleID;
+
             using (var context = new Context())
             {
+                // TODO: save the person on update, add the person on addingSale
                 personInfoPanelDonor.savePerson();
                 personInfoPanelRecipient.savePerson();
+                transactionPanel1.SaveSale();
+
+                Sale sale = context.Sales.Where(i => i.SaleID == saleid).ToList().First();
             }
         }
 
@@ -292,6 +346,31 @@ namespace TeamJ
 
         }
 
+        Person bufferPerson;
+        Address bufferAddress;
+        private void checkBoxSameAsDonor_CheckedChanged(object sender, EventArgs e)
+        {
+            personInfoPanelDonor.savePerson();
+            personInfoPanelRecipient.savePerson();
+
+            if (checkBoxSameAsDonor.Checked)
+            {
+                bufferPerson = personInfoPanelRecipient.getPerson();
+                bufferAddress = personInfoPanelRecipient.getAddress();
+                personInfoPanelRecipient.setPerson(personInfoPanelDonor.getPerson(), !addingSale);
+            }
+            else if (bufferPerson != null)
+            {
+                bufferPerson.Address = bufferAddress;
+                personInfoPanelRecipient.setPerson(bufferPerson, !addingSale);
+            }
+            else
+            {
+                Person p = new Person();
+                p.Address = new Address();
+                personInfoPanelRecipient.setPerson(p, !addingSale);
+            }
+        }
 
         #endregion
     }

@@ -72,6 +72,21 @@ namespace TeamJ
             this.newSale = newSale;
         }
 
+        public TextBox getTextBox1()
+        {
+            return textBoxLine1;
+        }
+
+        public TextBox getTextBox2()
+        {
+            return textBoxLine2;
+        }
+
+        public TextBox getTextBox3()
+        {
+            return textBoxLine3;
+        }
+
         #region SetSale(Sale s)
         /// <summary>
         ///     Sets the textbox fields from the data contained in the Sale parameter
@@ -90,7 +105,7 @@ namespace TeamJ
             this.textBoxLine2.Text = item.Line2;
             this.textBoxLine3.Text = item.Line3;
 
-            comboBoxSection.SelectedItem = item.Section.Location;
+            comboBoxSection.SelectedText = item.Section.Location;
 
             this.textBoxPrice.Text = item.ItemType.Price.ToString();
             this.textBoxDonation.Text = (s.Cost - item.ItemType.Price).ToString();

@@ -16,6 +16,7 @@ namespace TeamJ
         #region Private Variables
 
         private Person person = new Person();
+        private Address address = new Address();
 
         #endregion
 
@@ -65,22 +66,34 @@ namespace TeamJ
         ///     Sets the appropriate textbox fields with the information from the Person parameter.
         /// </summary>
         /// <param name="p">The Person object to load into the textbox fields</param>
-        public void setPerson(Person p)
+        public void setPerson(Person p, bool requery)
         {
-            this.person = p;
+            if (requery)
+            {
+                using (var context = new Context()) // requery the database because passing the person drops
+                //   the reference the the address object in the person
+                {
+                    person = context.People.Where(i => i.PersonID == p.PersonID).ToList().First();
+                    address = person.Address;
+                }
+            }
+            else
+            {
+                person = p;
+                address = person.Address;
+            }
 
-            this.textBoxFirstName.Text = p.FirstName;
-            this.textBoxMiddleName.Text = p.MiddleName;
-            this.textBoxLastName.Text = p.LastName;
+            this.textBoxFirstName.Text = person.FirstName;
+            this.textBoxMiddleName.Text = person.MiddleName;
+            this.textBoxLastName.Text = person.LastName;
 
-            this.textBoxEmail.Text = p.Email;
-            this.textBoxPhone.Text = p.Phone;
+            this.textBoxEmail.Text = person.Email;
+            this.textBoxPhone.Text = person.Phone;
 
-            Address addr = p.Address;
-            this.textBoxAddress.Text = addr.Street;
-            this.textBoxCity.Text = addr.City;
-            this.textBoxState.Text = addr.State;
-            this.textBoxZip.Text = addr.Zipcode;
+            this.textBoxAddress.Text = address.Street;
+            this.textBoxCity.Text = address.City;
+            this.textBoxState.Text = address.State;
+            this.textBoxZip.Text = address.Zipcode;
         }
 
         #endregion
@@ -97,6 +110,11 @@ namespace TeamJ
 
         #endregion
 
+        public Address getAddress()
+        {
+            return address;
+        }
+
         #region savePerson()
         /// <summary>
         ///     Save the information from the textbox fields into the Person object of the class.
@@ -109,11 +127,12 @@ namespace TeamJ
             person.Email = textBoxEmail.Text.Trim();
             person.Phone = textBoxPhone.Text.Trim();
 
-            Address addr = person.Address;
-            addr.Street = textBoxAddress.Text.Trim();
-            addr.City = textBoxCity.Text.Trim();
-            addr.State = textBoxState.Text.Trim();
-            addr.Zipcode = textBoxZip.Text.Trim();
+            address.Street = textBoxAddress.Text.Trim();
+            address.City = textBoxCity.Text.Trim();
+            address.State = textBoxState.Text.Trim();
+            address.Zipcode = textBoxZip.Text.Trim();
+
+            person.Address = address;
         }
 
         #endregion

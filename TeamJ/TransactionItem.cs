@@ -7,7 +7,7 @@ using DomainClasses;
 
 namespace TeamJ
 {
-    class TransactionItem
+    public class TransactionItem
     {
         private Sale sale;
         private Person person;
@@ -18,6 +18,21 @@ namespace TeamJ
             this.sale = sale;
             this.person = person;
             this.transactionType = transactionType;
+        }
+
+        public Sale getSale()
+        {
+            return sale;
+        }
+
+        public Person getPerson()
+        {
+            return person;
+        }
+
+        public String getTransactionType()
+        {
+            return transactionType;
         }
 
         public override string ToString()

@@ -148,6 +148,7 @@
             this.textBoxSearch.TabIndex = 1;
             this.textBoxSearch.Text = "Enter Name Here";
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxHighlight);
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);

@@ -88,8 +88,7 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            setPanel(new SearchPanel(textBoxSearch.Text));
-            textBoxSearch.Text = "Enter Name Here";
+            search();
         }
 
         #endregion
@@ -158,6 +157,11 @@ namespace TeamJ
 
         #endregion
 
+        private void textBoxHighlight(object sender, EventArgs e)
+        {
+            textBoxSearch.SelectAll();
+        }
+
         #region buttonAdvancedSearch_Click(object sender, EventArgs e)
         /// <summary>
         ///     Brings up the advanced search panel
@@ -181,10 +185,17 @@ namespace TeamJ
         {
             //  Search for transaction when user keys enter
             if (buttonSearch.Enabled && e.KeyCode == Keys.Enter)
-                setPanel(new SearchPanel(textBoxSearch.Text));
+                search();
         }
 
         #endregion
+
+        private void search()
+        {
+            String search = textBoxSearch.Text;
+            setPanel(new SearchPanel(search));
+            textBoxSearch.Text = "Enter Name Here";
+        }
 
         #region textBoxSearch_TextChanged(object sender, EventArgs e)
         /// <summary>

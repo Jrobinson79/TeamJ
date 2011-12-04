@@ -258,7 +258,7 @@ namespace TeamJ
             this.comboBoxSection.FormattingEnabled = true;
             this.comboBoxSection.Location = new System.Drawing.Point(79, 5);
             this.comboBoxSection.Name = "comboBoxSection";
-            this.comboBoxSection.Size = new System.Drawing.Size(133, 21);
+            this.comboBoxSection.Size = new System.Drawing.Size(87, 21);
             this.comboBoxSection.TabIndex = 0;
             this.comboBoxSection.SelectedIndexChanged += new System.EventHandler(this.comboBoxSection_SelectedIndexChanged);
             // 
