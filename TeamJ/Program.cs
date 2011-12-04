@@ -9,6 +9,8 @@ namespace TeamJ
 {
     static class Program
     {
+        public static MainForm mForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,7 +21,8 @@ namespace TeamJ
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestForm());
+            mForm = new MainForm();
+            Application.Run(mForm);
         }
     }
 }

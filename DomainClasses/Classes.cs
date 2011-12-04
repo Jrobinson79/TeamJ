@@ -32,6 +32,7 @@ namespace DomainClasses
     {
         public int PersonID { get; set; }
         public string FirstName { get; set; }
+        public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -51,6 +52,13 @@ namespace DomainClasses
         public virtual Person Donor { get; set; }
         public virtual Person Recipient { get; set; }
         public virtual ICollection<Item> Items { get; set; }
+
+        public override String ToString()
+        {
+            return ("DONOR: " + Donor.FirstName + " " + Donor.LastName + 
+                    " - " + Date.ToShortDateString() + " - " + 
+                    "RECIPIENT: " + Recipient.FirstName + " " + Recipient.LastName);
+        }
     }
 
     public class Item

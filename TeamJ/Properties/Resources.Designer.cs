@@ -67,5 +67,83 @@ namespace TeamJ.Properties
                 resourceCulture = value;
             }
         }
+	
+	internal static System.Drawing.Bitmap GroundAndPeople {
+            get {
+                object obj = ResourceManager.GetObject("GroundAndPeople", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap logo1 {
+            get {
+                object obj = ResourceManager.GetObject("logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza {
+            get {
+                object obj = ResourceManager.GetObject("Plaza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_A {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_B {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_B", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_C {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_C", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_D {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_D", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_E {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_E", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_F {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_F", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_G {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_G", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plaza_H {
+            get {
+                object obj = ResourceManager.GetObject("Plaza_H", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
     }
 }

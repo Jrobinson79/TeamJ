@@ -8,3 +8,8 @@ C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\bin\Debug\DomainClasses.pdb
 C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\DomainClasses.dll
 C:\Users\jeremiah\Desktop\TeamJ\DomainClasses\obj\Debug\DomainClasses.pdb
+C:\Users\Sx3StoneSky318\Desktop\repo\TeamJ\DomainClasses\bin\Debug\DomainClasses.dll
+C:\Users\Sx3StoneSky318\Desktop\repo\TeamJ\DomainClasses\bin\Debug\DomainClasses.pdb
+C:\Users\Sx3StoneSky318\Desktop\repo\TeamJ\DomainClasses\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sx3StoneSky318\Desktop\repo\TeamJ\DomainClasses\obj\Debug\DomainClasses.dll
+C:\Users\Sx3StoneSky318\Desktop\repo\TeamJ\DomainClasses\obj\Debug\DomainClasses.pdb
