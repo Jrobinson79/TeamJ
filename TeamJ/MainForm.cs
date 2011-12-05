@@ -114,7 +114,9 @@ namespace TeamJ
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void buttonReport_Click(object sender, EventArgs e)
         {
-            setPanel(new ShowReportPanel());
+            //setPanel(new ShowReportPanel());
+            SectionPopup popup = new SectionPopup();
+            popup.ShowDialog();
         }
 
         #endregion
