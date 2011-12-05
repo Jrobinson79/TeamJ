@@ -33,6 +33,7 @@ namespace TeamJ
         {
             using (var context = new Context())
             {
+                /*
                 //string image = "./Images/logo1.jpg";
                 object missing = Type.Missing;
 
@@ -88,6 +89,7 @@ namespace TeamJ
 
                 word.Selection.ParagraphFormat.SpaceAfter = 2;
                 word.Selection.ParagraphFormat.SpaceBefore = 2;
+                 */
             }
         }
 

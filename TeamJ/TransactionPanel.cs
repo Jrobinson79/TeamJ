@@ -105,7 +105,7 @@ namespace TeamJ
             this.textBoxLine2.Text = item.Line2;
             this.textBoxLine3.Text = item.Line3;
 
-            comboBoxSection.SelectedText = item.Section.Location;
+            comboBoxSection.Text = item.Section.Location;
 
             this.textBoxPrice.Text = item.ItemType.Price.ToString();
             this.textBoxDonation.Text = (s.Cost - item.ItemType.Price).ToString();
